@@ -1,20 +1,20 @@
 # EventEase
 
-![freefido responsive screenshot]('link')
+<!-- Image of the response site on different screen sizes -->
 
 ## Introduction
 
-FreeFido is a social media and booking app for a private dog park. FreeFido has been developed as part of the Code Institute's Full-Stack Developer course as my 4th project - focusing on Django and Bootstrap frameworks, Database manipulation and CRUD functionality. It is for educational purposes only.
+EventEase is an event management and booking app designed to manage public speaking events. This is a project work for Code Institute's Full-Stack Software Development. In the software development stack are Django, a high-level Python web framework that simplifies development process; PostgreSQL, a powerful relational database system; Bootstrap, a popular CSS library that takes care of styling components.  Django and Postresql together constitute the backend that ensures data integrity and security, while on the other hand Bootstrap, HTML, and JavaScript make up the frontend that provides user experience (UX) in software use. This work implements database manipulation and CRUD functionality. It is inspired to help a friend who is a public speaking professional organise, manage events, and the booking of events by his growing client population. It is for educational purposes only.
 
-View live site here : [FreeFido]('link')  
+View live site here : [EventEase]('link')  
   
-For Admin access with relevant sign-in information: [Freefido Admin](https://freefido.herokuapp.com/admin/)
+For Admin access with relevant sign-in information: [EventEase Admin](https://freefido.herokuapp.com/admin/)
 
 <hr>
 
 ## Table of Contents
 
-- [FreeFido](#freefido)
+- [EventEase](#Eventase)
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
