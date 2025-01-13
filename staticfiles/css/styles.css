@@ -1,0 +1,164 @@
+:root {
+  --primary-color: #4CAF50; 
+  --secondary-color: #FFC107;
+  --accent-color: #FF5722;
+  --background-color: #FFFFFF;
+  --text-color: #212121;
+  --secondary-text-color: #757575;
+  --error-color: #F44336;
+
+}
+
+html, body {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+header {
+background-color: #f8f9fa;
+padding: 10px 0;        
+}
+
+.topbar-container {
+display: flex;
+justify-content: space-between;
+align-items: center;        
+padding: 0 20px;
+}
+.topbar .topbar-brand, .bottombar .navbar-brand {
+font-size: 1.5rem;
+font-weight: 700;
+color: #333;
+text-decoration: none;
+}
+.topbar-brand .event {
+padding: 12px 2px 12px 12px;
+color: #fff;
+background-color: blue;  
+}
+.topbar-brand .ease {
+padding: 12px 12px 12px 2px;   
+color: #fff;    
+background-color: red; 
+}
+
+
+ul.right {
+display: flex;
+list-style: none;
+gap: 25px;
+align-items: center;
+}
+
+.right li a {
+color: blue;
+text-decoration: none;
+font-size: 2rem;
+}
+
+.bottombar {
+/* border: 1px solid red; */
+}
+
+.bottombar-container {
+padding: 0 20px;
+}
+.bottombar .navbar-brand {
+font-size: 1.5rem;
+font-weight: 700;
+color: #333;
+}
+
+.bottombar .event {
+padding: 12px 2px 12px 12px;
+color: #fff;
+background-color: blue;
+}
+
+.bottombar .ease {
+padding: 12px 12px 12px 2px;
+color: #fff;
+background-color: red;
+}
+
+.bottombar li a {
+font-size: 1.6rem;
+font-weight: 500;
+color: blue;
+}
+
+.bottombar-container .search-icon2 {
+font-size: 2rem;
+}
+
+.bottombar-container {
+display: flex;
+justify-content: space-between;
+}
+
+.bottombar-container .navbar-brand {
+margin-right: auto;        
+}
+
+
+
+
+
+
+@media (min-width: 992px) { 
+.bottombar .navbar-brand {
+  display: none;
+}
+
+.search-icon2 {
+  display: none;
+}
+
+footer .fistcol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+}
+
+@media (max-width: 992px) {
+.topbar {
+  display: none;
+}
+.search-icon2 {
+  margin-right: 20px;
+}
+
+
+
+}
+
+footer {
+background-color: blue;
+padding: 20px 0;
+color: #fff;
+font-size: 18px;
+font-weight: 400;
+}
+
+ul.footer-social-media {
+display: flex;
+list-style: none;
+gap: 10px;
+align-items: center;        
+}
+
+.footer-social-media li a {
+color: #fff;
+text-decoration: none;
+font-size: 1.5rem;
+}
+
+main {
+min-height: 100vh;
+}
+body {
+min-height: 100vh;
+}
