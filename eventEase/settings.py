@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-br14(fwo7%^ets0k$(j0pg7xu%x6ig2zt0s1vc0$$i_q3=_-sm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-joemburu-eventeaseapp-4tscn5jih0i.ws.codeinstitute-ide.net', '.herokuapp.com']
+ALLOWED_HOSTS = ['8000-joemburu-eventeaseapp-4tscn5jih0i.ws.codeinstitute-ide.net', '8000-joemburu-eventeaseapp-g6y6ujt166w.ws.codeinstitute-ide.net', '.herokuapp.com']
 
 
 # Application definition
@@ -119,6 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
