@@ -10,86 +10,99 @@
 }
 
 html, body {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 header {
-background-color: #f8f9fa;
-padding: 10px 0;        
+  background-color: var(--background-color);
+       
+  padding: 12px 0 0 0;
 }
 
 .topbar-container {
-display: flex;
-justify-content: space-between;
-align-items: center;        
-padding: 0 20px;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;  
 }
 .topbar .topbar-brand, .bottombar .navbar-brand {
-font-size: 1.5rem;
-font-weight: 700;
-color: #333;
-text-decoration: none;
+  display: inline-block;
+  text-decoration: none; /* Remove underline */
+  font-size: 3rem;
+  font-weight: bold;
+  
 }
 .topbar-brand .event {
-padding: 12px 2px 12px 12px;
-color: #fff;
-background-color: blue;  
+  padding: 10px;
+  color: #fff;
+  background-color: var(--primary-color);  
 }
 .topbar-brand .ease {
-padding: 12px 12px 12px 2px;   
-color: #fff;    
-background-color: red; 
+  color: var(--text-color);     
+  
+} 
+
+
+ul.social-media-icons {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  align-items: center;
+}
+
+.social-media-icons li {
+  transform: translateY(3px);
 }
 
 
-ul.right {
-display: flex;
-list-style: none;
-gap: 25px;
-align-items: center;
+
+.social-media-icons li a , .topbar-container a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 3rem;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.right li a {
-color: blue;
-text-decoration: none;
-font-size: 2rem;
+.fa-square-facebook:hover { color: #1877F2; }
+.fa-square-instagram:hover { background-color: #1DA1F2; }
+.fa-square-x-twitter:hover {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
 }
+.fa-linkedin:hover { background-color: #0077B5; }
 
-.bottombar {
-/* border: 1px solid red; */
+nav.navbar {
+  background-color: var(--primary-color) !important;
+  height: 60px;
 }
 
 .bottombar-container {
-padding: 0 20px;
+  
+
 }
 .bottombar .navbar-brand {
-font-size: 1.5rem;
-font-weight: 700;
-color: #333;
+  
 }
 
 .bottombar .event {
-padding: 12px 2px 12px 12px;
-color: #fff;
-background-color: blue;
+
 }
 
 .bottombar .ease {
-padding: 12px 12px 12px 2px;
-color: #fff;
-background-color: red;
+
 }
 
 .bottombar li a {
-font-size: 1.6rem;
-font-weight: 500;
-color: blue;
+  font-size: 2.6rem;
+  font-weight: 500;
+  margin-right: 10px;
+  color: var(--background-color);
 }
 
 .bottombar-container .search-icon2 {
-font-size: 2rem;
+  font-size: 2rem;
 }
 
 .bottombar-container {
