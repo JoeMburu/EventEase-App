@@ -19,6 +19,12 @@ from django.urls import path, include
 from home import views as home_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', home_views.index, name='home')
+    path('admin/', admin.site.urls),   
+    # path('accounts/', include('accounts.urls'), name='accounts-urls'),
+    path('contact/', include('contact.urls'), name='contact-urls'),
+    path('about/', include('about.urls'), name='about-urls'),
+    path('events/', include('events.urls'), name='events-urls'),
+    path('', include('home.urls'), name='home-urls'),
+    
+
 ]
