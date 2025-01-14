@@ -36,7 +36,7 @@
       <div class="container bottombar-container">
           <a class="navbar-brand" href="#"><span class="event">Event</span><span class="ease">Ease</span></a>   
           <a class="search-icon2" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarmenu" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>         
           <div class="collapse navbar-collapse" id="navbarmenu">
@@ -59,10 +59,12 @@
             </ul>
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa-solid fa-right-to-bracket"></i></a>
+                <!-- <a class="nav-link" href="#"><i class="fa-solid fa-right-to-bracket"></i></a> -->
+                <a class="nav-link" href="#">Register</a>
               </li>
-              <li class="nav-item" style="display: none;">
-                <a class="nav-link" href="#"><i class="fa-solid fa-user"></i></a>
+              <li class="nav-item">
+                <!-- <a class="nav-link" href="#"><i class="fa-solid fa-user"></i></a> -->
+                <a class="nav-link" href="#">Login</a>
               </li>
               <li class="nav-item" style="display: none;">
                 <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i></a>
@@ -72,8 +74,8 @@
         </div>
     </nav>
   </header>
-  <main style="background-color: blueviolet;">
-    <div class="container-fluid">
+  <main>
+    <div class="main-container" style="padding: 15px 0">
      {% block content %}
       <!-- Contents go here -->
      {% endblock content %}

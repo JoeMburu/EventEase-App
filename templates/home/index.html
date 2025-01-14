@@ -1,7 +1,29 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
-<h1>Home Page</h1>
-<p> {{ message }} </p>
+<!-- message -->
+<div></div>
+<!-- end of messge -->
+<section class="container home-hero-section">
+    <div class="row hero-row">
+        <div class="col-lg-5 col-12 home-hero-text">
+            <h1>Plan. Manage. Book. Simplified.</h1>
+            <p> Effortlessly create, manage, and attend webinar events with EventEase. Make your experience unforgettable.</p>
+            <div class="home-call-to-action">
+                <button type="button" class="btn btn-primary btn-lg">Signup</button>
+                <button type="button" class="btn btn-secondary btn-lg">Explore Events</button>
+            </div>
+        </div>
+        <div class="col-lg-7 col-12">
+            <img src="{% static 'images/webinar.jpg' %}" class="img-fluid" alt="event">
+        </div>
+    </div>
+</section>
+<section class="upcoming-events">
+
+</section>
+
 {% endblock content %}
  
