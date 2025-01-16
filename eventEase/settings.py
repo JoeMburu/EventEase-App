@@ -31,11 +31,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['8000-joemburu-eventeaseapp-4tscn5jih0i.ws.codeinstitute-ide.net', '8000-joemburu-eventeaseapp-g6y6ujt166w.ws.codeinstitute-ide.net', '.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://8000-joemburu-eventeaseapp-g6y6ujt166w.ws.codeinstitute-ide.net",
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
 ]
 
 # Application definition
@@ -47,12 +48,28 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount', 
+    'crispy_forms',
+    'crispy_bootstrap5',    
     'home',
     'events',
-    'accounts',
     'contact',
     'about',
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_SIGNUP_REDIRECT_URL = '/events/'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -63,6 +80,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'eventEase.urls'
@@ -93,6 +111,7 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
+#AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -112,6 +131,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Use email instead of username
+ACCOUNT_AUTHENTICATION_METHOD = "email"           # Only use email for authentication
+ACCOUNT_USERNAME_REQUIRED = True                  # Disable the username field
+ACCOUNT_EMAIL_REQUIRED = True                     # Email is required for registration
+ACCOUNT_EMAIL_VERIFICATION = "none"               # Set to "mandatory" if email verification is needed
+ACCOUNT_USER_MODEL_USERNAME_FIELD = 'username'    # Set the username field to None (for Django Allauth)
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
