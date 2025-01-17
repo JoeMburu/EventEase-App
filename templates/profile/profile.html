@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1>Welcome, {{ user.username }}</h1>
+
+    {% if is_admin %}
+        <h2>Admin Menu</h2>
+        <ul>
+            <li><a href="/admin/dashboard/">Dashboard</a></li>
+            <li><a href="/admin/manage-users/">Manage Users</a></li>
+            <li><a href="/admin/reports/">Reports</a></li>
+        </ul>
+    {% elif is_attendee %}
+        <h2>Attendee Menu</h2>
+        <ul>
+            <li><a href="/events/">View Events</a></li>
+            <li><a href="/profile/settings/">Profile Settings</a></li>
+        </ul>
+    {% endif %}
+
+{% endblock content %}

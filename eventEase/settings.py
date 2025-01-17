@@ -53,11 +53,13 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount', 
     'crispy_forms',
-    'crispy_bootstrap5',    
+    'crispy_bootstrap5',  
+
     'home',
     'events',
     'contact',
     'about',
+    'user_profile',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -66,9 +68,9 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/profile/'
 LOGOUT_REDIRECT_URL = '/'
-ACCOUNT_SIGNUP_REDIRECT_URL = '/events/'
+ACCOUNT_SIGNUP_REDIRECT_URL = '/profile/'
 
 
 MIDDLEWARE = [
