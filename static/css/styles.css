@@ -18,7 +18,11 @@ html, body {
   font-size: 62.5%;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+}
+body {
+  /* display: flex;
+  flex-direction: column; */
 }
 header {
   background-color: var(--background-color);       
@@ -120,10 +124,11 @@ nav.navbar {
 
 /* MAIN */
 main {
-  min-height: 100vh;
+  min-height: 78vh;  
 }
 
-/* HERO SECTION */
+/**************** HOME *******************/
+/* HOME HERO SECTION */
 .home-hero-section {
   background-color: var(--background-color);
   padding-bottom: 20px;
@@ -169,7 +174,7 @@ main {
   }
 }
 
-/* UPCOMING EVENTS SECTION */
+/* HOME UPCOMING EVENTS SECTION */
 .upcoming-events-section {
   background-color: var(--muted-neutral);
   padding: 5px 0 20px 0;
@@ -181,7 +186,7 @@ main {
 }
 
 
-/* 4 SIMPLE STEPS */
+/* HOME 4 SIMPLE STEPS SECTION */
 .simple-steps-section {
   background-color: var(--background-color);
   padding: 20px 0 20px 0;
@@ -253,7 +258,20 @@ main {
 
 }
 
+/**************** PROFILE *******************/
 
+.profile-container {
+  padding: 20px 0;
+}
+
+
+
+
+
+
+
+
+/**************** FOOTER *******************/
 footer {
 background-color: var(--primary-color);
 padding: 20px 0;
