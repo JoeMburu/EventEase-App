@@ -157,7 +157,7 @@ main {
   margin: 10px 0 20px 0;
 }
 
-.home-call-to-action .btn {
+.home-call-to-action .btn, .sidebar .btn {
   font-size: 2rem;
   background-color: var(--primary-color);
 }
@@ -261,10 +261,13 @@ main {
 /**************** PROFILE *******************/
 
 .profile-container {
-  padding: 20px 0;
+  padding: 20px 10px;
 }
 
-
+.dashboard-menu {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
 
 
 
@@ -292,4 +295,8 @@ color: #fff;
 text-decoration: none;
 font-size: 1.5rem;
 }
+
+
+
+
 

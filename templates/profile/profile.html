@@ -3,23 +3,39 @@
 {% load static %}
 
 {% block content %}
-<div class="container profile-container">
-  <div class="sidebar">
-    {% block sidebar %}
-        <ul>
-            {% if user.is_staff %}
-                <li><a href="{% url 'admin_reports' %}">Admin Reports</a></li>
-            {% else %}
-                <li><a href="{% url 'my_events' %}">My Events</a></li>
-            {% endif %}
-        </ul>
-    {% endblock %}
-</div>
-<div class="main-content">
-    {% block profile_content %}
-        <h3><p>Default profile content.</p></h3>
-    {% endblock %}
-</div>
+
+ 
+<div class="container profile-container">      
+    <div class="sidebar">
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="offcanvas" data-bs-target="#dashboard-menu">{% if user.is_superuser and user.is_staff %}Admin Submenu{% else %}Attendee Submenu {% endif %}</button>
+
+        <!-- Offcanvas Sidebar -->
+        <div class="offcanvas offcanvas-start dashboard-menu" id="dashboard-menu">
+            <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Dashboard</h1>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="font-size: 2.5rem; color: #FFF;"></button>
+            </div>
+            <div class="offcanvas-body">
+            {% block sidebar %}            
+                {% if user.is_superuser and user.is_staff %}
+                {% include 'profile/admin_menu.html' %}
+                {% else %}
+                {% include 'profile/attendee_menu.html' %}
+                {% endif %}
+            {% endblock %}
+            </div>
+        </div>
+
+
+
+
+        
+    </div>
+    <div class="profile-main-content">
+        {% block profile_content %}
+            <h3><p style="font-size: 2.5rem; color: #fff;">Default profile content.</p></h3>
+        {% endblock %}
+    </div> 
 </div>
 
 
