@@ -269,6 +269,22 @@ main {
   color: var(--background-color);
 }
 
+/* Hide submenus by default */
+ul.list-group ul {
+  display: none;
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+/* Show submenus when the parent is hovered */
+ul.list-group li:hover > ul {
+  display: block;
+}
+
+/* Optional: Add some styling to the submenu items */
+ul.list-group ul li {
+  padding: 5px 0;
+}
 
 
 

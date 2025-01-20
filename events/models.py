@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
+from accounts.models import User
 
 class Event(models.Model):
     # these are the fields

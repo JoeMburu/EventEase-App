@@ -7,7 +7,7 @@
  
 <div class="container profile-container">      
     <div class="sidebar">
-        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="offcanvas" data-bs-target="#dashboard-menu">{% if user.is_superuser and user.is_staff %}Admin Submenu{% else %}Attendee Submenu {% endif %}</button>
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="offcanvas" data-bs-target="#dashboard-menu">{% if user.is_superuser and user.is_staff %}Admin Menu{% else %}Attendee Menu {% endif %}</button>
 
         <!-- Offcanvas Sidebar -->
         <div class="offcanvas offcanvas-start dashboard-menu" id="dashboard-menu">
