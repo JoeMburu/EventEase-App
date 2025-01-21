@@ -1,10 +1,16 @@
 from django.shortcuts import render, redirect
 from .forms import EventRegisterForm
 from accounts.models import User
+from .models import Event
 
 # Create your views here.
 def events(request):
-    return render(request, 'events/events.html')
+    events = Event.objects.all()
+    context =  {
+        'events': events
+    }      
+    
+    return render(request, 'events/events.html', context)
 
 def pricing(request):
     return render(request, 'events/pricing.html')

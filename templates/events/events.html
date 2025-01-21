@@ -1,6 +1,22 @@
 {%  extends 'base.html' %}
-
+{% load static %}
+{% load crispy_forms_tags %}
 {% block content %}
 
 <h1>Events</h1>
+{% for event in events %}
+    {% if 'placeholder' in event.image.url %}
+    <img class="card-img-top" src="{% static 'images/winter.jpeg' %}" alt="placeholder image">
+    {% else %}
+    <img class="card-img-top" src="{{ event.image.url }}" alt="{{ event.title }}">
+    {% endif  %}
+    <p style="font-size: 3rem;"> {{ event.title }} </p>
+    <p style="font-size: 3rem;"> {{ event.description }} </p>
+    <p style="font-size: 3rem;"> {{ event.date }} </p>
+    <p style="font-size: 3rem;"> {{ event.time }} </p>
+    <p style="font-size: 3rem;"> {{ event.location }} </p>
+    <p style="font-size: 3rem;"> {{ event.category }} </p>
+    <p style="font-size: 3rem;"> {{ event.tags }} </p>
+
+{% endfor %}
 {% endblock content %}
