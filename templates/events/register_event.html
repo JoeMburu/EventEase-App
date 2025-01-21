@@ -1,0 +1,20 @@
+{%  extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="register_event">
+    <div class="container">
+       <div class="row justify-content-center align-items-center align-items-center">
+        <div class="col-lg-8 col-12">
+            <div class="card shadow-lg" style="padding: 5rem; ">
+                <form method="post" action="{% url 'register_event' %}" style="font-size: 2rem;">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <button type="submit" class="btn btn-primary lg w-100 mt-3">Submit</button>
+                </form>   
+            </div>            
+        </div>        
+       </div>
+    </div>    
+</div>
+{% endblock content %}

@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 # Create your models here.
 class UserManager(BaseUserManager):
@@ -32,14 +32,17 @@ class UserManager(BaseUserManager):
     user.is_active = True
     user.is_staff = True
     user.is_superadmin = True
+    user.is_superuser = True
     user.save(using=self._db)
     return user
 
-class User(AbstractBaseUser):
-  ORGANISER = 1
-  ATTENDEE = 2
+class User(AbstractBaseUser, PermissionsMixin):
+  ADMIN = 1
+  ORGANISER = 2
+  ATTENDEE = 3
 
   ROLE_CHOICES = (
+    (ADMIN, 'Admin'),
     (ORGANISER, 'Organiser'),
     (ATTENDEE, 'Attendee')  
   )
@@ -60,8 +63,9 @@ class User(AbstractBaseUser):
   modified_date = models.DateTimeField(auto_now=True) 
   is_admin = models.BooleanField(default=False) 
   is_staff = models.BooleanField(default=False)
-  is_active = models.BooleanField(default=False)
+  is_active = models.BooleanField(default=True)
   is_superadmin = models.BooleanField(default=False)
+  is_superuser = models.BooleanField(default=False)
 
   USERNAME_FIELD = 'email'
   REQUIRED_FIELDS = ['username', 'first_name', 'last_name']

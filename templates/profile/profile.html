@@ -17,19 +17,14 @@
             </div>
             <div class="offcanvas-body">
             {% block sidebar %}            
-                {% if user.is_superuser and user.is_staff %}
+                {% if is_admin %}
                 {% include 'profile/admin_menu.html' %}
                 {% else %}
                 {% include 'profile/attendee_menu.html' %}
                 {% endif %}
             {% endblock %}
             </div>
-        </div>
-
-
-
-
-        
+        </div>        
     </div>
     <div class="profile-main-content">
         {% block profile_content %}

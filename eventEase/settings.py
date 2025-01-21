@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5', 
     'PIL',
+    'widget_tweaks',
 
     'accounts',
     'home',
@@ -74,6 +75,7 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/profile/'
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_SIGNUP_REDIRECT_URL = '/profile/'
+ACCOUNT_AUTHENTICATED_REDIRECT_URL = '/profile/'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"

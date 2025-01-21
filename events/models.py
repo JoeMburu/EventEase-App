@@ -8,7 +8,7 @@ class Event(models.Model):
     description = models.CharField()
     date = models.DateField()
     time = models.TimeField()
-    location = models.CharField(max_length=255)
+    location = models.CharField(max_length=255, blank=True, help_text="Webinar or physical location")
     category = models.CharField(max_length=100)
     tags = models.CharField(max_length=255, blank=True, help_text="Comma-separated tags")
     image = models.ImageField(upload_to='events/images/', blank=True, null=True)

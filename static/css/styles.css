@@ -21,8 +21,7 @@ html, body {
   /* min-height: 100vh; */
 }
 body {
-  /* display: flex;
-  flex-direction: column; */
+  line-height: 1.7;
 }
 header {
   background-color: var(--background-color);       
@@ -288,6 +287,12 @@ ul.list-group ul li {
 
 
 
+
+/**************** EVENTS *******************/
+.register_event {
+  background-color: red;
+  
+}
 
 
 /**************** FOOTER *******************/

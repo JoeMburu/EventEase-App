@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 @login_required
 def profile_view(request):
     user = request.user
-    is_admin = user.is_superuser or user.is_staff
+    is_admin = user.is_superadmin and user.is_admin and user.is_superuser
     is_attendee = not is_admin
 
     context = {
