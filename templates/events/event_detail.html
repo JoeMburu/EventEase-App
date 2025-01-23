@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container event-detail-container">       
+        <div class="row justify-content-center">
+            <h1 class="text-center">Event Details</h1>
+            <div class="col-12 col-md-6 col-lg-6">
+                <div class="card text-center shadow-lg event-detail-card">
+                    <div class="card-header">
+                        <img class="card-img-top" src="{{  event.image.url }}" alt="{{ event.title }}" style="height: 400px;"> 
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{ event.title }}</h5>
+                      <p class="card-text">{{ event.description }}</p>
+                      <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>    
+                      <p class="card-text"><strong>Time:</strong> {{ event.time }}</p>    
+                      <p class="card-text"><strong>Location:</strong> {{ event.location }}</p> 
+                      <p class="card-text"><strong>Category:</strong> {{ event.category }}</p>     
+                      <p class="card-text"><strong>Tags:</strong> {{ event.tags }}</p>   
+                      <p class="card-text"><strong>Organizer:</strong> {{ event.organiser.username }}</p>   
+                      <p class="card-text"><strong>Email:</strong> {{ event.organiser }}</p>     
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <a href="{% url 'event-detail' event.pk %}" class="btn btn-primary lg">Book Event</a>
+                      <a href="{% url 'event-list' %}" class="btn btn-primary lg">Back to Events</a>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        
+      
+    </div>
+
+{% endblock %}
+

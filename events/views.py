@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import EventRegisterForm
 from accounts.models import User
 from .models import Event
+from django.views.generic import ListView, DetailView, CreateView, DeleteView
 
 # Create your views here.
 def events(request):
@@ -35,18 +36,8 @@ def create_event(request):
     else:
        return redirect('event-list')  # Change this later
 
-
-    # if request.method == 'POST':
-    #     form = EventRegisterForm(request.POST)
-    #     if form.is_valid():
-    #         event = form.save(commit=False)
-    #         event.organiser = request.user
-    #         form.save() 
-    #         return redirect('register_event')
-
-    # else:
-    #     form = EventRegisterForm()
-    # context = {
-    #     'form': form
-    # }
-    # return render(request, 'events/new_event.html', context)    
+class EventDetailView(DetailView):
+    model = Event
+    template_name = 'events/event_detail.html'
+    context_object_name = 'event'
+     
