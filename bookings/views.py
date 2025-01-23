@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, DeleteView
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
-#from .models import Booking
+from .models import Booking
 from events.models import Event
 
 # Create your views here.
@@ -26,9 +26,10 @@ class BookingDetailView(LoginRequiredMixin, DetailView):
 
 # Create a new booking
 class BookingCreateView(LoginRequiredMixin, CreateView):
-    #model = Booking
+    model = Booking
+    event = Event
     template_name = 'bookings/booking_form.html'
-    # fields = []  # No fields needed; event and user are set programmatically
+    fields = []  # No fields needed; event and user are set programmatically
 
     # def get_context_data(self, **kwargs):
     #     context = super().get_context_data(**kwargs)
