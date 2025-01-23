@@ -18,7 +18,10 @@ html, body {
   font-size: 62.5%;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+}
+body {
+  line-height: 1.7;
 }
 header {
   background-color: var(--background-color);       
@@ -120,10 +123,11 @@ nav.navbar {
 
 /* MAIN */
 main {
-  min-height: 100vh;
+  min-height: 78vh;  
 }
 
-/* HERO SECTION */
+/**************** HOME *******************/
+/* HOME HERO SECTION */
 .home-hero-section {
   background-color: var(--background-color);
   padding-bottom: 20px;
@@ -152,7 +156,7 @@ main {
   margin: 10px 0 20px 0;
 }
 
-.home-call-to-action .btn {
+.home-call-to-action .btn, .sidebar .btn {
   font-size: 2rem;
   background-color: var(--primary-color);
 }
@@ -169,7 +173,7 @@ main {
   }
 }
 
-/* UPCOMING EVENTS SECTION */
+/* HOME UPCOMING EVENTS SECTION */
 .upcoming-events-section {
   background-color: var(--muted-neutral);
   padding: 5px 0 20px 0;
@@ -181,7 +185,7 @@ main {
 }
 
 
-/* 4 SIMPLE STEPS */
+/* HOME 4 SIMPLE STEPS SECTION */
 .simple-steps-section {
   background-color: var(--background-color);
   padding: 20px 0 20px 0;
@@ -253,7 +257,99 @@ main {
 
 }
 
+/**************** EVENTS *******************/
+/* CONTAINER */
+.events-container {
+  padding: 25px 0;
+}
 
+.events-container h1 {
+  font-size: 3.5rem;
+  margin-left: 3px;
+}
+
+.event-card h5 {
+  font-size: 3.2rem;
+}
+
+.event-card p {
+  font-size: 2rem;
+}
+
+.event-card a {
+  font-size: 1.9rem;
+  background-color: var(--primary-color);
+}
+
+
+/**************** EVENTS *******************/
+/* CONTAINER */
+.event-detail-container {
+  padding: 25px 0;
+}
+
+.event-detail-container h1 {
+  font-size: 3.5rem;
+  margin-left: 3px;
+}
+
+.event-detail-card h5 {
+  font-size: 3.2rem;
+}
+
+.event-detail-card p {
+  font-size: 2rem;
+}
+
+.event-detail-card a {
+  font-size: 1.9rem;
+  background-color: var(--primary-color);
+  margin: 0 5px;
+}
+
+
+
+
+
+/**************** PROFILE *******************/
+
+.profile-container {
+  padding: 20px 10px;
+}
+
+.dashboard-menu {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+/* Hide submenus by default */
+ul.list-group ul {
+  display: none;
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+/* Show submenus when the parent is hovered */
+ul.list-group li:hover > ul {
+  display: block;
+}
+
+/* Optional: Add some styling to the submenu items */
+ul.list-group ul li {
+  padding: 5px 0;
+}
+
+
+
+
+/**************** EVENTS *******************/
+.register_event {
+  
+  
+}
+
+
+/**************** FOOTER *******************/
 footer {
 background-color: var(--primary-color);
 padding: 20px 0;
@@ -274,4 +370,8 @@ color: #fff;
 text-decoration: none;
 font-size: 1.5rem;
 }
+
+
+
+
 
