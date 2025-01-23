@@ -3,13 +3,14 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<h1>Events</h1>
+<h1>List of Upcoming Events</h1>
 {% for event in events %}
-    {% if 'placeholder' in event.image.url %}
-    <img class="card-img-top" src="{% static 'images/winter.jpeg' %}" alt="placeholder image">
-    {% else %}
-    <img class="card-img-top" src="{{ event.image.url }}" alt="{{ event.title }}">
-    {% endif  %}
+    <!-- {% if 'placeholder' in event.image.url %} -->
+
+    <!-- <img class="card-img-top" src="{% static 'images/winter.jpeg' %}" alt="placeholder image"> -->
+    <!-- {% else %} -->
+    <img class="card-img-top" src="{{  event.image.url }}" alt="{{ event.title }}"  style="max-width: 300px; height: auto;">
+    <!-- {% endif  %} -->
     <p style="font-size: 3rem;"> {{ event.title }} </p>
     <p style="font-size: 3rem;"> {{ event.description }} </p>
     <p style="font-size: 3rem;"> {{ event.date }} </p>

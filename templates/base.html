@@ -50,7 +50,7 @@
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'events' %}">Events</a>
+                <a class="nav-link" href="{% url 'event-list' %}">Events</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'pricing' %}">Pricing</a>
@@ -71,7 +71,7 @@
               </li>
               <li class="nav-item">
                 <!-- <a class="nav-link" href="#"><i class="fa-solid fa-right-to-bracket"></i></a> -->
-                <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"  href="{% url 'profile' %}">Dashboard</a>
+                <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"  href="{% if request.user.is_admin %}{% url 'admin-dashboard' %} {% else %} {% url 'attendee-dashboard' %} {% endif %}">Dashboard</a>
               </li>
               {% else %}
               <li class="nav-item">
@@ -118,7 +118,7 @@
     <script>
       // Explore Events button
       document.getElementById('home-explore-events').addEventListener('click', () => {
-        window.location.href = "{% url 'events' %}";
+        window.location.href = "{% url 'event-list' %}";
       })      
 
       // Explore Events button

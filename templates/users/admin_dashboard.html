@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %} 
+<div class="container profile-container">      
+    <div class="sidebar">
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="offcanvas" data-bs-target="#dashboard-menu">{% if user.is_superuser and user.is_staff %}Admin Menu{% else %}Attendee Menu {% endif %}</button>
+
+        <!-- Offcanvas Sidebar -->
+        <div class="offcanvas offcanvas-start dashboard-menu" id="dashboard-menu">
+            <div class="offcanvas-header">
+            <h3 class="offcanvas-title">Admin Dashboard Menu</h3>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="font-size: 2.5rem; color: #FFF;"></button>
+            </div>
+            <div class="offcanvas-body">
+            <!-- {% block sidebar %}            
+                {% if is_admin %}
+                {% include 'profile/admin_menu.html' %}
+                {% else %}
+                {% include 'profile/attendee_menu.html' %}
+                {% endif %}
+            {% endblock %} -->
+                <ul class="list-group">
+                    <li><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
+                    <li class="list-group-item" >
+                        <a href="#">Event Management</a>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="{% url 'event-list' %}">View All Events</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'admin_event_create' %}">Create New Event</a>
+                            </li>                           
+                            <li class="list-group-item">
+                                <a href="#">Event Analytics</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <a href="#">User Management</a>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="#">Manage Users (View, Edit, Delete)</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">Messaging and Notification</a>
+                            </li>   
+                            <li class="list-group-item">
+                                <a href="#">Attendee Insights</a>
+                            </li>            
+                        </ul>
+                    </li> -->
+                    <li class="list-group-item">
+                        <a href="#">View All Bookings</a>                        
+                    </li>               
+                </ul>
+            </div>
+        </div>        
+    </div>
+    <div class="profile-main-content">        
+        {% block profile_content %}
+            <!-- <h1>Admin Dashboard</h1> -->
+            <h3><p style="font-size: 2.5rem; color: #fff;">Default profile content.</p></h3>
+        {% endblock %}
+    </div> 
+</div> 
+{% endblock content %} 
+
+
+

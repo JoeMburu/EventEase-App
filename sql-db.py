@@ -1,9 +1,10 @@
 import psycopg2
 from psycopg2 import sql
 from urllib.parse import urlparse
+import os
 
 # Database URL
-DATABASE_URL = "postgresql://neondb_owner:zNBQYHMUF64j@ep-quiet-bread-a2bmbfh6.eu-central-1.aws.neon.tech/zero_user_gains_955285"
+DATABASE_URL = ""
 
 def delete_and_recreate_database(database_url):
     # Parse the database URL

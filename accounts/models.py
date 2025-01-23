@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin, AbstractUser
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class UserManager(BaseUserManager):
@@ -37,23 +38,19 @@ class UserManager(BaseUserManager):
     return user
 
 class User(AbstractBaseUser, PermissionsMixin):
-  ADMIN = 1
-  ORGANISER = 2
-  ATTENDEE = 3
-
+  
   ROLE_CHOICES = (
-    (ADMIN, 'Admin'),
-    (ORGANISER, 'Organiser'),
-    (ATTENDEE, 'Attendee')  
+    ('admin', 'Admin'),
+    ('attendee', 'Attendee')  
   )
   first_name = models.CharField(max_length=50)
   last_name = models.CharField(max_length=50)
   username = models.CharField(max_length=50, unique=True)
   email = models.EmailField(max_length=100, unique=True)
-  role = models.PositiveSmallIntegerField(choices=ROLE_CHOICES, blank=True, null=True)
+  role = models.CharField(choices=ROLE_CHOICES, default='attendee')
   address = models.TextField(null=True, blank=True)
   phone_number = models.CharField(max_length=15, null=True, blank=True)
-  profile_picture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True)
+  profile_picture = CloudinaryField('image', default='placeholder')  
   country = models.CharField(max_length=15, blank=True, null=True)
 
   # Required fields

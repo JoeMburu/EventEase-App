@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     'contact',
     'about',
     'user_profile',
+    'bookings'
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -74,10 +75,10 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/profile/'
+LOGIN_REDIRECT_URL = '/users/profile/'
 LOGOUT_REDIRECT_URL = '/'
-ACCOUNT_SIGNUP_REDIRECT_URL = '/profile/'
-ACCOUNT_AUTHENTICATED_REDIRECT_URL = '/profile/'
+ACCOUNT_SIGNUP_REDIRECT_URL = '/users/profile/'
+ACCOUNT_AUTHENTICATED_REDIRECT_URL = '/users/profile/'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
