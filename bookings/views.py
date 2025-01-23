@@ -26,9 +26,8 @@ class BookingDetailView(LoginRequiredMixin, DetailView):
 
 # Create a new booking
 class BookingCreateView(LoginRequiredMixin, CreateView):
-    pass
-    # model = Booking
-    # template_name = 'bookings/booking_form.html'
+    #model = Booking
+    template_name = 'bookings/booking_form.html'
     # fields = []  # No fields needed; event and user are set programmatically
 
     # def get_context_data(self, **kwargs):

@@ -85,21 +85,6 @@ nav.navbar {
 }
 
 
-.bottombar-container {
-  
-
-}
-.bottombar .navbar-brand {
-  
-}
-
-.bottombar .event {
-  
-}
-
-.bottombar .ease {
-
-}
 
 .bottombar li a {
   font-size: 2.6rem;
@@ -183,6 +168,36 @@ main {
   color: var(--text-color);
   font-size: 2.8rem;
 }
+
+.upcoming-events .img-fluid {
+  width: 100%;
+  height: 200px;
+}
+
+.upcoming-events h5 {
+  font-size: 1.4rem !important;
+}
+
+.upcoming-events p {
+  font-size: 1.4rem;
+}
+.upcoming-events a {
+  font-size: 1.3rem;
+}
+
+@media (min-width: 992px) {
+  .upcoming-events h5 {
+    font-size: 3rem !important;
+  }
+  .upcoming-events a {
+    font-size: 2rem;
+  }
+  .upcoming-events p {
+    font-size: 1.8rem;
+  }
+  
+}
+
 
 
 /* HOME 4 SIMPLE STEPS SECTION */

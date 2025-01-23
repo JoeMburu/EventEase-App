@@ -14,10 +14,8 @@
             <div class="card-body">
               <h5 class="card-title">{{ event.title }}</h5>
               <p class="card-text">{{ event.description }}</p>
-              <p class="card-text">
-                <span>Date:</span> <span>{{ event.date }}</span>
-                <span>Time:</span> <span>{{ event.time }}</span>
-              </p>              
+              <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
+              <p class="card-text"><strong>Time:</strong> {{ event.time }}</p>
             </div>
             <div class="card-footer text-body-secondary">
               <a href="{% url 'event-detail' event.pk %}" class="btn btn-primary btn-lg">Detailed Information</a>
