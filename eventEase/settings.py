@@ -30,8 +30,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['8000-joemburu-eventeaseapp-4tscn5jih0i.ws.codeinstitute-ide.net', '8000-joemburu-eventeaseapp-g6y6ujt166w.ws.codeinstitute-ide.net', '.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = [
@@ -124,6 +125,7 @@ WSGI_APPLICATION = 'eventEase.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -180,4 +182,4 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-#DEFAULT_FILE_STORAGE = os.environ.get('CLOUDINARY_URL')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
