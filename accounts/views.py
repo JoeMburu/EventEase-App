@@ -50,4 +50,4 @@ class AttendeeDashboardView(LoginRequiredMixin, UserPassesTestMixin, TemplateVie
     template_name = 'users/attendee_dashboard.html'
     def test_func(self):
         # Only allow attendees to access this view
-        return self.request.user.is_attendee
+        return self.request.user.role == "attendee"
