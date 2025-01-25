@@ -1,9 +1,34 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-<h1>Attendee Dashboard</h1>
-<ul>
-    <!-- <li><a href="{% url 'booking-list' %}">Your Bookings</a></li> -->
-    <li><a href="{% url 'event-list' %}">Browse Events</a></li>
-</ul>
+
+<div class="container profile-container">      
+    <div class="sidebar">
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="offcanvas" data-bs-target="#dashboard-menu">{% if user.is_superuser and user.is_admin %}Admin Menu{% else %}Attendee Menu {% endif %}</button>
+
+        <!-- Offcanvas Sidebar -->
+        <div class="offcanvas offcanvas-start dashboard-menu" id="dashboard-menu">
+            <div class="offcanvas-header">
+            <h3 class="offcanvas-title" style="font-size: 3rem;">Attendee Dashboard Menu</h3>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="font-size: 2.5rem; color: #FFF !important;"></button>
+            </div>
+            <div class="offcanvas-body">           
+                <ul class="list-group" style="color: #FFF; font-size: 2rem;">
+                    <li><a href="{% url 'attendee-dashboard' %}" style="color: #FFF; font-size: 2rem;">Dashboard</a></li>
+                    <li><a href="{% url 'my-profile-page' %}" style="color: #FFF; font-size: 2rem;">My Profile Page</a></li>
+                    <li><a href="{% url 'booking-list' %}" style="color: #FFF; font-size: 2rem;">Your Bookings</a></li>
+                    <li><a href="{% url 'event-list' %}" style="color: #FFF; font-size: 2rem;">Browse Events</a></li>                           
+                </ul>
+            </div>
+        </div>        
+    </div>
+    <div class="profile-main-content" style="padding: 20px 0;">               
+        {% block profile_content %}
+        <div class="content container">
+           <h3><p style="font-size: 2.5rem;">You are welcome to your dashboard. You can watch your apps Analytics and perform operations.</p></h3>
+        </div>          
+        {% endblock %}
+    </div> 
+</div> 
+
 {% endblock %}

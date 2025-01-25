@@ -191,6 +191,7 @@ main {
   }
   .upcoming-events a {
     font-size: 2rem;
+    color: var(--primary-color); 
   }
   .upcoming-events p {
     font-size: 1.8rem;

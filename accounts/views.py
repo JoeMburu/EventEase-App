@@ -4,45 +4,22 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import View
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
+from .models import User
+from .forms import UserUpdateForm
 
 
-
-
-# @login_required
-# def login_redirect(request):
-#     if request.user.role == request.user.ADMIN:
-#         return redirect('/users/admin/dashboard/')
-#     elif request.user.role == request.user.ATTENDEE:
-#         return redirect('/users/attendee/dashboard/')
-#     return redirect('/users/profile/')
-
-# Create your views here.
-# @login_required
-# def profile_view(request):
-#     user = request.user
-#     is_admin = user.is_superadmin and user.is_admin and user.is_superuser
-#     is_attendee = not is_admin
-
-#     context = {
-#         "is_admin": is_admin,
-#         "is_attendee": is_attendee
-#     }
-
-#     return render(request, "profile/profile.html", context)
-
-class ProfileView(LoginRequiredMixin, View):
+class ProfileView(LoginRequiredMixin, View):   
     def get(self, request, *args, **kwargs):
         # Redirect based on user's role
-        if request.user.is_admin and request.user.role == 'admin':
-            return redirect('/users/admin/dashboard/')
-        elif not request.user.is_admin and request.user.role == 'attendee':
-            return redirect('/users/attendee/dashboard/')  
-        return redirect('/users/profile/')     
+        if request.user.is_admin:
+            return redirect('admin-dashbaord')
+        elif request.user.role == 'attendee':
+            return redirect('attendee-dashboard')  
+        return redirect('event-list')     
 
 
 class AdminDashboardView(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
     template_name = 'users/admin_dashboard.html'
-
     def test_func(self):
         return self.request.user.is_admin
 
@@ -51,3 +28,28 @@ class AttendeeDashboardView(LoginRequiredMixin, UserPassesTestMixin, TemplateVie
     def test_func(self):
         # Only allow attendees to access this view
         return self.request.user.role == "attendee"
+
+class MyPageView(LoginRequiredMixin, TemplateView):
+    template_name = 'users/user_profile_page.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        context['user'] = user
+        print(user.first_name)
+        return context
+
+    def get(self, request):
+        form = UserUpdateForm(instance=request.user)  # Pre-fill the form with user data
+        return render(request, self.template_name, {'user': request.user, 'form': form})
+
+    def post(self, request):
+        form = UserUpdateForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()  # Update the user model
+            return redirect('my-profile-page')  # Redirect to the same page or another page
+        return render(request, self.template_name, {'user': request.user, 'form': form})    
+           
+
+   
+       

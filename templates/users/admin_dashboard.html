@@ -5,7 +5,7 @@
 {% block content %} 
 <div class="container profile-container">      
     <div class="sidebar">
-        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="offcanvas" data-bs-target="#dashboard-menu">{% if user.is_superuser and user.is_staff %}Admin Menu{% else %}Attendee Menu {% endif %}</button>
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="offcanvas" data-bs-target="#dashboard-menu">{% if user.is_superuser and user.is_admin %}Admin Menu{% else %}Attendee Menu {% endif %}</button>
 
         <!-- Offcanvas Sidebar -->
         <div class="offcanvas offcanvas-start dashboard-menu" id="dashboard-menu">
@@ -36,21 +36,7 @@
                                 <a href="#">Event Analytics</a>
                             </li>
                         </ul>
-                    </li>
-                    <!-- <li class="list-group-item">
-                        <a href="#">User Management</a>
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <a href="#">Manage Users (View, Edit, Delete)</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="#">Messaging and Notification</a>
-                            </li>   
-                            <li class="list-group-item">
-                                <a href="#">Attendee Insights</a>
-                            </li>            
-                        </ul>
-                    </li> -->
+                    </li>                    
                     <li class="list-group-item">
                         <a href="#">View All Bookings</a>                        
                     </li>               

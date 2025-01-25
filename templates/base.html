@@ -117,14 +117,21 @@
     <script src="{% static 'js/scripts.js' %}"></script>
     <script>
       // Explore Events button
-      document.getElementById('home-explore-events').addEventListener('click', () => {
-        window.location.href = "{% url 'event-list' %}";
-      })      
+      // document.getElementById('home-explore-events').addEventListener('click', () => {
+      //   window.location.href = "{% url 'event-list' %}";
+      // })      
 
-      // Explore Events button
-      document.getElementById('home-signup-btn').addEventListener('click', () => {
-        window.location.href = "{% url 'account_signup' %}";
-      })  
+      // // Explore Events button
+      // document.getElementById('home-signup-btn').addEventListener('click', () => {
+      //   window.location.href = "{% url 'account_signup' %}";
+      // })  
+
+      function toggleForm() {
+        document.getElementById('gridRow').style.display = document.getElementById('gridRow').style.display === 'none' ? 'block' : 'none';
+      }
+          
+     
+
     
     </script>
   

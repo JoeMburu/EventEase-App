@@ -9,9 +9,8 @@ from events.models import Event
 # Create your views here.
 # List all bookings for the logged-in user
 class BookingListView(LoginRequiredMixin, ListView):
-    pass
-    # model = Booking
-    # template_name = 'bookings/booking_list.html'
+    model = Booking
+    template_name = 'bookings/booking_list.html'
     # context_object_name = 'bookings'
 
     # def get_queryset(self):
