@@ -4,6 +4,8 @@ from .forms import EventRegisterForm
 from accounts.models import User
 from .models import Event
 from django.views.generic import ListView, DetailView, CreateView, DeleteView
+from django.contrib.auth.mixins import UserPassesTestMixin
+from django.urls import reverse_lazy
 
 # Create your views here.
 def events(request):
@@ -40,4 +42,17 @@ class EventDetailView(DetailView):
     model = Event
     template_name = 'events/event_detail.html'
     context_object_name = 'event'
+
+class EventDeleteView(UserPassesTestMixin, DeleteView):
+    model = Event
+    template_name = 'events/event_delete_confirmation.html'
+    success_url = reverse_lazy('event-list')    
+
+    def test_func(self):
+        return self.request.user.is_admin
+
+    def get(self, request, *args, **kwargs):
+        if request.GET.get('confirmed') == 'true':
+            return self.post(request, *args, **kwargs)
+        return super().get(request, *args, **kwargs)    
      

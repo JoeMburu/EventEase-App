@@ -1,8 +1,7 @@
-{% extends "base.html" %}
-
+{% extends 'base.html' %}
 {% load static %}
+{% block content %}
 
-{% block content %} 
 <div class="container profile-container">      
     <div class="sidebar">
         <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="offcanvas" data-bs-target="#dashboard-menu">{% if user.is_superuser and user.is_admin %}Admin Menu{% else %}Attendee Menu {% endif %}</button>
@@ -11,47 +10,25 @@
         <div class="offcanvas offcanvas-start dashboard-menu" id="dashboard-menu">
             <div class="offcanvas-header">
             <h3 class="offcanvas-title">Admin Dashboard Menu</h3>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="font-size: 2.5rem; color: #FFF;"></button>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="font-size: 2.5rem; color: #FFF !important;"></button>
             </div>
-            <div class="offcanvas-body">
-            <!-- {% block sidebar %}            
-                {% if is_admin %}
-                {% include 'profile/admin_menu.html' %}
-                {% else %}
-                {% include 'profile/attendee_menu.html' %}
-                {% endif %}
-            {% endblock %} -->
+            <div class="offcanvas-body">           
                 <ul class="list-group">
                     <li><a href="{% url 'admin-dashboard' %}">Dashboard</a></li>
-                    <li class="list-group-item" >
-                        <a href="#">Event Management</a>
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <a href="{% url 'event-list' %}">View All Events</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="{% url 'admin_event_create' %}">Create New Event</a>
-                            </li>                           
-                            <li class="list-group-item">
-                                <a href="#">Event Analytics</a>
-                            </li>
-                        </ul>
-                    </li>                    
-                    <li class="list-group-item">
-                        <a href="#">View All Bookings</a>                        
-                    </li>               
+                    <li><a href="{% url 'admin_event_create' %}">Create Event</a></li>
+                    <li><a href="{% url 'event-list' %}">Delete Event</a></li>
+                    <li><a href="{% url 'event-list' %}">Browse Events</a></li>                           
                 </ul>
             </div>
         </div>        
     </div>
-    <div class="profile-main-content">        
+    <div class="profile-main-content" style="padding: 20px 0;">               
         {% block profile_content %}
-            <!-- <h1>Admin Dashboard</h1> -->
-            <h3><p style="font-size: 2.5rem; color: #fff;">Default profile content.</p></h3>
+        <div class="content container">
+           <h3><p style="font-size: 2.5rem;">You are welcome to your dashboard. You can watch your apps Analytics and perform operations.</p></h3>
+        </div>          
         {% endblock %}
     </div> 
 </div> 
-{% endblock content %} 
 
-
-
+{% endblock %}

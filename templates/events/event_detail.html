@@ -22,8 +22,11 @@
                       <p class="card-text"><strong>Email:</strong> {{ event.organiser }}</p>     
                     </div>
                     <div class="card-footer text-body-secondary">
-                      <a href="{% url 'booking-create' event.pk %}" class="btn btn-primary lg">Book Event</a>
-                      <a href="{% url 'event-list' %}" class="btn btn-primary lg">Back to Events</a>
+                      <a href="{% url 'booking-create' event.pk %}" class="btn btn-primary btn-lg">Book Event</a>
+                      <a href="{% url 'event-list' %}" class="btn btn-primary btn-lg">Back to Events</a>
+                      {% if request.user.is_admin %}
+                      <a href="{% url 'event-delete' event.pk %}" class="btn btn-danger btn-lg" style="background-color: red !important;">Delete Event</a>
+                      {% endif %}
                     </div>
                 </div>                
             </div>

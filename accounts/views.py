@@ -1,8 +1,6 @@
-from django.shortcuts import render
-#from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import View
-from django.shortcuts import redirect
 from django.views.generic import TemplateView
 from .models import User
 from .forms import UserUpdateForm
@@ -12,16 +10,14 @@ class ProfileView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         # Redirect based on user's role
         if request.user.is_admin:
-            return redirect('admin-dashbaord')
-        elif request.user.role == 'attendee':
-            return redirect('attendee-dashboard')  
-        return redirect('event-list')     
-
+            return redirect('admin-dashboard')
+        else:
+            return redirect('attendee-dashboard') 
 
 class AdminDashboardView(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
     template_name = 'users/admin_dashboard.html'
     def test_func(self):
-        return self.request.user.is_admin
+        return self.request.user.is_staff
 
 class AttendeeDashboardView(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
     template_name = 'users/attendee_dashboard.html'

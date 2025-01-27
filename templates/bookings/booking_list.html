@@ -4,6 +4,26 @@
 
 {% block profile_content %}
 <h1>My Booking Listing</h1>
+
+{% if bookings %} 
+<h1>Your bookings</h1>
+{% else %}
+<h1>No Bookings</h1>
+{% endif %}
+
+{% for booking in bookings %}
+    <p>Booking number: {{booking.pk}}</p>
+    <p>Event name: {{booking.event.title}}</p>
+    <p>=======================================</p>
+{% endfor %}
+
+
+{% for booking in unpaid_bookings %}
+<p>Booking number: {{booking.pk}}</p>
+<p>Event name: {{booking.event.title}}</p>
+<p>=======================================</p>   
+{% endfor %}
+
 {% endblock %}
 
 

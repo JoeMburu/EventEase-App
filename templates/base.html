@@ -30,10 +30,10 @@
         <a class="topbar-brand" href="{% url 'home' %}"><span class="event">Event</span><span class="ease">Ease</span></a>
         <a href="#"><i class="fa-solid fa-magnifying-glass search-icon"></i></a>
         <ul class="social-media-icons">
-          <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
-          <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
-          <li><a href="#"><i class="fa-brands fa-square-x-twitter"></i></a></li> 
-          <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>          
+          <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-square-facebook"></i></a></li>
+          <li><a href="www.instagram.com" target="_blank"><i class="fa-brands fa-square-instagram"></i></a></li>
+          <li><a href="www.x.com" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a></li> 
+          <li><a href="www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>          
         </ul>   
       </div>  
     </div>
@@ -52,9 +52,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'event-list' %}">Events</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="{% url 'pricing' %}">Pricing</a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'about' %}">About</a>
               </li>
@@ -100,14 +100,17 @@
   <footer>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12 col-md-6 text-center">
-          <!-- Content for the first column -->
+        <div class="col-12 col-md-6" style="display: flex; align-items: center; justify-content: center;">
           <p>© 2025 Event Ease. All rights reserved.</p>
         </div>
         <div class="col-12 col-md-6 text-center">
-          <!-- Content for the second column -->          
-          <p>Social media icons</p>
-         
+          <ul class="footer-social_media_icons">
+            <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-square-facebook" aria-hidden="true"style="color:#FFF"></i></a></li>
+            <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-square-instagram" aria-hidden="true"style="color:#FFF"></i></a></li>
+            <li><a href="https://www.x.com" target="_blank"><i class="fa-brands fa-square-x-twitter" aria-hidden="true"style="color:#FFF"></i></a></li> 
+            <li><a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin" aria-hidden="true"style="color:#FFF"></i></a></li>          
+          </ul>   
+        </div>                     
         </div>
       </div>
     </div>

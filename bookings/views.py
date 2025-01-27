@@ -1,20 +1,27 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView, DetailView, CreateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, TemplateView
 from django.shortcuts import get_object_or_404, redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from .models import Booking
 from events.models import Event
+from .forms import BookingForm
+from django.views.generic.edit import CreateView
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 # List all bookings for the logged-in user
 class BookingListView(LoginRequiredMixin, ListView):
     model = Booking
     template_name = 'bookings/booking_list.html'
-    # context_object_name = 'bookings'
+    context_object_name = 'bookings'
 
-    # def get_queryset(self):
-    #     return Booking.objects.filter(user=self.request.user)
+    def get_queryset(self):
+        return Booking.objects.filter(user=self.request.user)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['unpaid_bookings'] = Booking.objects.filter(user=self.request.user, booking_status='PENDING')
+        return context    
 
 # View details of a specific booking
 class BookingDetailView(LoginRequiredMixin, DetailView):
@@ -26,30 +33,41 @@ class BookingDetailView(LoginRequiredMixin, DetailView):
 # Create a new booking
 class BookingCreateView(LoginRequiredMixin, CreateView):
     model = Booking
-    event = Event
-    template_name = 'bookings/booking_form.html'
-    fields = []  # No fields needed; event and user are set programmatically
+    form_class = BookingForm
+    template_name = 'bookings/booking_form.html'    
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     event_id = self.request.GET.get('event_id')
-    #     context['event'] = get_object_or_404(Event, id=event_id)
-    #     return context
+    def get_initial(self):
+        """
+        Prepopulate the form's price field with the event's price.
+        """
+        event = get_object_or_404(Event, pk=self.kwargs['pk'])
+        initial = super().get_initial()
+        initial['price'] = event.price        
+        return initial
 
-    # def form_valid(self, form):
-    #     event_id = self.request.GET.get('event_id')
-    #     event = get_object_or_404(Event, id=event_id)
-    #     form.instance.user = self.request.user
-    #     form.instance.event = event
+    def form_valid(self, form):
+        """
+        Set the event and user for the booking before saving.
+        """
+        event = get_object_or_404(Event, pk=self.kwargs['pk'])
+        form.instance.event = event
+        form.instance.price = event.price
+        form.instance.user = self.request.user
+        booking = form.save()     
+        #booking_payment_url = reverse('booking-payment', kwargs={'pk': booking.pk})  
+        return redirect('booking-list')
 
-    #     # Prevent duplicate bookings
-    #     if Booking.objects.filter(user=self.request.user, event=event).exists():
-    #         return redirect('booking-list')
+    def get_context_data(self, **kwargs):
+        """
+        Pass the event and user to the context for rendering in the template.
+        """
+        context = super().get_context_data(**kwargs)
+        context['event'] = get_object_or_404(Event, pk=self.kwargs['pk'])
+        context['user'] = self.request.user
+        context['organiser'] = get_object_or_404(Event, pk=self.kwargs['pk']).organiser        
+        return context    
 
-    #     return super().form_valid(form)
-
-    # def get_success_url(self):
-    #     return reverse_lazy('booking-list')
+   
 
 # Delete a booking
 class BookingDeleteView(LoginRequiredMixin, DeleteView):
@@ -57,3 +75,32 @@ class BookingDeleteView(LoginRequiredMixin, DeleteView):
     # template_name = 'bookings/booking_confirm_delete.html'
     # success_url = reverse_lazy('booking-list')
     pass
+
+# Booking payment
+class BookingPaymentView(TemplateView):
+    
+    template_name = 'booking_payment.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        booking_id = kwargs.get('pk')  # Get the booking ID from the URL
+        booking = get_object_or_404(Booking, pk=booking_id)
+        context['booking'] = booking
+        return context
+
+    def post(self, request, *args, **kwargs):
+        booking_id = kwargs.get('pk')  # Get the booking ID from the URL
+        booking = get_object_or_404(Booking, pk=booking_id)
+
+        # Update the payment status
+        booking.payment_status = 'Paid'
+        booking.save()
+
+        # Optionally, set booking status to 'Confirmed' as well
+        booking.booking_status = 'Confirmed'
+        booking.save()
+
+        # Display a success message
+        messages.success(request, "Payment confirmed successfully!")
+
+        # Redirect to a confirmation page or the user's dashboard
+        return redirect('attendee-dashboard')  # Adjust the redirect target as needed

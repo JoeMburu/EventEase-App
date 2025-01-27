@@ -6,7 +6,7 @@ from crispy_forms.helper import FormHelper
 class EventRegisterForm(forms.ModelForm):
     class Meta:
         model = Event
-        fields = ['title', 'description', 'date', 'time', 'location', 'category', 'tags', 'image']
+        fields = ['title', 'description', 'date', 'time', 'location', 'category', 'tags', 'image', 'price']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control mb-3 form-control-lg', 'type':'text'}),
             'description': forms.Textarea(attrs={

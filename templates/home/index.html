@@ -13,7 +13,7 @@
                 <h1>Plan. Manage. Book. Simplified.</h1>
                 <p> Effortlessly create, manage, and attend webinar events with EventEase. Make your experience unforgettable.</p>
                 <div class="home-call-to-action">
-                    <button type="button" class="btn btn-primary btn-lg" id="home-explore-events">Explore Events</button>
+                    <a type="button" href="{% url 'event-list' %}" class="btn btn-primary btn-lg" id="home-explore-events">Explore Events</a>
                     <button type="button" class="btn btn-secondary btn-lg" id="home-signup-btn">Signup</button>
                 </div>
             </div>
@@ -27,110 +27,107 @@
         <div class="container upcoming-events">
             <div class="d-flex justify-content-between">
                 {% for event in events %}
-                <div class="card" style="width:75%; margin: 0 5px;">
+                <div class="card col-md" style="width:70%; margin: 0 10px;">
                     <img src="{{ event.image.url }}" class="img-fluid" alt="{{ event.title }}">
                     <div class="card-body">
                     <h5 class="card-title">{{ event.title }}</h5>
                     <p class="card-text">{{ event.description }}</p>
-                    <a class="icon-link" href="{% url 'event-detail' event.pk %}">
-                        Read More
-                        <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
-                    </a>                    
+                    <a href="{% url 'event-detail' event.pk %}">Explore</a>
+                                       
                     </div>
                 </div>   
                 {% endfor %}
             </div>                    
         </div>       
     </section>
-    <section class="container simple-steps-section">
-        <h2>4 Simple Steps</h2>
-        <div class="row simple-steps-row">
-            <div class="col-6 col-lg-3 mb-5">
-                <div class="card" style="width: 90%;">
-                    <i class="fa-solid fa-right-to-bracket"></i>                
-                    <div class="card-body">
-                    <h5 class="card-title">Register & Login</h5>
-                    <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk of the card's content. 
-                        Some quick example text to build on the card title and make up the bulk of the card's content.</p>                  
-                    </div>
-                </div>            
+    <section class="container simple-steps-section" style="padding: 15px 0;">
+        <h2 style="font-size: 3rem;">4 Simple Steps</h2>
+        <div class="container">
+            <div class="row simple-steps-row justify-content-center">
+                <div class="col-6 col-lg-3 card-container">
+                    <div class="card shadow-lg p-5">
+                        <i class="fa-solid fa-right-to-bracket"  style="font-size: 6rem; color: var(--primary-color);"></i>                
+                        <div class="card-body">
+                        <h5 class="card-title" style="font-size: 2.5rem; color: var(--primary-color);">Register & Login</h5>
+                        <p class="card-text" style="font-size: 2rem; text-align: justify;">
+                            Some quick example text to build on the card title and make up the bulk of the card's content. 
+                        </p>                  
+                        </div>
+                    </div>            
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="card shadow-lg p-5">
+                        <i class="fa-regular fa-hand-pointer"  style="font-size: 6rem; color: var(--primary-color);"></i>
+                        <div class="card-body">
+                        <h5 class="card-title" style="font-size: 2.5rem; color: var(--primary-color);">Select Event</h5>
+                        <p class="card-text" style="font-size: 2rem; text-align: justify;">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.                           
+                        </p>                  
+                        </div>
+                    </div>   
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="card shadow-lg p-5">
+                        <i class="fa-regular fa-credit-card" style="font-size: 6rem; color: var(--primary-color);"></i>
+                        <div class="card-body">
+                        <h5 class="card-title" style="font-size: 2.5rem; color: var(--primary-color);">Pay for Event</h5>
+                        <p class="card-text" style="font-size: 2rem; text-align: justify;">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.                           
+                        </p>                  
+                        </div>
+                    </div>   
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="card shadow-lg p-5">
+                        <i class="fa-solid fa-person-walking"  style="font-size: 6rem; color: var(--primary-color);"></i>
+                        <div class="card-body">
+                        <h5 class="card-title" style="font-size: 2.5rem; color: var(--primary-color);">Attend Event</h5>
+                        <p class="card-text" style="font-size: 2rem; text-align: justify;">
+                            Some quick example text to build on the card title and make up the bulk of the card's content.                            
+                        </p>                  
+                        </div>
+                    </div>   
+                </div>
             </div>
-            <div class="col-6 col-lg-3 mb-5">
-                <div class="card" style="width: 70%;">
-                    <i class="fa-regular fa-hand-pointer"></i>
-                    <div class="card-body">
-                    <h5 class="card-title">Select Event</h5>
-                    <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>                  
-                    </div>
-                </div>   
-            </div>
-            <div class="col-6 col-lg-3 mb-5">
-                <div class="card" style="width: 70%;">
-                    <i class="fa-regular fa-credit-card"></i>
-                    <div class="card-body">
-                    <h5 class="card-title">Pay for Event</h5>
-                    <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>                  
-                    </div>
-                </div>   
-            </div>
-            <div class="col-6 col-lg-3 mb-5">
-                <div class="card" style="width: 70%;">
-                    <i class="fa-solid fa-person-walking"></i>
-                    <div class="card-body">
-                    <h5 class="card-title">Attend Event</h5>
-                    <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>                  
-                    </div>
-                </div>   
-            </div>
-        </div>
+        </div>        
     </section>
-    <section class="container testimonials-section">
-        <h2>Testimonials</h2>
+    <section class="container testimonials-section" style="padding: 15px 0;">
+        <h2 style="font-size: 3rem;">Testimonials</h2>
         <div class="row testimonials-row">
             <div class="col-6 col-lg-3 mb-5">
-                <div class="card" style="width: 70%;">
-                    <img src="{% static 'images/A Man In A Webinar.png' %}" class="card-img-top img-fluid" alt="event">
-                    <div class="card-body">
-                    <p>Name</p>         
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="card shadow-lg" style="width: 75%;">
+                    <img src="{% static 'images/james.png' %}" class="card-img-top img-fluid" alt="event">
+                    <div class="card-body">                          
+                    <p class="card-text" style="font-size: 1.4rem;">"Whether it's a small meetup or a large conference, EventEase makes everything run smoothly. The attendee management tools save me hours of manual work. Highly recommended!"</p>
+                    <p style="font-size: 1.2rem;">— James R., Community Organizer.</p>   
                     
                     </div>
                 </div>            
             </div>
             <div class="col-6 col-lg-3 mb-5">
-                <div class="card" style="width: 70%;">
-                    <img src="{% static 'images/A Man In A Webinar.png' %}" class="card-img-top img-fluid" alt="event">
-                    <div class="card-body">
-                        <p>Name</p>         
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="card shadow-lg" style="width: 75%;">
+                    <img src="{% static 'images/sarah.png' %}" class="card-img-top img-fluid" alt="event">
+                    <div class="card-body">                                 
+                        <p class="card-text" style="font-size: 1.4rem;">"EventEase has revolutionized how I organize my events. From sending invites to tracking attendees, everything is seamless and stress-free. The user-friendly interface and powerful admin features are unmatched!"</p>
+                        <p style="font-size: 1.2rem;">— Sarah T., Corporate Event Planner</p>
                     </div>
                 </div>   
             </div>       
             <div class="col-6 col-lg-3 mb-5">
-                <div class="card" style="width: 70%;">
-                    <img src="{% static 'images/A Man In A Webinar.png' %}" class="card-img-top img-fluid" alt="event">
-                    <div class="card-body">
-                        <p>Name</p>         
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="card shadow-lg" style="width: 75%;">
+                    <img src="{% static 'images/emily.png' %}" class="card-img-top img-fluid" alt="event">
+                    <div class="card-body">                               
+                        <p class="card-text" style="font-size: 1.4rem;">"I can't imagine managing events without EventEase anymore. The platform is intuitive, and the real-time updates keep everyone in sync. It's like having an extra team member!"</p>
+                        <p style="font-size: 1.2rem;">—Emily W., Wedding Coordinator</p> 
                     </div>
                 </div>   
             </div>
             <div class="col-6 col-lg-3 mb-5">
-                <div class="card" style="width: 70%;">
-                    <img src="{% static 'images/A Man In A Webinar.png' %}" class="card-img-top img-fluid" alt="event">
-                    <div class="card-body">
-                        <p>Name</p>         
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="card shadow-lg" style="width: 75%;">
+                    <img src="{% static 'images/david.png' %}" class="card-img-top img-fluid" alt="event">
+                    <div class="card-body">                                
+                        <p class="card-text" style="font-size: 1.4rem;">"As an admin, EventEase gives me complete control over every aspect of the event. The ability to distinguish roles between attendees and admins ensures smooth collaboration. A must-have app!"</p>
+                        <p style="font-size: 1.2rem;">— David L., Festival Organizer</p> 
                     </div>
                 </div>   
             </div>

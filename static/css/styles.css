@@ -9,6 +9,7 @@
   --soft-shade: #F0F4FF;
   --light-gray: #F7F7F7;
   --muted-neutral: #E5E5E5; 
+  --lighter-primary-color: #50c454;
 
 }
 
@@ -27,6 +28,7 @@ header {
   background-color: var(--background-color);       
   padding: 12px 0 0 0;
 }
+
 
 .topbar-container {
   display: flex;
@@ -63,8 +65,6 @@ ul.social-media-icons {
   transform: translateY(3px);
 }
 
-
-
 .social-media-icons li a , .topbar-container a {
   color: var(--primary-color);
   text-decoration: none;
@@ -84,6 +84,11 @@ nav.navbar {
   height: 60px;
 }
 
+@media (max-width: 992px) {
+  nav, header {
+    z-index: 100;
+  }
+}
 
 
 .bottombar li a {
@@ -123,6 +128,7 @@ main {
   flex-direction: column;
   align-items: center;
   color: var(--text-color);  
+  
 }
 
 .home-hero-text h1 {
@@ -159,7 +165,7 @@ main {
 }
 
 /* HOME UPCOMING EVENTS SECTION */
-.upcoming-events-section {
+ .upcoming-events-section {
   background-color: var(--muted-neutral);
   padding: 5px 0 20px 0;
 }
@@ -197,30 +203,8 @@ main {
     font-size: 1.8rem;
   }
   
-}
+} 
 
-
-
-/* HOME 4 SIMPLE STEPS SECTION */
-.simple-steps-section {
-  background-color: var(--background-color);
-  padding: 20px 0 20px 0;
-}
-.simple-steps-section h2 {
-  color: var(--text-color);
-  font-size: 2.8rem;
-}
-.card {
-  padding: 15px 0;
-}
-.card i {
-  font-size: 4.5rem;
-  text-align: center;
-}
-
-.card h5 {
-  font-size: 2.2rem;
-}
 
 @media (min-width: 992px) { 
   .bottombar .navbar-brand {
@@ -298,7 +282,7 @@ main {
 }
 
 
-/**************** EVENTS *******************/
+/**************** EVENT DETAIL *******************/
 /* CONTAINER */
 .event-detail-container {
   padding: 25px 0;
@@ -323,6 +307,12 @@ main {
   margin: 0 5px;
 }
 
+/************** 4 SIMPLE STEPS **************/
+.simple-steps-section {
+  padding: 15px 0
+}
+
+.simple-steps-section .card .p { color: red;}
 
 
 
@@ -357,35 +347,53 @@ ul.list-group ul li {
 
 
 
-
-/**************** EVENTS *******************/
-.register_event {
-  
-  
+/**************** DASHBOARD *******************/
+.offcanvas-body .list-group  {
+  margin: 0 40px;
+  list-style: none;
 }
+
+.offcanvas-body .list-group li {
+  margin: 10px 0;
+}
+.offcanvas-body .list-group li:hover {
+  background-color: var(--lighter-primary-color);
+}
+
+.offcanvas-body a {
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  text-decoration: none;
+}
+
+.offcanvas-title {
+  font-size: 2.8rem;
+}
+
+
+
+
 
 
 /**************** FOOTER *******************/
 footer {
-background-color: var(--primary-color);
-padding: 20px 0;
-color: #fff;
-font-size: 18px;
-font-weight: 400;
+  background-color: var(--primary-color);
+  padding: 20px 0;
+  color: #fff;
+  font-size: 2.3rem;
+  font-weight: 400;
 }
 
-ul.footer-social-media {
-display: flex;
-list-style: none;
-gap: 10px;
-align-items: center;        
+.footer-social_media_icons {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
-.footer-social-media li a {
-color: #fff;
-text-decoration: none;
-font-size: 1.5rem;
-}
+
+
 
 
 

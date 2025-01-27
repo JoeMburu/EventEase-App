@@ -9,15 +9,15 @@
         <!-- Offcanvas Sidebar -->
         <div class="offcanvas offcanvas-start dashboard-menu" id="dashboard-menu">
             <div class="offcanvas-header">
-            <h3 class="offcanvas-title" style="font-size: 3rem;">Attendee Dashboard Menu</h3>
+            <h3 class="offcanvas-title">Attendee Dashboard Menu</h3>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="font-size: 2.5rem; color: #FFF !important;"></button>
             </div>
             <div class="offcanvas-body">           
-                <ul class="list-group" style="color: #FFF; font-size: 2rem;">
-                    <li><a href="{% url 'attendee-dashboard' %}" style="color: #FFF; font-size: 2rem;">Dashboard</a></li>
-                    <li><a href="{% url 'my-profile-page' %}" style="color: #FFF; font-size: 2rem;">My Profile Page</a></li>
-                    <li><a href="{% url 'booking-list' %}" style="color: #FFF; font-size: 2rem;">Your Bookings</a></li>
-                    <li><a href="{% url 'event-list' %}" style="color: #FFF; font-size: 2rem;">Browse Events</a></li>                           
+                <ul class="list-group">
+                    <li><a href="{% url 'attendee-dashboard' %}">Dashboard</a></li>
+                    <li><a href="{% url 'my-profile-page' %}">My Profile Page</a></li>
+                    <li><a href="{% url 'booking-list' %}">Your Bookings</a></li>
+                    <li><a href="{% url 'event-list' %}">Browse Events</a></li>                           
                 </ul>
             </div>
         </div>        
