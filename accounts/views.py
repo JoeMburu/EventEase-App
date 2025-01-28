@@ -27,17 +27,16 @@ class AttendeeDashboardView(LoginRequiredMixin, UserPassesTestMixin, TemplateVie
 
 class MyPageView(LoginRequiredMixin, TemplateView):
     template_name = 'users/user_profile_page.html'
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.request.user
         context['user'] = user
-        print(user.first_name)
+        print(user.first_name)        
         return context
 
     def get(self, request):
         form = UserUpdateForm(instance=request.user)  # Pre-fill the form with user data
-        return render(request, self.template_name, {'user': request.user, 'form': form})
+        return render(request, self.template_name, {'user': self.request.user, 'form': form})
 
     def post(self, request):
         form = UserUpdateForm(request.POST, instance=request.user)

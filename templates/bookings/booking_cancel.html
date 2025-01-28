@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container cancel-confirmation" style="padding: 30px 0;">
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-6 shadow-lg" style="font-size: 2.5rem; padding: 30px 0;">
+            <h1>Cancel Booking</h1>
+            <p>Click Cancel Booking button to cancel the event and get a refund for event "{{ cancel_booking.event.title }}"</p>    
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-lg" style="font-size: 1.9rem;">Cancel Booking</button>
+                <a href="{% url 'booking-list' %}" class="btn btn-secondary btn-lg" style="font-size: 1.9rem; background-color: var(--primary-color);">Do not Cancel</a>
+            </form>
+        </div>       
+    </div>
+</div>
+
+{% endblock %}

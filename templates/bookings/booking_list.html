@@ -3,29 +3,150 @@
 
 
 {% block profile_content %}
-<h1>My Booking Listing</h1>
+<div class="container profile_booking_listing">
+    <div class="row">
+        <h2>Booking Listing</h2>
+        <!-- Messages -->
+        <div>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <div class="alert alert-success" role="alert">
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                </div>           
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        
+        <div class="col-md-6" id="unpaid_bookings">          
+            {% if not unpaid_bookings %}
+                <h4>No Current Unpaid Bookings</h4>
+            {% else %}
+                <div class="card shadow-lg" style="width: 100%">
+                    <div class="card-body">
+                        <h5 class="card-title">Unpaid Current Bookings</h5>
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Event Title</th>
+                                <th scope="col">Event Date</th>
+                                <th scope="col">Price</th>
+                                <th scope="col"></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                {% for booking in unpaid_bookings %}
+                                <tr>
+                                    <th>{{booking.event.title}}</th>                                    
+                                    <td>{{booking.event.date}}</td>
+                                    <td>{{booking.event.price}}</td>
+                                    <td>
+                                        <a href="{% url 'booking-payment' booking.pk %}" class="btn btn-primary btn-pay">Pay for Event</a>
+                                    </td>
+                                </tr> 
+                                {% endfor %} 
+                            </tbody>
+                          </table>
 
-{% if bookings %} 
-<h1>Your bookings</h1>
-{% else %}
-<h1>No Bookings</h1>
-{% endif %}
+                                           
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-md-6" id="paid_bookings">
+            {% if not paid_bookings %}
+            <h4>No Paid Bookings</h4>
+            {% else %}
+            <div class="card shadow-lg" style="width: 100%">
+                <div class="card-body">
+                    <h5 class="card-title">Your Paid Bookings</h5>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Event Title</th>
+                            <th scope="col">Event Date</th>
+                            <th scope="col">Price(Amount Paid)</th>
+                            <th scope="col">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for booking in paid_bookings %}
+                            <tr>
+                                <th>{{booking.event.title}}</th>                                    
+                                <td>{{booking.event.date}}</td>
+                                <td>{{booking.event.price}}</td>
+                                <td>{{booking.payment_status}}</td>
+                                <td>
+                                    <a href="{% url 'booking-cancel' booking.pk %}" class="btn btn-danger btn-cancel">Cancel Booking</a>
+                                </td>
+                            </tr> 
+                            {% endfor %} 
+                        </tbody>
+                      </table>                                       
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        <div class="col-12" id="canceled_bookings">
+            {% if not canceled_bookings %}
+            <h4>No Canceled Bookings</h4>
+            {% else %}
+            <div class="card shadow-lg" style="width: 100%">
+                <div class="card-body">
+                    <h5 class="card-title">Your Canceled Bookings</h5>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Event Title</th>
+                            <th scope="col">Event Date</th>
+                            <th scope="col">Price(Amount Refunded)</th>
+                            <th scope="col">Booking Status</th>
+                            <th scope="col">Refund Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for booking in canceled_bookings %}
+                            <tr>
+                                <th>{{booking.event.title}}</th>                                    
+                                <td>{{booking.event.date}}</td>
+                                <td>{{booking.price}}</td>
+                                <td>{{booking.booking_status}}</td>
+                                <td>{{booking.payment_status}}</td>
+                            </tr> 
+                            {% endfor %} 
+                        </tbody>
+                      </table>                                       
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
+    </div>    
+</div>
 
-{% for booking in bookings %}
-    <p>Booking number: {{booking.pk}}</p>
-    <p>Event name: {{booking.event.title}}</p>
-    <p>=======================================</p>
-{% endfor %}
-
-
-{% for booking in unpaid_bookings %}
-<p>Booking number: {{booking.pk}}</p>
-<p>Event name: {{booking.event.title}}</p>
-<p>=======================================</p>   
-{% endfor %}
 
 {% endblock %}
 
 
+
+    <!-- {% if bookings %} 
+    <h1>Your bookings</h1>
+    {% else %}
+    <h1>No Bookings</h1>
+    {% endif %}
+
+    {% for booking in bookings %}
+        <p>Booking number: {{booking.pk}}</p>
+        <p>Event name: {{booking.event.title}}</p>
+        <p>=======================================</p>
+    {% endfor %}
+
+
+    {% for booking in unpaid_bookings %}
+    <p>Booking number: {{booking.pk}}</p>
+    <p>Event name: {{booking.event.title}}</p>
+    <p>=======================================</p>   
+    {% endfor %} -->
 
 

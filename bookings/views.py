@@ -8,6 +8,7 @@ from events.models import Event
 from .forms import BookingForm
 from django.views.generic.edit import CreateView
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 
 # Create your views here.
 # List all bookings for the logged-in user
@@ -20,7 +21,9 @@ class BookingListView(LoginRequiredMixin, ListView):
         return Booking.objects.filter(user=self.request.user)
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['unpaid_bookings'] = Booking.objects.filter(user=self.request.user, booking_status='PENDING')
+        context['unpaid_bookings'] = Booking.objects.filter(user=self.request.user, booking_status='PENDING', payment_status='NOT_PAID')
+        context['paid_bookings'] = Booking.objects.filter(user=self.request.user, booking_status='CONFIRMED', payment_status='PAID') 
+        context['canceled_bookings'] = Booking.objects.filter(user=self.request.user, booking_status='CANCELED', payment_status='REFUNDED')        
         return context    
 
 # View details of a specific booking
@@ -79,12 +82,42 @@ class BookingDeleteView(LoginRequiredMixin, DeleteView):
 # Booking payment
 class BookingPaymentView(TemplateView):
     
-    template_name = 'booking_payment.html'
+    template_name = 'bookings/booking_payment.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         booking_id = kwargs.get('pk')  # Get the booking ID from the URL
         booking = get_object_or_404(Booking, pk=booking_id)
-        context['booking'] = booking
+        context['unpaid_booking'] = booking
+        return context
+
+    def post(self, request, *args, **kwargs):
+        booking_id = kwargs.get('pk')  # Get the booking ID from the URL
+        print("id: ", booking_id)
+        booking = get_object_or_404(Booking, pk=booking_id)
+
+        # Update the payment status
+        booking.payment_status = 'PAID'
+        booking.save()
+
+        # Optionally, set booking status to 'Confirmed' as well
+        booking.booking_status = 'CONFIRMED'
+        booking.save()
+
+        # Display a success message
+        messages.success(request, "Payment confirmed successfully!")
+
+        # Redirect to the booking listing
+        return redirect('booking-list')  
+
+# Booking payment
+class BookingCancelView(TemplateView):
+    
+    template_name = 'bookings/booking_cancel.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        booking_id = kwargs.get('pk')  # Get the booking ID from the URL
+        booking = get_object_or_404(Booking, pk=booking_id)
+        context['cancel_booking'] = booking
         return context
 
     def post(self, request, *args, **kwargs):
@@ -92,15 +125,15 @@ class BookingPaymentView(TemplateView):
         booking = get_object_or_404(Booking, pk=booking_id)
 
         # Update the payment status
-        booking.payment_status = 'Paid'
+        booking.payment_status = 'REFUNDED'
         booking.save()
 
         # Optionally, set booking status to 'Confirmed' as well
-        booking.booking_status = 'Confirmed'
+        booking.booking_status = 'CANCELED'
         booking.save()
 
         # Display a success message
-        messages.success(request, "Payment confirmed successfully!")
+        messages.success(request, "You have successfully canceled your booking!")
 
-        # Redirect to a confirmation page or the user's dashboard
-        return redirect('attendee-dashboard')  # Adjust the redirect target as needed
+        # Redirect to the booking listing
+        return redirect('booking-list')          

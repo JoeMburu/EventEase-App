@@ -1,3 +1,21 @@
-<h1>Booking Payment</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
 
-<h3>Thank you for the payment. Your attendance is confirmed. </h3>
+{% block content %}
+
+<div class="container payment-confirmation" style="padding: 30px 0;">
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-6 shadow-lg" style="font-size: 2.5rem; padding: 30px 0;">
+            <h1>Booking Payment</h1>
+            <p>Click Pay button to complete the payment for event "{{ unpaid_booking.event.title }}"</p>    
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary btn-lg" style="font-size: 1.9rem;">Pay</button>
+                <a href="{% url 'booking-list' %}" class="btn btn-secondary btn-lg" style="font-size: 1.9rem;">Cancel</a>
+            </form>
+        </div>       
+    </div>
+</div>
+
+{% endblock %}
