@@ -6,14 +6,25 @@ from .models import Event
 from django.views.generic import ListView, DetailView, CreateView, DeleteView
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.urls import reverse_lazy
+from django.db.models import Q
 
 # Create your views here.
 def events(request):
-    events = Event.objects.all()
-    context =  {
-        'events': events
-    }      
-    
+    query = request.GET.get('q', '')
+    if query:
+        events = Event.objects.filter(
+            Q(title__icontains=query) |
+            Q(description__icontains=query) |
+            Q(tags__icontains=query)
+        )
+        context =  {
+            'events': events
+        }        
+    else: 
+        events = Event.objects.all()
+        context =  {
+            'events': events
+        }    
     return render(request, 'events/event-list.html', context)
 
 def pricing(request):

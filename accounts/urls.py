@@ -8,5 +8,6 @@ urlpatterns = [
   path('admin/dashboard/', AdminDashboardView.as_view(), name='admin-dashboard'),
   path('attendee/dashboard/', AttendeeDashboardView.as_view(), name='attendee-dashboard'),
   path('profile/', ProfileView.as_view(), name='profile'), 
+  path('account/delete/', views.delete_account, name="user-account-delete"),
 ]
 

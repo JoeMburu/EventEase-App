@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.decorators import login_required
 from django.views import View
 from django.views.generic import TemplateView
 from .models import User
 from .forms import UserUpdateForm
+
 
 
 class ProfileView(LoginRequiredMixin, View):   
@@ -44,7 +46,17 @@ class MyPageView(LoginRequiredMixin, TemplateView):
             form.save()  # Update the user model
             return redirect('my-profile-page')  # Redirect to the same page or another page
         return render(request, self.template_name, {'user': request.user, 'form': form})    
-           
+
+@login_required  
+def delete_account(request):
+    if request.method == 'POST':
+        # get logged in user 
+        user = request.user
+        # Delete
+        user.delete()
+        return redirect('account_signup')
+
+    return render(request, 'users/account_delete.html')         
 
    
        
