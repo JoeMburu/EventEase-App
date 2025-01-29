@@ -152,10 +152,14 @@ main {
 }
 
 /**************** HOME *******************/
+.home {
+  padding: 25px 0;
+}
 /* HOME HERO SECTION */
 .home-hero-section {
   background-color: var(--background-color);
   padding-bottom: 20px;
+  
 }
 
 .home-hero-text {
@@ -495,4 +499,9 @@ footer {
 #modalElement .btn-search-submit {
   font-size: 2.2rem;
   background-color: var(--primary-color);
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(200deg);
 }

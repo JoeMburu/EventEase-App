@@ -20,7 +20,9 @@
             <div class="card-footer text-body-secondary">
               <a href="{% url 'event-detail' event.pk %}" class="btn btn-primary btn-lg">Detailed Information</a>
             </div>
-        </div>       
+        </div> 
+        {% empty %}      
+          <p style="font-size: 3rem;">No events found.</p>
         {% endfor %}
         
     </div>
