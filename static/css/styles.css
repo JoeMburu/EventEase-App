@@ -255,16 +255,10 @@ main {
 }
 .upcoming-events a {
   font-size: 2rem;
-  color: var(--secondary-text-color);
+  color: var(--secondary-color);
+  background-color: var(--text-color);
+  padding: 10px;
 }
-
-@media (min-width: 768px) { 
-  .upcoming-events a {
-    font-size: 2rem;
-    color: var(--primary-color); 
-  }
-  
-} 
 
 @media (min-width: 992px) {
   .upcoming-events h5 {    
@@ -272,7 +266,7 @@ main {
   }
   .upcoming-events a {
     font-size: 2rem;
-    color: var(--primary-color); 
+    
   }
   .upcoming-events p {
     font-size: 1.8rem;
@@ -284,14 +278,64 @@ main {
     width: 80%;     
    }
 }
-
 @media (min-width: 768px) {
   .upcoming-events .card {
     height: 350px;   
    }
 }
+@media (max-width: 767.5px) {
+  .upcoming-events .card {
+    margin-bottom: 1.5rem;
+   }
+}
 
+/************** SIMPLE STEPS SECTION**************/
+.simple-steps-section {
+  border: 1px solid red;   
+}
 
+.simple-steps-section h2 {
+  color: var(--text-color);
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+.simple-steps-row .card i {
+  font-size: 6rem;
+  color: var(--primary-color);
+  margin: 2rem 0 1rem 0;
+}
+
+.simple-steps-row h5 {
+  font-size: 2.3rem;
+  color: var(--primary-color);  
+  font-weight: 700;
+}
+
+.simple-steps-row p {
+  font-size: 2.1rem;
+  color: var(--secondary-text-color);
+  
+}
+
+@media (max-width: 767.5px) {
+  .simple-steps-row .card {
+    padding-bottom: 4rem;
+   }
+}
+
+@media (min-width: 430px) and (max-width: 767.5px) {
+  .simple-steps-row .card {
+    width: 80%;     
+   }
+}
+
+@media (min-width: 992px) {
+  .simple-steps-row .card {
+    height: 200px;
+   }
+}
 
 
 
@@ -397,12 +441,7 @@ main {
   margin: 0 5px;
 }
 
-/************** 4 SIMPLE STEPS **************/
-.simple-steps-section {
-  padding: 15px 0
-}
 
-.simple-steps-section .card .p { color: red;}
 
 
 /**************** PROFILE *******************/

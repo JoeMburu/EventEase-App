@@ -152,33 +152,33 @@ main {
 }
 
 /**************** HOME *******************/
-.home {
-  padding: 25px 0;
-}
+
 /* HOME HERO SECTION */
+
 .home-hero-section {
   background-color: var(--background-color);
-  padding-bottom: 20px;
-  
+  padding-bottom: 20px;  
 }
 
 .home-hero-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: var(--text-color);  
-  
+  color: var(--text-color);    
 }
 
-.home-hero-text h1 {
-  font-size: 3.5rem;
+.home-hero-text h1 {  
   font-weight: 700;
   text-align: center;
+  font-family: "Tinos", serif; 
+  font-style: normal;
 }
 
 .home-hero-text p {
   font-size: 2rem;
+  font-weight: 400;
   text-align: center;
+  font-style: italic;
   color: var(--secondary-text-color);
 }
 
@@ -186,32 +186,56 @@ main {
   margin: 10px 0 20px 0;
 }
 
-.home-call-to-action .btn, .sidebar .btn {
-  font-size: 2rem;
-  background-color: var(--primary-color);
+.home-call-to-action .btn, .sidebar .btn { 
+  font-size: 2.2rem;  
+  color: var(--background-color);
 }
 
 .home-call-to-action .btn:first-child {
   margin-right: 10px;
+  background-color: var(--secondary-color);
+  padding: 1rem;
+}
+.home-call-to-action .btn:last-child {
+  background-color: var(--primary-color);
+  padding: 1rem;
 }
 
 
 @media (min-width: 992px) { 
   .home-hero-text h1 {
     margin-top: 12rem;
+    margin-bottom: 2rem;
     font-size: 4.2rem;    
+  }
+  .home-hero-text p {
+    font-size: 2.3rem;    
+  }
+}
+@media (max-width: 991.5px) { 
+  .home-hero-text h1 {
+    margin-top: 7rem;
+    margin-bottom: 2rem;
+    font-size: 4.2rem;    
+  }
+  .home-call-to-action {
+    margin-bottom: 4rem;
   }
 }
 
 /* HOME UPCOMING EVENTS SECTION */
  .upcoming-events-section {
   background-color: var(--muted-neutral);
-  padding: 5px 0 20px 0;
-}
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 3rem;
+} 
 
 .upcoming-events-section h2 {
   color: var(--text-color);
-  font-size: 2.8rem;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 2rem 0;
 }
 
 .upcoming-events .img-fluid {
@@ -220,29 +244,100 @@ main {
 }
 
 .upcoming-events h5 {
-  font-size: 1.4rem !important;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
 }
 
 .upcoming-events p {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
+  line-height: 1.2;
 }
 .upcoming-events a {
-  font-size: 1.3rem;
+  font-size: 2rem;
+  color: var(--secondary-color);
+  background-color: var(--text-color);
+  padding: 10px;
 }
 
 @media (min-width: 992px) {
-  .upcoming-events h5 {
-    font-size: 3rem !important;
+  .upcoming-events h5 {    
+    font-size: 1.9rem !important;
   }
   .upcoming-events a {
     font-size: 2rem;
-    color: var(--primary-color); 
+    
   }
   .upcoming-events p {
     font-size: 1.8rem;
-  }
-  
+  }  
 } 
+
+@media (min-width: 460px) and (max-width: 767.5px) {
+  .upcoming-events .card {
+    width: 80%;     
+   }
+}
+@media (min-width: 768px) {
+  .upcoming-events .card {
+    height: 350px;   
+   }
+}
+@media (max-width: 767.5px) {
+  .upcoming-events .card {
+    margin-bottom: 1.5rem;
+   }
+}
+
+/************** SIMPLE STEPS SECTION**************/
+.simple-steps-section {
+  border: 1px solid red;   
+}
+
+.simple-steps-section h2 {
+  color: var(--text-color);
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+.simple-steps-row .card i {
+  font-size: 6rem;
+  color: var(--primary-color);
+  margin: 2rem 0 1rem 0;
+}
+
+.simple-steps-row h5 {
+  font-size: 2.3rem;
+  color: var(--primary-color);  
+  font-weight: 700;
+}
+
+.simple-steps-row p {
+  font-size: 2.1rem;
+  color: var(--secondary-text-color);
+  
+}
+
+@media (max-width: 767.5px) {
+  .simple-steps-row .card {
+    padding-bottom: 4rem;
+   }
+}
+
+@media (min-width: 430px) and (max-width: 767.5px) {
+  .simple-steps-row .card {
+    width: 80%;     
+   }
+}
+
+@media (min-width: 992px) {
+  .simple-steps-row .card {
+    height: 200px;
+   }
+}
+
+
 
 
 @media (min-width: 992px) { 
@@ -345,13 +440,6 @@ main {
   background-color: var(--primary-color);
   margin: 0 5px;
 }
-
-/************** 4 SIMPLE STEPS **************/
-.simple-steps-section {
-  padding: 15px 0
-}
-
-.simple-steps-section .card .p { color: red;}
 
 
 

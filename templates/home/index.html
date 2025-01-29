@@ -48,68 +48,68 @@
         <div class="row upcoming-events justify-content-center">
             {% for event in events %}
             <div class="col-md-4">
-                <div class="card mx-auto d-flex">
+                <div class="card shadow-lg mx-auto d-flex">
                     <img src="{{ event.image.url }}" class="img-fluid" alt="{{ event.title }}">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{ event.title }}</h5>
                         <p class="card-text">{{ event.description }}</p>
-                        <a href="{% url 'event-detail' event.pk %}" class="mt-auto">Explore</a>                                       
+                        <div class="mt-auto">
+                            <a href="{% url 'event-detail' event.pk %}" >Explore</a>  
+                        </div>                                                             
                     </div>
                 </div>   
             </div>               
             {% endfor %}            
         </div>       
     </section>
-    <section class="container simple-steps-section" style="padding: 15px 0;">
-        <h2 style="font-size: 3rem;">4 Simple Steps</h2>
-        <div class="container">
-            <div class="row simple-steps-row justify-content-center">
-                <div class="col-6 col-lg-3 card-container">
-                    <div class="card shadow-lg p-5">
-                        <i class="fa-solid fa-right-to-bracket"  style="font-size: 6rem; color: var(--primary-color);"></i>                
-                        <div class="card-body">
-                        <h5 class="card-title" style="font-size: 2.5rem; color: var(--primary-color);">Register & Login</h5>
-                        <p class="card-text" style="font-size: 2rem; text-align: justify;">
-                            Some quick example text to build on the card title and make up the bulk of the card's content. 
+    <section class="container simple-steps-section">
+        <h2>4 Simple Steps</h2>
+        <div class="row simple-steps-row justify-content-center">
+            <div class="col-md-6 col-lg-3">
+                <div class="card shadow-lg mx-auto d-flex align-items-center mb-4">
+                    <i class="fa-solid fa-right-to-bracket"></i>                
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <h5 class="card-title">Register & Login</h5>
+                        <p class="card-text text-center">
+                            Create your account in seconds and log in to explore exciting events.
                         </p>                  
-                        </div>
-                    </div>            
-                </div>
-                <div class="col-6 col-lg-3">
-                    <div class="card shadow-lg p-5">
-                        <i class="fa-regular fa-hand-pointer"  style="font-size: 6rem; color: var(--primary-color);"></i>
-                        <div class="card-body">
-                        <h5 class="card-title" style="font-size: 2.5rem; color: var(--primary-color);">Select Event</h5>
-                        <p class="card-text" style="font-size: 2rem; text-align: justify;">
-                            Some quick example text to build on the card title and make up the bulk of the card's content.                           
-                        </p>                  
-                        </div>
-                    </div>   
-                </div>
-                <div class="col-6 col-lg-3">
-                    <div class="card shadow-lg p-5">
-                        <i class="fa-regular fa-credit-card" style="font-size: 6rem; color: var(--primary-color);"></i>
-                        <div class="card-body">
-                        <h5 class="card-title" style="font-size: 2.5rem; color: var(--primary-color);">Pay for Event</h5>
-                        <p class="card-text" style="font-size: 2rem; text-align: justify;">
-                            Some quick example text to build on the card title and make up the bulk of the card's content.                           
-                        </p>                  
-                        </div>
-                    </div>   
-                </div>
-                <div class="col-6 col-lg-3">
-                    <div class="card shadow-lg p-5">
-                        <i class="fa-solid fa-person-walking"  style="font-size: 6rem; color: var(--primary-color);"></i>
-                        <div class="card-body">
-                        <h5 class="card-title" style="font-size: 2.5rem; color: var(--primary-color);">Attend Event</h5>
-                        <p class="card-text" style="font-size: 2rem; text-align: justify;">
-                            Some quick example text to build on the card title and make up the bulk of the card's content.                            
-                        </p>                  
-                        </div>
-                    </div>   
-                </div>
+                    </div>
+                </div>            
             </div>
-        </div>        
+            <div class="col-md-6 col-lg-3">
+                <div class="card shadow-lg mx-auto d-flex align-items-center mb-4">
+                    <i class="fa-regular fa-hand-pointer"></i>
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <h5 class="card-title">Select an Event</h5>
+                        <p class="card-text text-center">
+                            Browse events, find your favorite, and get all the details you need.                        
+                        </p>                  
+                    </div>
+                </div>   
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card shadow-lg mx-auto d-flex align-items-center mb-4">
+                    <i class="fa-regular fa-credit-card"></i>
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <h5 class="card-title">Book and Pay</h5>
+                        <p class="card-text text-center">
+                            Secure your spot instantly with a simple booking and seamless payment process.                       
+                        </p>                  
+                    </div>
+                </div>   
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card shadow-lg mx-auto d-flex align-items-center mb-4">
+                    <i class="fa-solid fa-person-walking"></i>
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <h5 class="card-title">Attend and Enjoy</h5>
+                        <p class="card-text text-center">
+                            Show up, have fun, and make unforgettable memories!                         
+                        </p>                  
+                    </div>
+                </div>   
+            </div>
+        </div>       
     </section>
     <section class="container testimonials-section" style="padding: 15px 0;">
         <h2 style="font-size: 3rem;">Testimonials</h2>
@@ -155,4 +155,4 @@
     </section>
 </div>
 {% endblock content %}
- 
+
