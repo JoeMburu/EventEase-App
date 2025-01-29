@@ -291,7 +291,7 @@ main {
 
 /************** SIMPLE STEPS SECTION**************/
 .simple-steps-section {
-  border: 1px solid red;   
+  padding: 2rem 0 3rem 0; 
 }
 
 .simple-steps-section h2 {
@@ -299,6 +299,10 @@ main {
   font-size: 3rem;
   font-weight: 700;
   margin: 5px 0;
+}
+
+.simple-steps-row .card {
+  padding: 2rem 0;
 }
 
 .simple-steps-row .card i {
@@ -336,6 +340,62 @@ main {
     height: 200px;
    }
 }
+
+/************** TESTIMONIALS SECTION**************/
+.testimonials-section {
+  padding: 20px 0;
+}
+
+.testimonials-section h2 {
+  color: var(--text-color);
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+.testimonials-row .card {
+  padding: 2rem 0;
+}
+
+.testimonials-row .card p:first-of-type {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--secondary-text-color);
+  padding: 0 10px;
+  
+}
+.testimonials-row .card p:last-of-type {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--secondary-text-color);
+  padding: 0 10px;
+  font-style: italic;
+}
+
+
+@media (max-width: 400px) {
+  .testimonials-row .card-img-top {
+    height: 300px;
+  }
+}
+
+@media (min-width: 400.5px) and (max-width: 767.5px) {
+  .testimonials-row .card-img-top {
+    height: 200px;
+  }
+}
+@media (min-width: 430px) and (max-width: 767.5px) {
+  .testimonials-row .card {
+    width: 80%;     
+   }
+}
+@media (min-width: 768px) {
+  .testimonials-row .card {
+    height: 480px;
+   }
+}
+
+
 
 
 
