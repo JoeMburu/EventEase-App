@@ -1,6 +1,6 @@
 # EventEase
 
-<!-- Image of the response site on different screen sizes -->
+![freefido responsive screenshot](documentation/views/responsiveness.png)
 
 ## Introduction
 
