@@ -3,30 +3,51 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container events-container">
-    <h1>List of Upcoming Events</h1>
-    <div class="row ">        
-        {% for event in events %}
-        <div class="card text-center col-md-6 col-lg-4  shadow-lg event-card">
+<div class="container events-page-container">
+    <h2>List of Upcoming Events</h2>
+    <div class="row event-list-row"> 
+      {% for event in events %}
+        <div class="col-12 col-md-6 col-lg-4 card-wrapper d-flex justify-content-center">
+          <div class="card shadow-lg event-card">
             <div class="card-header">
-                <img class="card-img-top" src="{{  event.image.url }}" alt="{{ event.title }}" style="height: 400px;"> 
+                <img class="img-fluid event-page-image" src="{{  event.image.url }}" alt="{{ event.title }}"> 
             </div>
-            <div class="card-body">
+            <div class="card-body d-flex flex-column align-items-center">
+              <h5 class="card-title">{{ event.title }}</h5>
+              <p class="card-text">{{ event.description }}</p>
+              <p class="card-text event-date"><strong>Date:</strong> <span class="date">{{ event.date }}</span></p>
+              <p class="card-text event-time"><strong>Time:</strong> <span class="time">{{ event.time }}</span></p>
+              <a href="{% url 'event-detail' event.pk %}" class="btn btn-primary btn-lg mt-auto">Detailed Information</a>
+            </div>            
+          </div> 
+        </div>       
+      {% empty %}      
+          <p style="font-size: 3rem;">No events found.</p>
+      {% endfor %}     
+      
+      
+
+        <!-- {% for event in events %}
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="card shadow-lg event-card">
+            <div class="card-header mx-auto mb-4">
+                <img class="card-img-top img-fluid event-image" src="{{  event.image.url }}" alt="{{ event.title }}"> 
+            </div>
+            <div class="card-body d-flex flex-column align-items-center">
               <h5 class="card-title">{{ event.title }}</h5>
               <p class="card-text">{{ event.description }}</p>
               <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
               <p class="card-text"><strong>Time:</strong> {{ event.time }}</p>
             </div>
-            <div class="card-footer text-body-secondary">
+            <div class="card-footer">
               <a href="{% url 'event-detail' event.pk %}" class="btn btn-primary btn-lg">Detailed Information</a>
             </div>
-        </div> 
+          </div> 
+        </div>
         {% empty %}      
           <p style="font-size: 3rem;">No events found.</p>
-        {% endfor %}
-        
-    </div>
-    
+        {% endfor %}         -->
+    </div>    
 </div>
 
 {% endblock content %}
