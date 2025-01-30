@@ -1,6 +1,6 @@
 # EventEase
 
-![freefido responsive screenshot](documentation/views/responsiveness.png)
+![Eventease responsive screenshot](documentation/views/responsiveness.png)
 
 ## Introduction
 
