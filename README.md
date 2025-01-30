@@ -1,14 +1,14 @@
 # EventEase
 
-<!-- Image of the response site on different screen sizes -->
+![Eventease responsive screenshot](documentation/views/responsiveness.png)
 
 ## Introduction
 
 EventEase is an event management and booking app designed to manage public speaking events. This is a project work for Code Institute's Full-Stack Software Development. In the software development stack are Django, a high-level Python web framework that simplifies development process; PostgreSQL, a powerful relational database system; Bootstrap, a popular CSS library that takes care of styling components.  Django and Postresql together constitute the backend that ensures data integrity and security, while on the other hand Bootstrap, HTML, and JavaScript make up the frontend that provides user experience (UX) in software use. This work implements database manipulation and CRUD functionality. It is inspired to help a friend who is a public speaking professional organise, manage events, and the booking of events by his growing client population. It is for educational purposes only.
 
-View live site here : [EventEase]('link')  
+View live site here : [EventEase](https://joe-mb-django-event-ease-d4ba6612685d.herokuapp.com/)  
   
-For Admin access with relevant sign-in information: [EventEase Admin](https://freefido.herokuapp.com/admin/)
+For Admin access with relevant sign-in information: [EventEase Admin](https://joe-mb-django-event-ease-d4ba6612685d.herokuapp.com/admin)
 
 <hr>
 
