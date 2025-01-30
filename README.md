@@ -66,17 +66,28 @@ For Admin access with relevant sign-in information: [EventEase Admin](https://jo
 
 ## Overview
 
-Eventease is webinar events management abd booking app to help the intended webinar presenter to organise his events, such as creating new events, updating events, and even deleting events. On the other handsfor the users to see and browse through., select desired event. The users in addition will also , book for it   is an social media and booking app for a private dog park. Users are invited to:
+Eventease is webinar events management and booking app to help a webinar presenter to organise and manage presentation events. On one hand the presenter can perform operations such as: 
 
-- Join the FreeFido community
-- Create their own profiles
-- Add and interact with articles
-- Create and manage their bookings
-- Upload their favourite snaps from the park
-- Discover more about the dog park
+- Create events for presentation
+- Show upcoming events
+- Update any events
+- Delete events
+- Delete users
+- See analytics about events
 
-FreeFido is accessible via all browsers with full responsiveness on different screen sizes. Its aim is to create a safe, informed community of dog owners who can interact and share with each other and avail of the essential booking feature to reserve a spot in the secure, private dog park. I have created this site to meet the needs of the growing private dog park business. Private dog parks have become a highly sought after service for dog owners to exercise and train their dogs in a safe, secure area, without the fear of a strange dog running up to them. Dog reactivity is unfortunately on the rise at public dog parks due to some dog owners being unaware of dog body language and basic etiquette. FreeFido aims to offer a starting point for creating a community of regular users of this dog park who can book one hour slots through the basic booking system. In future development of this project, I hope to offer users an upgraded booking system with payment options, the opportunity to connect with other parks users with compatible dogs via adding a friend and direct messaging. Other features will inlcude the option to hire a trainer and purchase merchandise and training equipment.
+On the other hand, users to the app can also perform the following operations: 
 
+- Create account
+- Login to the app
+- Browse through the events
+- Select an event to attend
+- Book and pay
+- Join and enjoy events
+- Cancel an event and get a refund
+- Lastly, cancel subscription
+
+
+The app is intended to primarily help a presenter to showcase upcoming events on the topics that his clients are interested in. It is broswer-based, allowing people to access it through their devices that have internet connection. Since the majority of people use mobile phones and devices, the app is responsive to different sizes of devices. With online presentation on the increase, particularly since the pandemic, webinars are becoming more popular because of their advantages. This app offers lots of advantages to both the presenter and the clients or attendees to such online presentations.
 
 # UX - User Experience
 
