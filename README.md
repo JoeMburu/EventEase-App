@@ -4,7 +4,7 @@
 
 ## Introduction
 
-EventEase is an event management and booking app designed to manage public speaking events. This is a project work for Code Institute's Full-Stack Software Development. In the software development stack are Django, a high-level Python web framework that simplifies development process; PostgreSQL, a powerful relational database system; Bootstrap, a popular CSS library that takes care of styling components.  Django and Postresql together constitute the backend that ensures data integrity and security, while on the other hand Bootstrap, HTML, and JavaScript make up the frontend that provides user experience (UX) in software use. This work implements database manipulation and CRUD functionality. It is inspired to help a friend who is a public speaking professional organise, manage events, and the booking of events by his growing client population. It is for educational purposes only.
+EventEase is an event management and booking app designed to manage webinar events. This is a capstone project work for Code Institute's Full-Stack Software Development programme. In the software development stack are Django, a high-level Python web framework that simplifies development process; PostgreSQL, a powerful relational database system; Bootstrap, a popular CSS library that takes care of styling components.  Django and Postresql together constitute the backend that ensures data integrity and security, while on the other hand Bootstrap, HTML, and JavaScript make up the frontend that provides user experience (UX) in software use. This work implements database manipulation using popular CRUD (Create, Read, Update, and Delete) functionalities. It is inspired to help a friend who is a webinar professional presenter to organise, manage events, and the booking of events by his growing client population. It is for educational purposes only.
 
 View live site here : [EventEase](https://joe-mb-django-event-ease-d4ba6612685d.herokuapp.com/)  
   
@@ -66,7 +66,7 @@ For Admin access with relevant sign-in information: [EventEase Admin](https://jo
 
 ## Overview
 
-FreeFido is an social media and booking app for a private dog park. Users are invited to:
+Eventease is webinar events management abd booking app to help the intended webinar presenter to organise his events, such as creating new events, updating events, and even deleting events. On the other handsfor the users to see and browse through., select desired event. The users in addition will also , book for it   is an social media and booking app for a private dog park. Users are invited to:
 
 - Join the FreeFido community
 - Create their own profiles
