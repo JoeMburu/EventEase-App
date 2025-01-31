@@ -32,14 +32,14 @@
             <div></div>
         </div>  
         <div class="user_details">
-           <div name="name">
+           <div class="name">
                 <strong>Name: </strong> {% if user.first_name %} {{ user.first_name}} {{ user.last_name }} {% else %} {{ user }}  {% endif %}
                 
            </div>
-           <div name="role">
+           <div class="role">
                 <strong>Role: </strong> {{ user.role }} 
            </div>
-           <div name="last-login">
+           <div class="last-login">
                 <strong>Last logged in: </strong> {{ user.last_login }} 
            </div>           
         </div>  
@@ -49,7 +49,13 @@
             <div></div>
             <p class="text-center">Application Analytics</p>
             <div></div>
-        </div>   
+        </div> 
+        <div class="analytics-details">
+            <div class="total_bookings">
+                <i class="fa-solid fa-book fa-5x" style="color: var(--primary-color); margin-right: 50px;"></i> <span style="font-size: 5rem;">{{ total_bookings_analytics }}</span>
+            </div>
+
+        </div>  
         {% endblock %}
     </div> 
 </div> 

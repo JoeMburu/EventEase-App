@@ -22,6 +22,15 @@ class AdminDashboardView(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
     def test_func(self):
         return self.request.user.is_staff
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context  
+
+    def get(self, request):
+        total_bookings_analytics = Booking.objects.all().count()
+        print(total_bookings_analytics)      
+        return render(request, 'users/admin_dashboard.html', {'total_bookings_analytics': total_bookings_analytics})       
+
 class AttendeeDashboardView(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
     template_name = 'users/attendee_dashboard.html'
     def test_func(self):
@@ -35,14 +44,14 @@ class AttendeeDashboardView(LoginRequiredMixin, UserPassesTestMixin, TemplateVie
         return context  
 
     def get(self, request):
-        latest_booking = Booking.objects.filter(user=request.user).order_by('-booking_date').first()
+        latest_booking = Booking.objects.filter(user=request.user).order_by('-booking_date').first()        
         if latest_booking:
-            latest_booking_date = latest_booking.booking_date
+            latest_booking_date = latest_booking.booking_date            
         else:
             latest_booking_date = None  # Or set a default value
-        total_bookings = len(Booking.objects.filter(user=request.user))
-        
-        return render(request, 'users/attendee_dashboard.html', {'latest_booking_date': latest_booking_date, 'total_bookings': total_bookings})      
+        total_bookings_per_attendee = Booking.objects.filter(user=request.user).count() 
+        print( total_bookings_per_attendee)       
+        return render(request, 'users/attendee_dashboard.html', {'latest_booking_date': latest_booking_date, 'total_bookings_per_attendee': total_bookings_per_attendee})      
 
 class MyPageView(LoginRequiredMixin, TemplateView):
     template_name = 'users/user_profile_page.html'

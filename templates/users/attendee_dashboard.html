@@ -40,17 +40,17 @@
                 {% endif %}
            </div>
            <div name="role">
-                <strong>Role: </strong> {{ user.role }} 
+                <strong>Role: </strong> {{ user.role }}
            </div>
            <div name="last-login">
                 <strong>Last logged in: </strong> {{ user.last_login }} 
            </div>
 
            <div name="last-booking">
-             <strong>Last booking: </strong> {% if latest_booking %} {{ latest_booking }} {% else %}No Bookings Yet. {% endif %}
+             <strong>Last booking: </strong> {% if latest_booking_date != None %} {{ latest_booking_date}} {% else %} No Bookings Yet. {% endif %}
            </div>
            <div name="total-bookings">
-            <strong>Total bookings: </strong> {{ total_bookings}}
+            <strong>Total bookings: </strong> {{ total_bookings_per_attendee}}
           </div>
         </div>     
         {% endblock %}
