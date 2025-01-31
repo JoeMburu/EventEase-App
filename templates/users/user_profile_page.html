@@ -3,35 +3,46 @@
 {% load crispy_forms_tags %}
 
 {% block profile_content %}
-<div class="container">
-    <div class="row">
-        <div class="col-12 col-md-6">
-            <h2 style="font-size: 3.5rem;">My Profile Page</CCh2>
-                <div class="details">
-                    <p><img src="{{user.profile_picture.url}}" alt="{{user.username}}" style="height: 200px; width: 300px;"></p>
-                    <p style="font-size: 2.7rem;">Username: <span >{{ user.username }}</span></p>
-                    <p style="font-size: 2.7rem;">Name: <span >{{ user.first_name }} {{ user.last_name }}</span></p>
-                    <p style="font-size: 2.7rem;">Email: <span >{{ user.email }}</span></p>
-                    <p style="font-size: 2.7rem;">Address: <span >{{ user.address }} {{user.country}}</span></p>
-                    <p style="font-size: 2.7rem;">Phone: <span >{{ user.phone_number }}</span></p>
-                    <p style="font-size: 2.7rem;">Date Joined: <span >{{ user.date_joined}} </span></p>
-                    <button class="btn btn-primary btn-lg" style="background-color: var(--secondary-color); font-size: 1.6rem; color: var(--primary-color)" onclick="toggleForm()">Change Profile Preference
-                    </button>
-                </div>
-        </div>
-        <div class="col-12 col-md-6" style="display: none;" id="gridRow">
-            <div class="card profile-form shadow-lg p-5">
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <button type="submit" class="btn btn-primary btn-lg" style="background-color: var(--primary-color);">Update</button>
-                </form>
-            </div>       
-        </div>
-    </div>   
-</div>
-    
-{% endblock %}
+<div class="welcome_box" >
+    <div></div>
+    <p class="text-center">My Profile Page</p>
+    <div></div>
+</div>  
+<div class="row justify-content-center" style="margin-bottom: 20px;">
+    <div class="col-12 col-md-6" id="profile_user_profile" style="margin: 0 0 20px 0;">
+        <div class="card text-center d-flex justify-content-center align-items-center" style="font-size: 2.5rem;">
+            {% if user.image %}
+            <img src="{{ user.image.url }}" class="card-img-top" alt="user.username" style="width: 40%; margin: 10px 0;">
+            {% else %}
+                <img src="{% static 'images/default.jpg' %}" alt="Default Image" style="width: 40%; margin: 10px 0;">
+            {% endif %}           
 
+            <p><strong>Username:          </strong>{{ user.username }}</p>
+            <p><strong>Full Name:         </strong>{{ user.first_name }} {{ user.last_name }} {% if not user.first_name %} None (Update your preferences) {% endif %}</p>
+            <p><strong>Email:          </strong>{{ user.email }}</p>
+            <p><strong>Address:          </strong>{{ user.address }}</p>
+            <p><strong>Country:          </strong>{{ user.country }}</p>
+            <p><strong>Phone:          </strong>{{ user.phone_number }}</p>
+            <p><strong>Date Joined:          </strong>{{ user.date_joined }}</p>     
+            <div class="change_profile_btn_wrapper">
+                <button class="btn btn-primary btn-lg" style="background-color: var(--secondary-color); font-size: 2rem; color: var(--primary-color)" onclick="toggleForm()">
+                    Change Profile Preference
+                </button>
+            </div>  
+        </div>        
+    </div>
+    <div class="col-12 col-md-6" id="form_card_update" style="display: none;">
+        <div class="card update_form_card">
+            <form method="post" enctype="multipart/form-data" style="font-size: 2.9rem; padding: 20px;">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <button type="submit" class="btn btn-primary btn-lg" style="background-color: var(--primary-color); font-size: 2.8rem;">Update</button>
+            </form>
+        </div>
+    </div>    
+</div>
+
+
+{% endblock %}
 
 

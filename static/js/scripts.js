@@ -1,6 +1,4 @@
 
-      
-
 
 const searchIcon = document.getElementById('search-icon');
 const searchIcon2 = document.getElementById('search-icon2');
@@ -15,5 +13,13 @@ searchIcon.addEventListener('click', () => {
 searchIcon2.addEventListener('click', (e) => {
     modalQuestion.show();    
 })
+
+function toggleForm() {
+    let value = document.getElementById('form_card_update').style.display == 'none' ? 'block' : 'none';
+    document.getElementById('form_card_update').style.display = value;
+    console.log(value)
+}
+ 
+
 
 

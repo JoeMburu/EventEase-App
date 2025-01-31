@@ -3,9 +3,11 @@
 {% block content %}
 
 <div class="container profile-container">      
-    <div class="sidebar">
-        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="offcanvas" data-bs-target="#dashboard-menu">{% if user.is_superuser and user.is_admin %}Admin Menu{% else %}Attendee Menu {% endif %}</button>
-
+    <div class="sidebar">        
+        <!-- <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="offcanvas" data-bs-target="#dashboard-menu">{% if user.is_superuser and user.is_admin %}Admin Menu{% else %}Attendee Menu {% endif %}</button> -->
+        <p style="text-align: end;"><a class="link-offset-1" data-bs-toggle="offcanvas" href="#dashboard-menu" style="font-size: 3rem; color: var(--accent-color);">{% if user.is_superuser and user.is_admin %}Admin Menu{% else %}Attendee Menu {% endif %}</a></p>
+       
+       
         <!-- Offcanvas Sidebar -->
         <div class="offcanvas offcanvas-start dashboard-menu" id="dashboard-menu">
             <div class="offcanvas-header">
@@ -25,9 +27,32 @@
     </div>
     <div class="profile_main_content">               
         {% block profile_content %}
-        <div class="content container">
-           <h3><p style="font-size: 2.5rem;">You are welcome to your dashboard. You can watch your apps Analytics and perform operations.</p></h3>
-        </div>          
+        <div class="welcome_box" >
+            <div></div>
+            <p class="text-center">Welcome back, {% if user.username %} {{ user.username}} {% else %} {{ user }}  {% endif %}</p>
+            <div></div>
+        </div>  
+        <div class="user_details">
+           <div name="name">
+                <strong>Name: </strong> {% if user.first_name %} {{ user.first_name}} {{ user.last_name }} {% else %} {{ user }}  {% endif %}
+                {% if user.username %} 
+                <a href="{% url 'my-profile-page' %}" style="padding: 0; margin: 0;">Update your name</a>
+                {% endif %}
+           </div>
+           <div name="role">
+                <strong>Role: </strong> {{ user.role }} 
+           </div>
+           <div name="last-login">
+                <strong>Last logged in: </strong> {{ user.last_login }} 
+           </div>
+
+           <div name="last-booking">
+             <strong>Last booking: </strong> {% if latest_booking %} {{ latest_booking }} {% else %}No Bookings Yet. {% endif %}
+           </div>
+           <div name="total-bookings">
+            <strong>Total bookings: </strong> {{ total_bookings}}
+          </div>
+        </div>     
         {% endblock %}
     </div> 
 </div> 

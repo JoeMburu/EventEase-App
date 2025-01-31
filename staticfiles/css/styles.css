@@ -35,7 +35,15 @@
   font-family: "Tinos", serif;
   font-weight: 700;
   font-style: italic;
-} */
+}
+
+.shadows-into-light-regular {
+  font-family: "Shadows Into Light", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+  
+*/
 
 * {
   margin: 0;
@@ -335,9 +343,9 @@ main {
    }
 }
 
-@media (min-width: 992px) {
+@media (min-width:768px) {
   .simple-steps-row .card {
-    height: 200px;
+    height: 320px;
    }
 }
 
@@ -393,7 +401,11 @@ main {
 }
 @media (min-width: 768px) {
   .testimonials-row .card {
-    height: 480px;
+    height: 510px;
+   }
+
+   .testimonials-row img {
+    height: 330px;
    }
 }
 
@@ -575,6 +587,44 @@ ul.list-group ul li {
   padding: 5px 0;
 }
 
+.profile_main_content .welcome_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.profile_main_content .welcome_box div {
+  height: 5px;
+  background-color: var(--lighter-primary-color);
+  flex: 1;
+}
+.profile_main_content .welcome_box p {
+  font-size: 3rem; color: var(--lighter-primary-color);
+  margin: 0 15px;
+}
+
+.profile_main_content .user_details {
+  min-height: 200px;
+  color: var(--primary-color);
+  font-size: 3.5rem;
+  font-family: "Shadows Into Light", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.profile_main_content .user_details div {
+  margin-bottom: 20px;
+}
+
+.change_profile_btn_wrapper {
+  margin: 5px 0 20px 0;
+}
+
+#div_id_address #id_address {
+ font-size: 2.2rem !important;
+}
+
+
 
 
 /**************** DASHBOARD *******************/
@@ -599,9 +649,6 @@ ul.list-group ul li {
 .offcanvas-title {
   font-size: 2.8rem;
 }
-
-
-
 
 
 
@@ -696,3 +743,19 @@ footer {
 .carousel-control-prev-icon {
     filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(200deg);
 }
+
+
+/************** LOGIN FORM **************/
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="file"], 
+textarea {
+  height: 30px; /* Adjust the height as needed */
+  font-size: 2.2rem;
+  background: none !important; 
+  background-color: transparent !important; 
+  font-weight: 700;
+  font-style: italic;
+}
+

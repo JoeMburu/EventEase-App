@@ -5,6 +5,7 @@ from django.views import View
 from django.views.generic import TemplateView
 from .models import User
 from .forms import UserUpdateForm
+from bookings.models import Booking
 
 
 
@@ -26,6 +27,22 @@ class AttendeeDashboardView(LoginRequiredMixin, UserPassesTestMixin, TemplateVie
     def test_func(self):
         # Only allow attendees to access this view
         return self.request.user.role == "attendee"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        context['user'] = user
+        print(user.first_name)        
+        return context  
+
+    def get(self, request):
+        latest_booking = Booking.objects.filter(user=request.user).order_by('-booking_date').first()
+        if latest_booking:
+            latest_booking_date = latest_booking.booking_date
+        else:
+            latest_booking_date = None  # Or set a default value
+        total_bookings = len(Booking.objects.filter(user=request.user))
+        
+        return render(request, 'users/attendee_dashboard.html', {'latest_booking_date': latest_booking_date, 'total_bookings': total_bookings})      
 
 class MyPageView(LoginRequiredMixin, TemplateView):
     template_name = 'users/user_profile_page.html'
