@@ -750,7 +750,7 @@ input[type="email"],
 input[type="password"], 
 input[type="file"], 
 textarea {
-  height: 30px; /* Adjust the height as needed */
+  height: 40px; /* Adjust the height as needed */
   font-size: 2.2rem;
   background: none !important; 
   background-color: transparent !important; 
@@ -758,3 +758,58 @@ textarea {
   font-style: italic;
 }
 
+
+
+/************** CONTACT US **************/
+
+.contact_us_container {
+  padding: 10px 0;
+}
+
+.new_welcome_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    height: 7px;
+    background-color: var(--primary-color);
+    flex: 1;
+  };
+
+  p {
+    color: var(--primary-color);
+    font-size: 3rem;
+    margin: 0 20px;
+  }
+}
+
+.contact_us_container .email {
+  margin: 30px 0;
+  
+}
+
+.contact_us_container .email i {
+ color: var(--primary-color);
+}
+
+.contact_us_container .card-body {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+ }
+
+ .contact_form #message {
+  font-size: 2.2rem;
+  height: 80px;
+
+ }
+
+ .contact_form p {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+ }
+
+ .contact_form .btn {
+  font-size: 2.2rem;
+  background-color: var(--primary-color);
+ }
