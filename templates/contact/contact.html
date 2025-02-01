@@ -12,6 +12,20 @@
         <div></div>
     </div>
 
+    <!-- Messages -->
+    <div>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                <li class="{{ message.tags }}" style="font-size: 2rem;">{{ message }}</li>
+            </div>           
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+
     <div class="row justify-content-center email">
         <div class="col-12 col-md-6">            
             <div class="card text-center mb-3 ">
@@ -32,7 +46,8 @@
                     <p>If you would want us to contact you</p>
                 </div>
                 <div class="card-body" >
-                    <form>
+                    <form method="POST" >
+                        {% csrf_token %}
                         <div class="mb-3">
                           <label for="name" class="form-label">Name</label>
                           <input type="text" class="form-control" id="name" placeholder="Name">                          
@@ -52,15 +67,5 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
 {% endblock content %}
 

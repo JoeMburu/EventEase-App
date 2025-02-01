@@ -763,7 +763,7 @@ textarea {
 /************** CONTACT US **************/
 
 .contact_us_container {
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .new_welcome_box {
@@ -813,3 +813,26 @@ textarea {
   font-size: 2.2rem;
   background-color: var(--primary-color);
  }
+
+ 
+/************** ABOUT US **************/
+.about_us_container {
+  padding: 20px 0;
+}
+
+.about-details {
+  margin: 50px 0;
+}
+
+.about-details .who h3, 
+.about-details .vision h3 {
+  font-size: 3.5rem;
+  color: var(--primary-color);
+}
+
+.about-details .who p, 
+.about-details .vision p {
+  font-size: 2rem;
+  color: var(--secondary-text-colorr);
+  text-align: justify;
+}
