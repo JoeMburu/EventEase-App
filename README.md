@@ -117,58 +117,46 @@ These colours are carefully crafted and chosen to stimulate interest and reassur
 Using [Google Fonts](https://fonts.google.com/), I used a combination of two Google fonts imported for the project - 'Tinos' and 'Shadows Into Light'. The image below show samples of these fonts. 
 
 ![Google fonts sample](documentation/views/fonts.png)  
-*Outfit, a Google Font designed by Rodrigo Fuenzalida*
+
 
 # Project Planning  
  
 ## Strategy Plane
 
-The project goal was to build a simple booking app for a service. The 'product' was a one hour slot in a private, secure dog park and the 'users' were dog owners, trainers and walkers. As the service itself was uncomplicated, I aimed to create an easy, uncomplicated booking system for the user. Through planning and design prep work, I realised that there was an opportunity to treat this service like a 'brand' and develop the idea further. A social element was born from this with an idea for dog owners to be able to share advice and images of their furry friends on the website. This would hopefully help to create a happy group of park users who would recommend the park to others, share articles outside of the core group, and attract more users to sign up. Following common social-media design trends, I planned to use icons, high-quality, photographic images and an attractive, connected colour scheme.
+Eventease is a platform designed for steamless webinar management and monetization, helping event organisers host high quality virtual events and for users to easily access these events while enjoying both the user-friendliness of the app and the events themselves. This results in audience engagement and revenue generation. This solution provides a seamless operation performance for webinar event organisers and event attendee alike. 
 
 ### Site Goals
 
-- Create a safe, happy environment for dog owners
-- Use of playful colour to identify connected features of the website, plenty of white space to keep it fresh and to-the-point
-- Commonly-used, identifiable icons with some redesigns to fit the theme
-- Easy UI for quick fulfillment of feature CRUD functionalities
-- UX remains the same whether on mobile, tablet or desktop
-- Scalable idea, for addition of future features to easily grow the business
+- Provide an all-in-one platform for scheduling, hosting, and mangaging webinars
+- Automate the billing proicess for users or webinar attendees
+- Offer analytic and insights for event organisersto optimize future webinars
+- Enhance audience engagement with the user-friendly tools
+- Customised for all users and devices through resposiveness and user-friendliness
+- Can be a source of revenue generation for organisers through the sale of events
+- Organisers can manage events, booking, and users
+
+The target audience includes webinar organisers and other event organisers, and the webinar events attendees, who want to keep up with the upcoming events. This is because the app can be tweaked a little for other events management and booking.
 
 ## Agile Methodologies - Project Management
 
-FreeFido is my first project following Agile planning methods. As someone who loves to prepare and plan, it was a joy to get to know and use. I used my [Github Projects Board](https://github.com/users/amylour/projects/4) to plan and document all of my work, initially I started with a [Trello](https://trello.com/) board to allow myself to make some mistakes and gather any scraps of notes or information that I had and then refined them into my Projects board. I'm sure the next time around will be a smoother process.
+The project is organised and divided into segments or parts that make for ease of implementation and inremental development. I used Github for Agile planning and development. This is the project board in Github [Github Projects Board](<https://github.com/users/JoeMburu/projects/9>).
 
 ### MoSCoW Prioritization
 
-I chose to follow the MoSCoW Prioritization method for Freefido, identifying and labelling my:
+I chose the MoSCoW Prioritization method for Eventease project, dividing and labeling the component tasks as follows:
 
 - **Must Haves**: the 'required', critical components of the project. Completing my 'Must Haves' helped me to reach the MVP (Minimum Viable Product) for this project early, allowing me to develop the project further than originally planned.
   
 - **Should Haves**: the components that are valuable to the project but not absolutely 'vital' at the MVP stage. The 'Must Haves' must receive priority over the 'Should Haves'.
-- **Could Haves**: these are the features that are a 'bonus' to the project, it would be nice to have them in this phase, but only if the most important issues have been completed first and time allows.
-- **Won't Haves**: the features or components that either no longer fit the project's brief or are of very low priority for this release. 
+- **Could Haves**: these are the features that are a 'bonus' to the project, it would be nice to have them in this phase, but only if the most important issues have been completed first and time allows. These could be considered as the later additions to the project.
 
 ### Sprints
 
-I broke down the time available to me before project submission and pushed to have the MVP completed a month out from the submission date of 17th July 2023. This was primarily due to family duties and wanting to have the bulk of the project completed before my son's school finished for summer. It was a busy time frame and I reached MVP status ahead of schedule, allowing me to push my learning and add some extra features. Initially I had started FreeFido (v1) in a separate repo and I was utilising my simultaneous learning of Tailwind to great success, until I ran into issues with my database. This was to be expected on my first project using database schemas and Django. I understood what my issues were and even after flushing the database successfully, I felt that time allowed to start afresh. This version of Freefido was set up much quicker, I had more confidence in understanding the process and I chose to stick with Bootstrap this time around to concentrate on reaching MVP. 
-
-I broke my process into Dev (Developer) Tasks, User Stories and Testing Tasks, which I converted into issues and labelled fully on my projects board. I found adding comments to my issues helpful, as I could quickly record information/sources/fixes for developing later in my README.
-
-My Sprints are representative of a general timeframe of focus on the stated areas, with study, project work and running a household, some sprints timeframes blended with each other as work was completed during every available free moment.
-
-| Sprint No. | Sprint Content | Start/Finish Dates |
-|------------|----------------|--------------------|
-| #1 | Project Setup | 23/05/23 -> 25/05/23 |
-| #2 | All Auth Setup/Site Navigation | 25/05/23 -> 01/06/23 |
-| #3 | Profile/Articles Features | 27/05/23 -> 06/06/23 |
-| #4 | Booking/Gallery Features | 07/06/23 -> 12/06/23 |
-| #5 | Frontend Development | 13/06/23 -> 20/06/23 |
-| #6 | Testing/Documentation | 04/07/23 -> 14/07/23 |
-
+My first plan was to reach the MVP (viable minimum product) for this app for the time allocated for this project, three weeks. However, I could not get the project ready within the time allotment, and the student care added another, almost one week. It was overwhelming at first to put all these technologies together for this kind of app, to resolve conflicts and errors that come up during the development, and to document the project. I broke my process into Dev (Developer) Tasks, User Stories and Testing Tasks, which I converted into issues and labelled fully on my projects board. I found adding comments to my issues helpful, as I could quickly record information/sources/fixes for developing later in my README.
 
 ## User Stories
 
-User stories and features recorded and managed on [GitHub Projects](<https://github.com/users/amylour/projects/4>)
+User stories and features recorded and managed on [GitHub Projects](<https://github.com/users/JoeMburu/projects/9>)
 
 
 ### Visitor User Stories
