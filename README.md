@@ -159,17 +159,29 @@ My first plan was to reach the MVP (viable minimum product) for this app for the
 User stories and features recorded and managed on [GitHub Projects](<https://github.com/users/JoeMburu/projects/9>)
 
 
-### Visitor User Stories
+### User - User Stories
 
 | User Story | Priority |
 |----------------------------------------------------------------------------------------------------------------------------|---------------|
 | As a **user**, I would like to **view the websites home page** so that I can **learn about it and the services it offers** | **MUST HAVE** |
 | As a **user**, I can **find the websites navigation area** so that I **may easily navigate around the website** | **MUST HAVE** |
-| As a **user**, I can **see the sites social media links at the bottom of the webpage** so that I can **visit, contact the business and follow them online** | **MUST HAVE** |
+| As a **user**, I can **see the sites social media links either at the top or bottom of the website** so that I can **visit, contact the business and follow them online** | **MUST HAVE** |
 | As a **user**, I can **view any error pages with a 'Home' button** so that I **can get back to the homepage easily** | **MUST HAVE** |
 | As a **user**, I want **to see a message when I have successfully/unsuccessfully completed an action** so that I can **receive feedback from my interaction with the website** | **MUST HAVE** |
+| As a **user**, I want **to see users testimonials on the home page** so that I can **decide whether I should register to the site or not** | **COULD HAVE** |
 
-### Epic - User Profile
+### User dashboard/profile - User Stories
+
+| User Story | Priority |
+|----------------------------------------------------------------------------------------------------------------------------|---------------|    
+| As a **user**, I can **use my email and password to login to my profile account/dashboard** so that I can **use my profile to connect to the websites features** | **MUST HAVE** |
+| As a **user**, I can **enter my email and password** so that I can **register an account with the website** | **MUST HAVE** |
+| As a **user**, I can **enter my personal details** so that I can **create an account with Eventease** | **MUST HAVE** |
+| As a **user**, I can **receive feedback in the form of a logout page** so that **I can confirm that I have been logged out successfully** | **MUST HAVE** |
+| As a **user**, I can **edit my user profile** to **update my personal details** | **MUST HAVE** |
+| As a **user**, I can **click a delete button in my user profile setup** so that I **can delete all personal data, photos and bookings that are connected to me on the website and close account** | **COULD HAVE** |
+
+### Event - User Stories
 
 | User Story | Priority |
 |----------------------------------------------------------------------------------------------------------------------------|---------------|    
