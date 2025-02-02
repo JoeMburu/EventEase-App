@@ -29,12 +29,11 @@ For Admin access with relevant sign-in information: [EventEase Admin](https://jo
     - [MoSCoW Prioritization](#moscow-prioritization)
     - [Sprints](#sprints)
   - [User Stories](#user-stories)
-    - [Visitor User Stories](#visitor-user-stories)
-    - [Epic - User Profile](#epic---user-profile)
-    - [Epic - Articles](#epic---articles)
-    - [Epic - Booking](#epic---booking)
-    - [Epic - Photo Gallery](#epic---photo-gallery)
-    - [Epic - Visit Us/Reviews](#epic---visit-usreviews)
+    - [Attendee - User Stories](#attendee-user-stories)
+    - [User Dashboard/Profile - User Stories](#user-dashboard-profile)
+    - [Event - User Stories](#event-user-stories)
+    - [Booking - User Stories](#booking-user-stories)
+    - [About & Contact Us - User Stories](#about-contact-us-user-stories)   
   - [Scope Plane](#scope-plane)
   - [Structural Plane](#structural-plane)
   - [Skeleton \& Surface Planes](#skeleton--surface-planes)
@@ -159,7 +158,7 @@ My first plan was to reach the MVP (viable minimum product) for this app for the
 User stories and features recorded and managed on [GitHub Projects](<https://github.com/users/JoeMburu/projects/9>)
 
 
-### User - User Stories
+### Attendee - User Stories
 
 | User Story | Priority |
 |----------------------------------------------------------------------------------------------------------------------------|---------------|
@@ -171,7 +170,7 @@ User stories and features recorded and managed on [GitHub Projects](<https://git
 | As a **user**, I want **to see users testimonials on the home page** so that I can **decide whether I should register to the site or not** | **COULD HAVE** |
 
 
-### User dashboard/profile - User Stories
+### User Dashboard/Profile - User Stories
 
 | User Story | Priority |
 |----------------------------------------------------------------------------------------------------------------------------|---------------|    
@@ -183,7 +182,7 @@ User stories and features recorded and managed on [GitHub Projects](<https://git
 | As a **user**, I can **click a delete button in my user profile setup** so that I **can delete all personal data, photos and bookings that are connected to me on the website and close account** | **COULD HAVE** |
 
 
-### Event
+### Event - User Stories
 
 | User Story | Priority |
 |----------------------------------------------------------------------------------------------------------------------------|---------------|
@@ -198,7 +197,7 @@ User stories and features recorded and managed on [GitHub Projects](<https://git
 | As a **user**, I can **enter a search term into the search bar** so that I can **search for particular events with information topics that I am interested in** | **COULD HAVE** |
 
 
-### Booking
+### Booking - User Stories
 
 | User Story | Priority |
 |----------------------------------------------------------------------------------------------------------------------------|---------------|
@@ -208,7 +207,7 @@ User stories and features recorded and managed on [GitHub Projects](<https://git
 | As a **user**, I can **get information about my booked events feedback from the website** that will **explain that only four active bookings are allowed per person** | **SHOULD HAVE** |
 
 
-### About & Contact Us
+### About & Contact Us - User Stories
 
 | User Story | Priority |
 |----------------------------------------------------------------------------------------------------------------------------|---------------|
