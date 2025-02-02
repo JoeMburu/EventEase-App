@@ -214,26 +214,26 @@ User stories and features recorded and managed on [GitHub Projects](<https://git
 |----------------------------------------------------------------------------------------------------------------------------|---------------|
 | As a **user**, I can **view the 'About us page** so that I can **get to read about the organisatio, visions and missions** | **COULD HAVE** |
 | As a **user**, I can **contact information about the presenter** so that I can **leave questions** | **COULD HAVE** |
-| As a **user**, I can **see contact us form** so that I can **ask for the presenter to contact me** | **COULD HAVE** | 
-| As a **user**, I can **click the delete button beside my review** so that I can **delete a review that I made** | **COULD HAVE** |
+| As a **user**, I can **see contact us form** so that I can **ask for the presenter to contact me** | **SHOULD HAVE** | 
+
     
     
 ## Scope Plane
 
-As this would be a dual learning/building project using technologies that were new to me, such as Django, SQL, Bootstrap and Cloudinary, I was cautious to maintain consistent control over the scope of the project and not let my idea grow too big. With the sheer amount of files, I needed to lockdown my project features early on into manageable blocks so as not to lose track of the MVP. Following my learning of the Django MVT framework I was able to identify how to change the templated structure to produce different website features from my base HTML. This allowed me to build upon my original idea of 'Booking app' only, and to add a social experience around articles and shared images. Following Agile Planning Methodologies, I added my Developer Tasks, User Stories and Testing Tasks as issues on my [GitHub project board](https://github.com/users/amylour/projects/4), and set up Sprints to keep the flow of the project in check.
+I started with the event management (scheduling) and later added the booking system to be able to meet the MVP requirements of the project. Overall, the scope of the project is listed below.
 
 Essential features of my project were:
 
 - A striking, accessible website that fulfils user needs
 - Responsive website for users of mobile, tablet and desktop devices
 - User Authentication
-- User Profile creation and editing
-- Article feature with full CRUD functionality
+- User dashboard and profile creation and editing
+- Event feature with full CRUD functionality
 - Booking feature with full CRUD functionality
-- Gallery wall with adding/deletion of images
+- Event search feature
 - Business details to inform the user
 
-Planning my project thoroughly from the start allowed me to identify areas of importance for MVP completion and satisfaction of assessment criteria, and to balance them with the feasibility of the features.
+Planning was really essential because it was the basis of the project. Without planning would be tantamount to failure, or put mildly running into lots of challenges. This project helped me to understand why planning comes before coding.
 
 
 ## Structural Plane
