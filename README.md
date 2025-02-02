@@ -108,19 +108,17 @@ I used the following colour pallete for the Eventease event management and booki
 - Secondary text colour: ```#757575``` '--grey'
 - Error colour: ```#F44336``` '--red'
 
-![outfit font design sheet](documentation/views/color_palette.png) 
+![color palette](documentation/views/color_palette.png) 
 
 These colours are carefully crafted and chosen to stimulate interest and reassurance in the website. The primary colour of green engenders a feeling of serenity with white text.  
 
 ### Font
 
-Using [Google Fonts](https://fonts.google.com/), I imported 'Outfit' and 'Montserrat' as a complementary font to my CSS file. Outfit is a playful, clear sans-serif which I felt worked well in designing my logo and for headers in my project. For future use, I envisoned merchandise bearing the logo for the FreeFido stall at the dog park. Montserrat was chosen as it gave more structure to the paragraph sections.
+Using [Google Fonts](https://fonts.google.com/), I used a combination of two Google fonts imported for the project - 'Tinos' and 'Shadows Into Light'. The image below show samples of these fonts. 
 
-![outfit font design sheet](documentation/final_views/outfit.png)  
+![Google fonts sample](documentation/views/fonts.png)  
 *Outfit, a Google Font designed by Rodrigo Fuenzalida*
 
-In development, 'Outfit' was identified by variable ```--title```, whilst 'Montserrat' was set as ```--main-font``` within the CSS file. Similar to my setup for the project's colours, using variables helped to speed up the frontend process.
-  
 # Project Planning  
  
 ## Strategy Plane
