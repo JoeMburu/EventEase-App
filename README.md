@@ -170,6 +170,7 @@ User stories and features recorded and managed on [GitHub Projects](<https://git
 | As a **user**, I want **to see a message when I have successfully/unsuccessfully completed an action** so that I can **receive feedback from my interaction with the website** | **MUST HAVE** |
 | As a **user**, I want **to see users testimonials on the home page** so that I can **decide whether I should register to the site or not** | **COULD HAVE** |
 
+
 ### User dashboard/profile - User Stories
 
 | User Story | Priority |
@@ -181,60 +182,39 @@ User stories and features recorded and managed on [GitHub Projects](<https://git
 | As a **user**, I can **edit my user profile** to **update my personal details** | **MUST HAVE** |
 | As a **user**, I can **click a delete button in my user profile setup** so that I **can delete all personal data, photos and bookings that are connected to me on the website and close account** | **COULD HAVE** |
 
-### Event - User Stories
 
-| User Story | Priority |
-|----------------------------------------------------------------------------------------------------------------------------|---------------|    
-| As a **user**, I can **use my email and password to login to my profile account** so that I can **use my profile to connect to the websites features** | **MUST HAVE** |
-| As a **user**, I can **enter my email and password** so that I can **register an account with the website** | **MUST HAVE** |
-| As a **user**, I can **enter my personal details** so that I can **create an account with FreeFido** | **MUST HAVE** |
-| As a **user**, I can **receive feedback in the form of a logout page** so that **I can confirm that I have been logged out successfully** | **MUST HAVE** |
-| As a **user**, I can **edit my user profile** to **update my personal details** | **MUST HAVE** |
-| As a **user**, I can **click a delete button in my user profile setup** so that I **can delete all personal data, photos and bookings that are connected to me on the website** | **COULD HAVE** |
-
-### Epic - Articles
+### Event
 
 | User Story | Priority |
 |----------------------------------------------------------------------------------------------------------------------------|---------------|
-| As an **user**, I want to be able to **create and view articles** so that I can **learn more about dog related topics** | **MUST HAVE** |
-| As a **user**, I would like to **move to the next page** so that I can **view all of the articles** | **SHOULD HAVE** |
-| As a **user**, I would like to **view an article's likes** so that I can **find the most interesting articles** | **COULD HAVE** |
-| As a **user**, I can **visit the articles page** so that I **can read and interact with the articles** | **MUST HAVE** |
-| As a **user**, I can **click on an article** so that I **can view it's contents** | **MUST HAVE** |
-| As a **user**, I can **click a button icon** so that I **can like/unlike and article** | **COULD HAVE** |
-| As a **user**, I can **comment on a post** so that I can **interact and get involved with the conversation** | **SHOULD HAVE** |
-| As a **user**, I can **fill-in, edit and save an article text field** so that I can **create and share an article from my profile** | **MUST HAVE** |
-| As a **user**, I can **click on the edit button of my article** so that I can **edit the article and save it again** | **MUST HAVE** |
-| As a **user**, I can **click on the delete button on my own article page** so that I can **delete the article** | **MUST HAVE** |
-| As a **user**, I can **enter a search term into the search bar** so that I can **search for particular articles and articles with information topics that I am interested in** | **SHOULD HAVE** |
-| As a **user**, I can **click a delete button** so that I **can remove a comment that I have made** | **COULD HAVE** |
-  
-### Epic - Booking
+| As an **admin**, I want to be able to **create events** so that I can **show upcoming events on related topics** | **MUST HAVE** |
+| As a **user**, I would like to **see the upcoming events** so that I can **choose interesting upcoming events to attend** | **MUST HAVE** |
+| As a **user**, I can **click on detailed information button about an event** so that I **can view the event detailed page** | **MUST HAVE** |
+| As a **user**, I can **visit an event detailed page** so that I **can read more about such an event** | **MUST HAVE** |
+| As a **user**, I can **click a like event icon button** so that I **can like/unlike an event** | **COULD HAVE** |
+| As a **user**, I can **click on Book Now button** so that I can **book an event** | **MUST HAVE** |
+| As a **user**, I can **click on Pay for event button** so that I can **pay for an event to attend an event** | **MUST HAVE** |
+| As an **admin**, I can **click on the event delete button on the event detailed page** so that I can **delete the event when not needed** | **MUST HAVE** |
+| As a **user**, I can **enter a search term into the search bar** so that I can **search for particular events with information topics that I am interested in** | **COULD HAVE** |
+
+
+### Booking
 
 | User Story | Priority |
 |----------------------------------------------------------------------------------------------------------------------------|---------------|
-| As a **user**, I can **view the booking home page** so that I can **learn about booking and see my active bookings** | **MUST HAVE** |
-| As a **user**, I can **use the bookings page** so that I can **make a booking at the dog park** | **MUST HAVE** |
-| As a **user**, I can **receive feedback via email when I make a booking** so that I **can confirm my booking and keep a copy of it in my email account** | **COULD HAVE** |
-| As a **user**, I can **edit my confirmed bookings** so that I **can choose a different day or time slot or add an extra dog** | **MUST HAVE** |
-| As a **user**, I can **click the 'Trash' icon under my booking** so that I can **delete that booking from my bookings list** | **MUST HAVE** |
-| As a **user**, I can **get feedback from the website** that will **explain that only four active bookings are allowed per person** | **SHOULD HAVE** |
+| As a **user**, I can **view the bookings page** so that I can **learn about booking and see my active bookings** | **MUST HAVE** |
+| As a **user**, I can **cancel my event booking** so that I **can get a refund for booking the event** | **MUST HAVE** |
+| As an **admin**, I can **get the event analytics** so that I can **get historical information about bookings** | **MUST HAVE** |
+| As a **user**, I can **get information about my booked events feedback from the website** that will **explain that only four active bookings are allowed per person** | **SHOULD HAVE** |
 
-### Epic - Photo Gallery
 
-| User Story | Priority |
-|----------------------------------------------------------------------------------------------------------------------------|---------------|
-| As a **user**, I can **visit the gallery page** so that I can **view the gallery wall of photos** | **COULD HAVE** |
-| As a **user**, I can **click the upload image button on the Gallery page** so that I can **upload an image of my dog having fun in the park** | **COULD HAVE** |
-| As a **user**, I can **click the 'Trash' icon when I hover/click on a photo** so that I can **delete the photo** | **COULD HAVE** |
-
-### Epic - Visit Us/Reviews
+### About & Contact Us
 
 | User Story | Priority |
 |----------------------------------------------------------------------------------------------------------------------------|---------------|
-| As a **user**, I can **view the 'Visit Us' page** so that I can **see the businesses location and details** | **MUST HAVE** |
-| As a **user**, I can **fill out a review form** so that I can **leave feedback about my park visit** | **COULD HAVE** |
-| As a **user**, I can **edit my review** so that I can **correct a mistake or change my review** | **COULD HAVE** |
+| As a **user**, I can **view the 'About us page** so that I can **get to read about the organisatio, visions and missions** | **COULD HAVE** |
+| As a **user**, I can **contact information about the presenter** so that I can **leave questions** | **COULD HAVE** |
+| As a **user**, I can **see contact us form** so that I can **ask for the presenter to contact me** | **COULD HAVE** | 
 | As a **user**, I can **click the delete button beside my review** so that I can **delete a review that I made** | **COULD HAVE** |
     
     
