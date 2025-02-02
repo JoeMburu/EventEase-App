@@ -33,7 +33,7 @@ For Admin access with relevant sign-in information: [EventEase Admin](https://jo
     - [User Dashboard/Profile - User Stories](#user-dashboardprofile---user-stories)
     - [Event - User Stories](#event---user-stories)
     - [Booking - User Stories](#booking---user-stories)
-    - [About & Contact Us - User Stories](#about-contact-us---user-stories)   
+    - [About & Contact Us - User Stories](#about--contact-us---user-stories)   
   - [Scope Plane](#scope-plane)
   - [Structural Plane](#structural-plane)
   - [Skeleton \& Surface Planes](#skeleton--surface-planes)
