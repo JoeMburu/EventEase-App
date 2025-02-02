@@ -87,42 +87,30 @@ On the other hand, users to the app can also perform the following operations:
 - Lastly, cancel subscription
 
 
-The app is intended to primarily help a presenter to showcase upcoming events on the topics that his clients are interested in. It is broswer-based, allowing people to access it through their devices that have internet connection. Since the majority of people use mobile phones and devices, the app is responsive to different sizes of devices. With online presentation on the increase, particularly since the pandemic, webinars are becoming more popular because of their advantages. This app offers lots of advantages to both the presenter and the clients or attendees to such online presentations, and can be customised for handling events management and billing.
+The app is intended to primarily help a presenter to showcase upcoming events on the topics that his clients are interested in. It is broswer-based, allowing people to access it through their devices that have internet connection. Since the majority of people use mobile phones and devices, the app is responsive to different sizes of devices. With online presentation on the increase, particularly since the pandemic, webinars are becoming more popular because of their advantages. This app offers lots of advantages to both the presenter and the clients or attendees to such online presentations, and can be customised for events management and billing. 
 
 # UX - User Experience
 
 ## Design Inspiration
 
-I was really excited to get working on this project's frontend as I could see the final product from the very beginning. I wanted to create a website that had plenty of clean whitespace that allowed colourful, bright icons to pop for each section of the website. The colours chosen were very specific from the beginning and I was careful to manipulate the CSS for each section to carry the relevant, related colour through. Original inspiration was from the Fisher-Price toy games controller, I had wanted to create an interactive, service-based website, with it's own logo using the colour scheme of the games controller. Once I had chosen the font of 'Outfit' and created the logo on Procreate, the website content followed swiftly and I had great fun developing it.
+The app is born out of the need to help a friend who is a professional webinar presenter and a youtuber. He creates online events and invites people to register and attend such events. He does not not have a professional way to manage the activities involved to manage events and booking. This will provide the rudiments to get him started and later add more functionalities for efficiency. By means of this website, he will be able to refer people to the site for upcoming events, and provide all the information they need. 
 
-![Fischer Price controller](documentation/final_views/fp_toy.webp)  
-*Original inspiration for the design process*
-
-![FreeFido logo](documentation/final_views/logo.png)  
-*FreeFido logo in font 'Outfit' using colours inspired by the toy*
 
 ### Colour Scheme
 
-As mentioned above, the colour scheme and logo drove the design of the website. I wanted to create a 'fun' environment for the user to create the connection with the enjoyment that they would have with their dog at the park. The colours represent different sections/features of the website. I balanced the vibrant shades with a classic, ```#fff``` white background and an off-black shade of ```#0d0d0d```, as I felt that it yielded a slightly more matte effect that ```#000``` black. This combination also yielded a high contrast ratio of 19.44 for accessibility, with my colour scheme also passing a Colour Blind Safe check via [Adobe Color](https://color.adobe.com/create/color-wheel). This check was important for accessibility as the colours would form the base for my page and feature icons. Each colour in the scheme was also contrast checked with black ```#0d0d0d``` to ensure no contrast issue, all passed.
+I used the following colour pallete for the Eventease event management and booking app. 
 
-The corresponding sections and colours and identifying CSS variables are:
+- Primary colour: ```#4CAF50``` '--green'
+- Secondary colour: ```#FFC107``` '--amber'
+- Accent colour: ```#FF5722``` '--deep orange'
+- Background colour: ```#FFFFFF``` '--white'
+- Text colour: ```#212121``` '--dark grey'
+- Secondary text colour: ```#757575``` '--grey'
+- Error colour: ```#F44336``` '--red'
 
-- Authentication: ```#AC44F2``` '--purple'
-- Gallery: ```#3BD952``` '--green'
-- User Profile: ```#F29F05``` '--orange'
-- Visiting Information: ```#F25C5C``` '--coral'
-- Booking: ```#4CE0C3``` '--blue'
+![outfit font design sheet](documentation/views/color_palette.png) 
 
-For the Login/Logout icon, a grey ```#a6a6a6``` was used as a base colour. I felt this grey helped to balance the colours and prevent the icons from 'popping' too much for the eye in the navigation bar.
-
-![balancing colours for website text,background and Login/Logout icon](documentation/final_views/safe_colours.png)  
-*Black, white and grey used for backgrounds, text and Login/Logout icon*
-
-![screenshot of colour scheme](documentation/final_views/color_small.png)  
-*Colour Scheme for FreeFido website*
-
-![colour blind safe colour swatch](documentation/final_views/color_blind_safe.png)  
-*Accessibility check for colour scheme*
+These colours are carefully crafted and chosen to stimulate interest and reassurance in the website. The primary colour of green engenders a feeling of serenity with white text.  
 
 ### Font
 
