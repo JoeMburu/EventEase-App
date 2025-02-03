@@ -53,15 +53,12 @@ For Admin access with relevant sign-in information: [EventEase Admin](https://jo
   - [Connecting to GitHub](#connecting-to-github)
   - [Django Project Setup](#django-project-setup)
   - [Cloudinary API](#cloudinary-api)
-  - [Elephant SQL](#elephant-sql)
+  - [PostgreSql](#postgresql)
   - [Heroku deployment](#heroku-deployment)
-  - [Clone project](#clone-project)
-  - [Fork Project](#fork-project)
-- [Credits](#credits)
+  - [Credits](#credits)
   - [Code](#code)
   - [Media](#media)
-    - [Additional reading/tutorials/books/blogs](#additional-readingtutorialsbooksblogs)
-  - [Acknowledgements](#acknowledgements)
+
 
 ## Overview
 
