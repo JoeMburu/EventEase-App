@@ -472,20 +472,17 @@ The Admin creates events.
     <img src="documentation/views/admin_create_event.png">  
 </details> 
   
-
-  **Bookings**
-
-<details open>
-    <summary>Bookings - Event Booking Page </summary>  
-    <img src="documentation/views/event_booking.png">  
-</details>
-
 When the user clicks on Book Event, the event is book and the user is redirected to the booking-list
 <details>
     <summary>Event Detailed Page</summary>  
      <img src="documentation/views/event_booking.png">   
 </details>  
  
+ <details open>
+    <summary>Event Delete - Visible only to Admin </summary>  
+    <img src="documentation/views/event_delete.png">  
+</details>
+
 
 <details open>
     <summary>Cancel Booking (Update)</summary>  
@@ -501,158 +498,19 @@ When the user clicks on Book Event, the event is book and the user is redirected
 
 <hr>
  
- 
-  
-For creating a booking, the user is informed of the necessary fields to be filled in to secure the booking via feedback. The user may add a second dog if they wish, or leave this to another time. A dropdown selection of 'Breed Choices' is made available for quicker booking, with 'Other' included for mixed breeds. This information is important to the FreeFido staff member who maybe operating the gate for allowing entry. The dog's appearance will help them to identify and confirm the booking along with the human user information.
-Date and time is selectable via a calendar widget for date and dropdown selection menu displaying the hour slots from 8am to 8pm. FreeFido is super kind and opens every single day of the year for it's community members.
-
-![past booking warning](documentation/final_views/past_book.png)  
-*Warning shown to Users if they choose a date in the past, can only save a booking with a valid date/time*  
- 
-  
-![unavaialable date/time](documentation/final_views/unavailable_datetime.png)  
-*If a date/time combo is unavailable then the user is informed via warning message - future version of the booking system will have shaded out portions for the unavailable dates/times to make it easier on the user*  
-
-
-![booking saved message](documentation/final_views/booking_saved_msg.png)  
-*User feedback is delivered by message once a booking has been submitted through creation or edit- message disappears after 3 seconds*
-
-
-**Edit Booking**
-
-<details>
-    <summary>Edit Booking Page - Visible for Logged-In Users who have made a previous Booking</summary>  
-    <img src="documentation/final_views/booking_e.png">  
-</details>
-
-**Delete Booking**
-
-<details>
-    <summary>Delete Booking Page - Visible for Logged-In Users who have made a previous Booking</summary>  
-    <img src="documentation/final_views/booking_d.png">  
-</details>
-  
-A user may delete thier booking or return to the booking page incase they clicked the delete icon in error.
-
-![deleted booking message](documentation/final_views/booking_del_msg.png)  
-*User feedback is delivered by message once a booking has been deleted - message dissappears after 3 seconds*
-
-<hr>
-
-**Gallery**
-
-<details open>
-    <summary>Gallery Page - Registered, Logged-In User View with 'Add Photo' icon, Unregistered User View without icon</summary>  
-    <img src="documentation/final_views/gallery.png">  
-</details>
-  
-The FreeFido Gallery page allows the user and Admin to quickly upload snapshots from the park's activities to create a continuous flow of updated images. An overlay on hover/touch on mobile shows the user brief information about the photograph. The carousel of images at the top of the page shows some highlighted photos. For future development this carousel will display a collection of randomly selected images from the bulk of images availabale and stored in the Cloudinary database.    
-
-<details>
-    <summary>Gallery Page - Unregistered User view with photo info on hover(Desktop)/touch (on Mobile)</summary>  
-    <img src="documentation/final_views/gal_unreg_info.png">  
-</details>
-
-**Add Photo**
-
-<details open>
-    <summary>Add Photo Page - Registered Users only</summary>  
-    <img src="documentation/final_views/add_photo.png">  
-</details>
-  
-All fields are required for the Upload Image form to be submitted and saved correctly. Feedback prompts the user if they have neglected a field.
-
-**Delete Photo**
-
-<details open>
-    <summary>Photo Delete - Registered User View - delete icon only visible over the photos uploaded by that logged-in user. </summary>  
-    <img src="documentation/final_views/gal_reg_del.png">  
-</details>
-
-<details>
-    <summary>Delete Photo Page</summary>  
-    <img src="documentation/final_views/del_photo_modal.png">  
-</details>
-  
-If a user no longer wants their image to appear, or if they have made a mistake, thay may delete their image. Admin approval is not needed for images to be posted and future development will include community posting guidelines and a form of AI software to check the image for any unwanted content.  
-   
-![delete photo user message, successful deletion](documentation/final_views/photo_del_msg.png)  
-*User feedback is provided by message, informing user that the photo has been deleted successfully - message disappears after 3 seconds*
-
-<hr>
-
-**Visit Us**
-
-<details>
-    <summary>Visit Us Page</summary>  
-    <img src="documentation/final_views/visit.png">  
-</details>
-  
-This page offers the user business information including opening hours and address. An embedded interactive Google Map allows the user to see FreeFido's location without leaving the site. If they require driving directions to the park, they can click on the map's 'View larger map' link to go to Google Maps in a new browser tab.
-
-For future development, this page will hold the 'Feedback' feature for registered users to leave a review of the park. 
-
-<hr>
-
-**403, 404, 500 Pages**
-
-These templates were added to this project in order to give the user the functionality to return to the website by using the links in the navigation bar or the Back to Homepage button on the Error page.
-
-![404 error page](documentation/final_views/404error.png)
-
-- They are triggered when a user tries to access:
-  - information that is not theirs - 403,
-  - information that does not exist anymore - 404,
-  - something has gone wrong with the server and cannot retrieve database - 500
-
-**Admin Panel**
-
-Through Django's built-in Administration Panel, the Admin has full access over the data submitted to the website by registered Users. To access the Admin panel the Admin user adds '/admin/' to the end of the URL to display [https://freefido.herokuapp.com/admin/](https://freefido.herokuapp.com/admin/). A username and password is requested. For FreeFido, Admin approval is needed for articles and comments to keep the site on topic and to prevent spamming. Registered, logged-in users' have instant access to make a booking and upload images.
-
-![django admin panel view](documentation/final_views/dj_adminpanel.png)  
-*Django Admin panel view for FreeFido Administrator - content selection menu on left hand side*  
-
-
-Users articles and comments require approval by the Admin of FreeFido to keep the website content on topic. Admin can change the status of articles from 'Draft' to 'Published'.
-
-<details>
-    <summary>Dropdown menu allowing Admin to 'publish' a users article, 'Save' button must be clicked to confirm</summary>  
-    <img src="documentation/final_views/draft_art.png">  
-</details>  
-
-  
-<details>
-    <summary>Dropdown menu allowing Admin to 'approve' a users comment, 'Go' must be clicked to confirm</summary>  
-    <img src="documentation/final_views/comment_apprv.png">  
-</details>
-    
-
-Admin can control users bookings via the Django Admin panel.  
-
-<details>
-    <summary>All bookings are made available to the Admin</summary>  
-    <img src="documentation/final_views/djbooking.png">  
-</details>
-
- **Close Account**
+  **Close Account**
 
 Attendee can close an account, in that case, he is permanently deleted from the database.
 <details open>
     <summary>Close Account (Delete) </summary>  
-    <img src="documentation/views/close_accout.png">  
+    <img src="documentation/views/close_account.png">  
 </details>
 
 
 ## Future Features
 
-- **Admin key icon for superuser login**: A 'key' icon appears in the footer for the Admin user that brings them directly to the admin panel without having to type it in.
-- **Social account login**: Allowing popular social account login to the FreeFido site will speed up the registration and booking process.
-- **Updated Booking system using Django Agenda/Scheduler that shows unavailable dates and times**: I did investigate this feature, I figured a way that I believe will work but it requires more learning on my part to execute it smoothly. I reminded myself of meeting the MVP.
-- **Downloable app with quicker access to booking system for regular users**: I can envison FreeFido as an app that connects multiple private dog park spaces and alot more people. This would build the community. Each location would have it's own model for booking, with a menu to allow users to choose available parks or perhaps free parks within 20km.
-- **Member to member contact via DM, connecting profiles to allow for sharing bookings with compatible dogs**: Community will drive the success of FreeFido and allowing users to add compatible dogs and people to their bookings opens up the parks to group training sessions, doggie birthday parties and new friendships.
-- **Merchandise section with dog training items/treats available for collection at the Freefido coffee hut at dog park entrance**: I would like to utilise the website's logo and designs to sell merchandise and grow the FreeFido brand.
-- **Book a Trainer/Join training classes**: This option can be easily added to the booking system with a payment or voucher system to allow users to book a trainer or group to help with any dog training/behavioural issues.
-- **Quick info about local area for visitors eg pet stores/vets/dog-friendly restaurants**: Visitors new to the area with their dogs would benefit to quick access to all relevant information to make their stay better and safer.
+- **Social account login**: Allowing popular social account login to Eventease website will be an alternative to user registration.
+- **Payment system**: I would like to investigate and integrate a payment system to the app.
 
 # Technologies & Languages Used
 
@@ -661,47 +519,46 @@ Attendee can close an account, in that case, he is permanently deleted from the 
 - JavaScript
 - Python
 - [Git](https://git-scm.com/) used for version control.
-- [Github](https://www.github.com) used for online storage of codebase and Projects tool.
-- [CodeAnywhere](https://app.codeanywhere.com) as an online, cloud-based IDE for development.
-- [Figma](https://www.figma.com) for project design planning and wireframe creation.
-- [Adobe Color](https://color.adobe.com) for colour theme creation and accessibility checkers.
+- [Github](https://www.github.com/) used for online storage of codebase and Projects tool.
+- [Balsalmiq](https://balsamiq.com/) for project design planning and wireframe creation.
 - [Django](https://www.djangoproject.com/) was used as the Python framework for the site.
 - [Cloudinary](https://cloudinary.com/) was used for cloud media storage of user uploaded images.
-- [ElephantSQL](https://www.elephantsql.com/) was used to host the PostgreSQL database needed to collect and recall the users data.
+- [Postresql](https://www.postgresql.org/) was used to host the PostgreSQL database needed to collect and recall the users data.
 - [Heroku](https://www.heroku.com) was used to host the FreeFido application.
-- [WAVE](https://wave.webaim.org/) to evaluate the accessibility of the site.
-- [Procreate](https://procreate.com/) for image creation and editing.
+
 
 ## Libraries & Frameworks
 
 - Bootstrap v5.2.3
-- Django v3.2.19
-- Django AllAuth v0.54.0
-- Django Crispy Forms v2.0
-- Crispy Bootstrap5 v0.7
-- Django Resized v1.0.2
-- Django RichTextField v1.6.1
-- Django Summernote v0.8.2
-- Python Slugify v8.0.1
-- Pillow v9.5
-  
+- asgiref==3.8.1
+- cloudinary==1.36.0
+- crispy-bootstrap5==0.7
+- dj-database-url==0.5.0
+- dj3-cloudinary-storage==0.0.6
+- Django==4.2.17
+- django-allauth==0.57.2
+- django-crispy-forms==2.3
+- django-widget-tweaks==1.5.0
+- gunicorn==20.1.0
+- oauthlib==3.2.2
+- pillow==11.1.0
+- psycopg2==2.9.10
+- PyJWT==2.10.1
+- python3-openid==3.2.0
+- requests-oauthlib==2.0.0
+- sqlparse==0.5.3
+- urllib3==1.26.20
+- whitenoise==5.3.0
+
 Further information is available in the [requirements.txt file](requirements.txt)
 
 ## Tools & Programs
 
-- [EZGif](<https://ezgif.com/>) for gif conversion.
-- [Convertio](https://convertio.co/) for file conversion to PNG, WEBP.
-- [Tiny Png](https://tinypng.com/) for file size reduction.
 - [Lucidchart](https://www.lucidchart.com/pages) for ERD (entity relationship diagram) creation.
-- [Trello](https://www.trello.com) for intial project agile planning.
-- [Perplexity AI](https://www.perplexity.ai/) for breaking down Python concepts and Django documentation into more understandable chunks.
-- [Pattern Monster](https://pattern.monster/) for the hero image pattern SVG.
+- [ChatGPT AI](https://chatgpt.com/) for breaking down Python concepts and Django documentation into more understandable chunks.
+- [Copilot](https://github.com/features/copilot/) for the hero image pattern SVG.
 - [Favicon](https://favicon.io/) for converting an icon into favicon.
-- [LogoAI](https://www.logoai.com/) for design inspiration using my font and colour choices.
 
-# Testing
-
-- For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
 # Deployment
   
@@ -719,7 +576,7 @@ To begin this project from scratch, you must first create a new GitHub repositor
 
 1. Install Django and supporting libraries: 
    
-- ```pip3 install 'django<4' gunicorn```
+- ```pip3 install 'django@4' gunicorn```
 - ```pip3 install dj_database_url psycopg2```
 - ```pip3 install dj3-cloudinary-storage```  
   
@@ -762,7 +619,7 @@ os.path.join(BASE_DIR, 'templates', 'allauth')
 
 - Create the media, static and templates directories in top level of project file in IDE workspace.
 
-11. A **Procfile** must be created within the project repo for Heroku deployment with the following placed within it: ```web: gunicorn freefido.wsgi```
+11. A **Procfile** must be created within the project repo for Heroku deployment with the following placed within it: ```web: gunicorn eventEase.wsgi```
 12. Make the necessary migrations again.
 
 ## Cloudinary API 
@@ -790,9 +647,7 @@ In your project workspace:
   DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 ```
 
-## Elephant SQL
-
-A new database instance can be created on [Elephant SQL](https://www.elephantsql.com/) for your project. 
+## PostgreSql
 
 - Choose a name and select the **Tiny Turtle** plan, which is free.
 - Select your Region and the nearest Data Center to you. 
@@ -821,32 +676,6 @@ To start the deployment process , please follow the below steps:
 9.  Choose from '**Automatic**' or '**Manual**' deployment options, I chose the 'Manual' deployment method. Click '**Deploy Branch**'.
 10. Once the waiting period for the app to build has finished, click the '**View**' link to bring you to your newly deployed site. If you receive any errors, Heroku will display a reason in the app build log for you to investigate. **DISABLE_COLLECTSTATIC**  may be removed from the Config Vars once you have saved and pushed an image within your project, as can **PORT:8000**.
 
-## Clone project
-
-A local clone of this repository can be made on GitHub. Please follow the below steps:
-
-1. Navigate to GitHub and log in.
-2. The [FreeFido Repository](https://github.com/amylour/FreeFido_v2) can be found at this location.
-3. Above the repository file section, locate the '**Code**' button.
-4. Click on this button and choose your clone method from HTTPS, SSH or GitHub CLI, copy the URL to your clipboard by clicking the '**Copy**' button.
-5. Open your Git Bash Terminal.
-6. Change the current working directory to the location you want the cloned directory to be made.
-7. Type `git clone` and paste in the copied URL from step 4.
-8. Press '**Enter**' for the local clone to be created.
-9. Using the ``pip3 install -r requirements.txt`` command, the dependencies and libraries needed for FreeFido will be installed.
-10. Set up your **env.py** file and from the above steps for Cloudinary and ElephantSQL, gather the Cloudinary API key and the Elephant SQL url for additon to your code.
-11. Ensure that your **env.py** file is placed in your **.gitignore** file and follow the remaining steps in the above Django Project Setup section before pushing your code to GitHub.
-
-## Fork Project
-
-A copy of the original repository can be made through GitHub. Please follow the below steps to fork this repository:  
-
-1. Navigate to GitHub and log in.  
-2. Once logged in, navigate to this repository using this link [FreeFido Repository](https://github.com/amylour/FreeFido_v2).
-3. Above the repository file section and to the top, right of the page is the '**Fork**' button, click on this to make a fork of this repository.
-4. You should now have access to a forked copy of this repository in your Github account.
-5. Follow the above Django Project Steps if you wish to work on the project.
-
 # Credits
 
 ## Code
@@ -856,19 +685,8 @@ The following blogs/tutorials complemented my learning for this project, alongsi
 - [Django Docs](https://www.djangoproject.com/)
 - [Bootstrap Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 - [Code Institute's](https://github.com/Code-Institute-Org>) Blog/Boutique Ado walkthroughs
-- [Daisy McGirr's](https://www.youtube.com/@IonaFrisbee) easy to follow Django Recipe App tutorial for understanding how to use Django's MVT framework
-- [Adel Codes - Youtube - Service Appointment Sys using Django](https://www.youtube.com/watch?v=HTHqEr3R_Kw&t=81s)
-- [Django save method](https://docs.djangoproject.com/en/4.2/ref/models/instances/) in models.py  
-- [Django UserCreationForm](https://www.javatpoint.com/django-usercreationform>) Creating New Users 
-- [Advanced User Profile creation using allauth/signals](<https://dev.to/thepylot/create-advanced-user-sign-up-view-in-django-step-by-step-k9m)
-- [Override Django's save method](https://www.sankalpjonna.com/learn-django/how-to-override-the-save-method-in-your-django-models)
-- TypeError Datetime object issue for same day bookings - [#1](https://bobbyhadz.com/blog/python-check-if-variable-is-datetime-object)
-                                                      - [#2](https://bobbyhadz.com/blog/python-typeerror-datetime-datetime-object-is-not-callable#:~:text=The%20Python%20%22TypeError%3A%20'datetime,and%20the%20built%2Din%20classes.)
-- Find the [parent form element](https://www.geeksforgeeks.org/difference-between-dom-parentnode-and-parentelement-in-javascript/) of delete confirm button
-- [Scrollbar styling](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar2)
-- [Browser autofill styling overrule](https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css)
-- [Django Docs](https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.readonly_fields) to make model item readonly for search function showing deleted articles
-- [Django cleaned data how to](https://overiq.com/django-1-10/django-form-basics/?utm_content=cmp-true)
+- [ChatGPT](https://chatgpt.com/) Got a lot of help from ChatGPT.
+
 
 ## Media
 
@@ -876,44 +694,4 @@ The following sites were used to gather the photographic media used in FreeFido:
 
 - [Pexels](https://www.pexels.com/)
 - [Unsplash](https://unsplash.com/)
- <details>
-   <summary>Credit to the following photographers</summary>
-   
-   - https://www.dreamstime.com/stock-photo-beagle-dog-tennis-ball-wants-to-play-image93818038 - beagle image  
-   - jack russell running towards Photo by Matthias Zomer: https://www.pexels.com/photo/dog-running-on-grass-422220  
-   - dogs with fence Photo by Flo Dnd: https://www.pexels.com/photo/dogs-running-together-12951462/
-   - dogs run Photo by Gili  Pup: https://www.pexels.com/photo/dogs-playing-in-the-field-11178657/
-   - dog on log Photo by chepté cormani: https://www.pexels.com/photo/dog-with-ball-in-mouth-jumping-over-a-fallen-tree-trunk-3013467/
-   - snoozer Photo by Engin Akyurt: https://www.pexels.com/photo/close-up-photography-of-short-coated-white-dog-sleeping-on-green-grass-1458421/
-   - shitzu close up Photo by Damian Barczak: https://www.pexels.com/photo/close-up-shot-of-an-adorable-yorkshire-terrier-running-while-looking-at-camera-7460161/
-   - corgi bichon Photo by Chris Duan: https://www.pexels.com/photo/photo-of-dogs-running-14520087/
-   - dog with hat https://www.pexels.com/photo/shiba-inu-wearing-beanie-hat-4588048/
-   - sheltie https://pixabay.com/tr/photos/k%C3%B6pek-shetland-koyun-evcil-hayvan-8078576/
-   - beach dachshund https://www.pexels.com/@ionelceban/
-   - forest dogs https://www.pexels.com/search/elina%20volk/
-   - party dog https://www.pexels.com/photo/a-black-and-tan-dog-7683158/
-   - frenchie https://pixabay.com/ja/photos/%E7%8A%AC-%E3%83%9C%E3%82%B9%E3%83%88%E3%83%B3%E3%83%86%E3%83%AA%E3%82%A2-%E5%8F%8B%E9%81%94-%E7%B9%81%E6%AE%96-4990023/
-   - surprise doggo Photo by Karolina Grabowska: https://www.pexels.com/photo/photo-of-a-dog-running-5705625/
-   - dobbie Photo by Aysun Kahraman Öktem: https://www.pexels.com/photo/dog-with-stick-5938159/
-   - husky zoom Photo by Kateryna Babaieva: https://www.pexels.com/photo/two-siberian-husky-running-in-snowy-park-3715581/
-   - husky smile Photo by cosmindoro: <https://www.pexels.com/photo/close-up-shot-of-a-siberian-husky-7175485/>
-   - french bulldog Photo by Scott Spedding: <https://www.pexels.com/photo/selective-focus-photography-of-short-coated-dog-2918094/>
 
- </details>
-
- Additional photos were added by users or from my own pets.
-
-### Additional reading/tutorials/books/blogs
-
-- [Python Crash Course](https://www.oreilly.com/library/view/python-crash-course/9781492071266/), Author: Eric Matthes, Publisher: No Starch Press, Year: 2019 Edition.
-- [Geeks for Geeks](https://www.geeksforgeeks.org/python-programming-language/?ref=ghm) for additional Python learning.
-
-## Acknowledgements
-
-- Many thanks to my husband and son for their continued support and for bringing me snacks when I have spent too long at the computer.
-- Thank you to my mentor Rahul Lakhanpal for his positive support, guidance and advice.
-- Huge thanks to my fellow students and friends, and Code Institute's Slack community for keeping positive the energy up.
-- Thanks to my dogs Poe and Indy for being the inspiration for this project, maybe someday I can make Freefido a reality!  
-  
-  ![Poe and Indy](documentation/final_views/poe_indy.png)
-  
