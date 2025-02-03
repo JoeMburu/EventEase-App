@@ -219,190 +219,106 @@ User stories and features recorded and managed on [GitHub Projects](<https://git
     
 ## Scope Plane
 
-I started with the event management (scheduling) and later added the booking system to be able to meet the MVP requirements of the project. Overall, the scope of the project is listed below.
+I started with the event management (scheduling) and later added the booking system to be able to meet the MVP requirements of the project. Overall, the scope of the project is listed below.These are the functions expected for the app.
 
 Essential features of my project were:
 
-- A striking, accessible website that fulfils user needs
 - Responsive website for users of mobile, tablet and desktop devices
 - User Authentication
-- User dashboard and profile creation and editing
+- Attendee dashboard and profile creation and editing
+- Admin dashboard for app operations and analytics
 - Event feature with full CRUD functionality
 - Booking feature with full CRUD functionality
 - Event search feature
 - Business details to inform the user
 
-Planning was really essential because it was the basis of the project. Without planning would be tantamount to failure, or put mildly running into lots of challenges. This project helped me to understand why planning comes before coding.
+Based on the above app functions, I will like to explain a little about the user registration and authentication, and webinar scheduling and management. Users are not required to register and login for browsing through the events and looking at the detailed information on each event. But registration and authentication are required for booking events. The function requires a user to sign up, log in. They will use email/password authentication for this. The second function is that the host or admin should be able to create, edit, and delete webinar events. This he does by means of the title, description, changing event image or other fields.
 
 
 ## Structural Plane
 
-From initial concept to finished product, having icons as the navigation area was an idea that I stuck with. I wanted to understand how to implement icon-based UX successfully so that the user can easily understand its purpose. Bootstrap classes and components were used to help control the flexibility of the site alongside overriding some classes with my own CSS to style as much of the form inputs that I could. Site graphic components were created by myself in Figma and Procreate. Combining icons from Google's [Material Symbols & Icons](https://fonts.google.com/icons?icon.set=Material+Icons) pack, icons from [Flaticon](https://www.flaticon.com/) and my colour scheme, I created my navbar icons in Figma. Each icon was placed on a colour-themed rectangle with ```border-radius:30px;``` and exported as PNGs. I edited my Login/Logout icons with a pawprint in the center of lock to have them fit the dog theme better.  
+Users interact with the app through the app navigation. To find the upcoming events, users need to go to the events menu and browse through, the register, book an event, pay for an event, and then join and enjoy the event. These are the steps required to accomplish these tasks. The user interacts with the system through menus. The menus are self-explanatory and easy to navigate around to perform one's operations. Events are designed using the CSS cards that will make each event look as compact as possible. Below is an example of the app's navigation and event as a card. 
+![App's Menubar](documentation/views/menubar.png) 
+**Sample of a navigation menubar** 
 
 
-![navbar icons](documentation/final_views/icons_row.png)  
-*Navigation icons for FreeFido*
-
-  
-Accessibility is very important to me and in case I missed the mark with my icon idea, I ensured that I created tooltips for both mobile and desktop views that reveal the icons purposes on hover with the mouse and hover/light touch on mobile.  
-
-  
-![desktop tooltips](documentation/final_views/tooltip_gif.gif)  
-*Navigation bar tooltips demonstrated on Desktop*
-
- 
-Continuing with a similar shape of the icons, images and buttons on the Freefido website are given a border-radius ranging from 20px - 30px to round off the corners and keep the styling consistent throughout the project.  
- 
-  
-![image with rounded corners](documentation/final_views/article_card_br.png)  
-*Article card from the Articles section with rounded corner styling*
-
- 
-Headings were given thick, dashed, underline styling in the coordinating colour of their feature to mark the beginning of a section.
-
- 
-![header with underline](documentation/final_views/header_underline.png)  
-*Sign Up page header with purple underline for Authentication related sections*  
-  
-
-A favicon was added of a purple tennis ball to fit with the theme of the website, keeping it playful.
-  
-
-![tennis ball favicon](documentation/final_views/ball_favicon.png)  
-*Ball Favicon*
-  
-
-I utilised webkits to change the appearance of my scrollbar to include rounded endpoints and a muted, purple/teal colour-gradient. This was especially so the smaller scrollbar within the profile dashboard would fit in with the projects design. The scrollbar change was successful in the Chrome browser but did not translate over to the Mozilla or Safari browsers. This will be looked at for the next deployment to hopefully continue the design over all browsers. 
-  
-  
-![scrollbar](documentation/final_views/scrollbar.png)  
-*Modified Scrollbar*
-  
-
-To allow for ease of responsiveness, each section was designed keeping in mind the switch from 'row' to 'column' when moving from Desktop to Mobile/Tablet view. This approach allowed me to add more features to the project early on by reusing and repurposing sections of code.
+![CSS Card Event](documentation/views/event_card.png)   
+**Sample of an event as a CSS card**
 
 ## Skeleton & Surface Planes
 
 ### Wireframes
 
-The wireframes for FreeFido were created in Figma and were high-spec from the beginning as I was sure of my design concept. [Figma](www.figma.com) is an easy and fast design system for web and software mockups that allows for great control and testing of ideas particularly within the specific frame sizes which represent different devices. As I was using Bootstrap, I was confident that I had created a modular structure for my feature elements that would suit a grid system and that would allow them to easily work across different devices and screen sizes.
+The wireframes for Eventease were created in Balsamiq, which the institute gave us a free key for the use. It was really fun using this app to create the mockups for the app. With the mockup wireframes in place, it was like a guide when the coding started to you on track.
 
 **Mobile/Tablet view for:**  
 
 - Home
-- Sign Up
-- Profile
+- Login
+- Detailed Page
 
 Originally I had planned for the home page to be mostly icon based for quick and easy use. However, I felt that this format would suit a downloadable app version of FreeFido, instead of the web version, which regular users might avail of to give them quicker access to the booking page, especially if they are one-handed, walking the dog on the way to the park. This will be part of my future features for the project growth.
 
-<details open>
-    <summary>Mobile/Tablet Home Page Wireframe</summary>  
-    <img src="documentation/wireframes/mt_home.png">  
+<details>
+    <summary>Mobile Home Page Wireframe</summary>  
+    <img src="documentation/views/mobile_homepage_wire.png">  
+    <img src="documentation/views/mobile_homepage2_wire.png">  
 </details>
   
-The hero image of the beagle and patterned background was created in Figma. The beagle was removed from it's photo background and placed over an SVG that I edited on [Pattern Monster](https://pattern.monster/memphis-1/). The corners were then rounded.
-
 <details>
-    <summary>Mobile/Tablet Sign Up Page Wireframe</summary>  
-    <img src="documentation/wireframes/mobile_tablet_sign_up.png">
+    <summary>Tablet login Page Wireframe</summary>  
+    <img src="documentation/views/tablet_login.png">
 </details>
 
 <details>
-    <summary>Mobile/Tablet Profile Page Wireframe</summary>  
-    <img src="documentation/wireframes/profile_mt.png">
+    <summary>Mobile Detailed Page Wireframe</summary>  
+    <img src="documentation/views/detailed_mobile.png">
 </details>
 
 **Desktop view for:**
 
 - Home
-- Sign Up
-- Profile
-- Booking
-- Gallery
-- Find Us
-- Contact Us
+- Events
+- detailed
 
-<details open>
+<details>
     <summary>Desktop Home Page Wireframe</summary>  
-    <img src="documentation/wireframes/home_desktop.png">  
+    <img src="documentation/views/desktop_homepage_wire.png">  
 </details>
 
 <details>
-    <summary>Desktop Home Page Footer Wireframe</summary>  
-    <img src="documentation/wireframes/home_2_desktop.png">
+    <summary>Desktop Events Page Wireframe</summary>  
+    <img src="documentation/views/desktop_events_wire.png">
 </details>
 
 <details>
-    <summary>Desktop Sign Up Page Wireframe</summary>  
-    <img src="documentation/wireframes/signup_in_desktop.png">
+    <summary>Desktop Detailed Page Wireframe</summary>  
+    <img src="documentation/views/desktop_detailed_wire.png">
 </details>
 
-<details>
-    <summary>Desktop Profile Create Page Wireframe</summary>  
-    <img src="documentation/wireframes/profile_desktop.png">
-</details>
-
-<details>
-    <summary>Desktop Profile View Page Wireframe</summary>  
-    <img src="documentation/wireframes/profile_view_desktop.png"> 
-</details>
-
-<details>
-    <summary>Desktop Booking Page Wireframe</summary>  
-    <img src="documentation/wireframes/booking_desktop.png">
-</details>
-
-<details open>
-    <summary>Desktop Booking Create Page Wireframe</summary>  
-    <img src="documentation/wireframes/booking_create_desktop.png">  
-</details>
-
-I had grand ideas for re-creating this exact booking page in this deployment of FreeFido. However, as this was a learning/building project, my understanding of implementing packages such as Django Agenda, Scheduler and dj-booking reached a point after a few struggles where I felt that it was more important to follow my planning steps for MVP and deliver a basic, functional booking system first. I look forward to developing my booking sytem in the next version of FreeFido.
-
-<details>
-    <summary>Desktop Gallery Page Wireframe</summary>  
-    <img src="documentation/wireframes/gallery_desktop.png">
-</details>
-
-<details>
-    <summary>Desktop Gallery Add Photo Page Wireframe</summary>  
-    <img src="documentation/wireframes/photo_desktop.png">
-</details>
-
-<details>
-    <summary>Desktop Find Us/Contact Us Page Wireframe</summary>  
-    <img src="documentation/wireframes/map_contact_desktop.png">  
-</details>
-
-Through the early development of FreeFido, I created an Article section to help with my learning and understanding of Django before I tackled a booking system. This feature stayed in and helped to grow the idea of having a social/educational theme to the website. There are no wireframes for my Article section but I was able to continue my modular approach to it's design by using other elements from the project's planning in it's creation.
 
 ### Database Schema - Entity Relationship Diagram
 
-![ERD Image](documentation/wireframes/freefidov2.png)  
+![ERD Image](documentation/views/ERD.png)  
 *Database Schema (ERD) for FreeFido displaying relationships between feature components saved within the database*
 
-This Entity Relationship Diagram(ERD) demonstrates how each feature interacts with each other and the connected PostgreSQL Database. Using Django's User Model, and Django AllAuth to carry out all user authentication, a user_id is created when the user registers with their username and email. This allows the user to edit a blank profile, create new articles, add comments and photos which will display their username, and create and manage their bookings. For future development, a Feedback system will be included allowing users to leave a review of the park.
+This Entity Relationship Diagram(ERD) demonstrates how each feature interacts with each other and the connected PostgreSQL Database. Using Django's User Model, which I customized and Django AllAuth to carry out all user authentication, a user_id is created when the user registers with their email, username, and password. We have three models here, and the relationship between users and events is one to many. This means that one user (admin) can create many events. This is the same relationship between events and bookings, one event can have many bookings. There is also one to many relationship between users and bookings. This means that one user can have many bookings. This relationship is governed by the primary key and the foreign key relationship.
 
-The Profile, Articles and Comments Models were inspired by the blog walkthrough by the Code Institute and the [Recipe App by Daisy McGirr](https://github.com/Daisy-McG/Recipe-Tutorial) during my learning of Django. They helped me to get a good and secure grasp of the templating structure and connected Python files to push my features further, make them my own and then develop my Booking and Gallery Models.
-
-My Booking Model collects data from the user about them and their dog(s) which can be used by the Admin to check the booking and allow entry to the park at their alloted time. The booking form displays a dropdown menu for Breed Choices and the hourly slots that are available for booking. A DateField allows that booking date to be chosen.
-
-Through the Admin Django Dashboard, the connected user_id to all data entered to the site means that the Admin can remove a User and their data completely through the additon of on_delete=models.CASCADE. At the moment, a user can remove any data they share with the site, but they cannot delete their account completely. This feature will come in the next version.
 
 ### Security
 
-A number of security steps were taken in this project in order to protect the user's submitted data. Unlike a strictly informative website, FreeFido allows the user to become part of the community and avail of it's booking services. To meet the strict internet standards of protecting a user's data, the following processes were included in the project's development.
+This project used the security features in some libraries. One of such is the authentication framework, AllAuth, which integrates into app to provide a login authentication security.
 
 **AllAuth**  
 
-Django AllAuth is an installable framework that takes care of the user registration and authentication process. Authentication was needed to determine when a user was registered or unregistered and it controlled what content was accessible on FreeFido. The setup of AllAuth included:
+Django AllAuth is an installable framework that takes care of the user registration and authentication process. Authentication is needed to determine when a user is registered or unregistered and it controls what content is accessible on Eventease. The setup of AllAuth included:
 
 - installing it to my workspace dependencies
 - adding it to my INSTALLED_APPS in my settings.py
 - sourcing the AUTHENTICATION_BACKENDS from the AllAuth docs for my settings.py
 - adding its URL to my projects 'urls.py'
 - run database migrations to create the tables needed for AllAuth
-- (For this version of FreeFido, to meet MVP, email and social accounts were not configured as part of the feedback/sign up options to the user. They will be included with the next release.)
+- For this first version of Eventease, to meet MVP, email and social accounts were not configured as part of the feedback/sign up options to the user. They will be included with the next release.
   
 **Defensive Design**  
 
@@ -412,96 +328,80 @@ FreeFido was developed to ensure a smooth user experience, to the best of my cur
 - Unregistered users are diverted to the Sign Up page from restricted access pages. 
 - Authentication processes control edit/delete icons to reveal them to the content author only. 
 - Deletion of data is confirmed through an additional modal, double-checking with the user.
-- Error pages are displayed with 'Take me home' buttons to help users get back on track. 
-- Testing and validation of features completes the process.
 
 **CSRF Tokens** 
 
-CSRF (Cross-Site Request Forgery) tokens are included in every form to help authenticate the request with the server when the form is submitted. Absence of these tokens can leave a site vulnerable to attackers who may steal a users data.
-  
+CSRF (Cross-Site Request Forgery) tokens are included in every form to help authenticate the request with the server when the form is submitted. Absence of these tokens can leave a site vulnerable to attackers who may steal a users data.  
 
 # Features
 
 ## User View - Registered/Unregistered
 
-It was important to me from the beginning that FreeFido be accessible to an unregistered user, in some capacitites. I wanted the website to sell the product to a new user quickly by immediately inviting them into the community through the park's information, articles and gallery sections. The following is a breakdown of the site's accessibility for registered/unregistered users:
+As a repetition, new users can access Eventease. They do not need to log in to access the home page, the event page, and the detailed page. This is because these pages contain information for public consumption. The following is a breakdown of the site's accessibility for registered/unregistered users:
 
 | Feature   | Unregistered User | Registered, Logged-In User |
 |-----------|-------------------|-----------------|
-| Home Page | Visable           | Visable         |
-| Profile   | Not Visible - 'Profile' icon only appears for registered, logged-in users | Visable and full feature interaction available |
-| Articles  | Visable but not interactable via 'Likes/Comments', 'Add Article' button not visible | Visable and full feature interaction available |
-| Booking   | Icon visible but redirected to Sign In page/Sign Up through link | Visable and full feature interaction available |
-| Gallery   | Visable but no option to 'Add Photo' | Visable and full feature interaction available |
-| Visit Us  | Visable and map interaction available | Visible and map interaction available |
-
+| Home Page | Visible           | Visible         |
+| Event Page | Visible           | Visible         |
+| About Page | Visible           | Visible         |
+| Contact Us Page | Visible           | Visible         |
+| Detailed Page   | Visible | Visible |
+| Dashboard  | Not Visible | Visible  |
+| Booking   | Not Visible | Visible |
+| Profile   | Not Visible | Visible |
 
 ## CRUD Functionality
 
-Users are able to Create, Read, Update and Delete their shared information on FreeFido. Some features make full CRUD functionality available, whilst others present the necessary options only. Here is my CRUD breakdown for FreeFido:
+Registered users (called Attendees) are able to Create, Read, Update and Delete their preference information on Eventease, as well as Create, Read, and Update their Bookings. Some features make full CRUD functionality available, whilst others present the necessary options only. Here is my CRUD breakdown for Eventease:
 
 | Feature | Create | Read | Update | Delete |
 |---------|--------|------|--------|--------|
-| Profile | Created upon registration | Yes | Yes | Full Profile deletion is currently only available to Admin upon User Account deletion, the profile dashboard clears automatically if a user removes all of their articles or bookings |
-| Articles | Yes | Yes | Yes | Yes |
-| Bookings | Yes | Yes | Yes | Yes |
-| Gallery | Yes | Yes | No - this feature felt unneccessary as it's intention is a 'quick-sharing' of a photo, a minimal amount of information is required and users are able to delete the image if they wish | Yes |
+| Profile | Created upon registration | Yes | Yes | Attendee can cancel account |
+| Events | Only the Admin can create an Event | Yes Attendee can read vents | only Admin can update an event | Only Admin can delete an eveny |
+| Bookings | Yes | Yes | Yes. Attendee can cancel bookings which is a form of update. Cancel does not delete a booking but changes the flags to CANCELLED AND REFUNDED because his money will be refunded. | No. Only Admin
 
 ## Feature Showcase 
   
 **Header/Navigation & Footer**
 
-*For features showcase, screenshots of the features in use were taken on Laptop/iPad Pro/iPhone 12 Pro*
+*For features showcase, screenshots of the features
 
 <details open>
-    <summary>Header & Navigation - All Users (Profile Icon only visible to Registered, Logged-In Users)</summary>  
-    <img src="documentation/final_views/nav.png">  
+    <summary>Header & Navigation - All Users</summary>  
+    <img src="documentation/views/mobile_nav.png">  
+    <img src="documentation/views/mobile_homepage_steps.png">  
+    <img src="documentation/views/mobile_homepage_footer.png">  
 </details>
 
-![Profile Icon](documentation/final_views/profileicon_nav.png)  
-*Registered, Logged In view with Profile Icon*  
-  
-As mentioned in the [Structural Plane](#structural-plane) section above, the icon navigation bar allows the user to make their way around the FreeFido site. The icons have a small amount of animation when hovered/clicked on and to reinforce the icon meaning, have tooltips on hover/touch (on mobile) that display their intention.
-  
-The 'header.html' has been created as a separate template and using Jinja templating language, called into the 'base.html' using ```{% include 'includes/header.html' %}```. The templating format and file setup took a little while to get used to when putting it together at first but felt very powerful once I became acclimatised to it. 
-
 <details open>
-    <summary>Footer - Visible to all Users</summary>  
-    <img src="documentation/final_views/footer.png">  
+    <summary>Login - Visible to all Users</summary>  
+    <img src="documentation/views/mobile_login.png">  
+    <img src="documentation/views/desktop_login.png"> 
 </details>
 
 The FreeFido footer has been created with a 'wave' background in grey, to complement the whitespace. The social-media icons, from [Flaticon](https://www.flaticon.com), open in a new tab when clicked. Tooltips are again used for those who may not be familiar with the icons. FreeFido does not have any active social media currently so the Facebook link only brings the user to the Facebook sign up page. Twitter, LinkedIn and GitHub bring the user to my own personal accounts connected to the production of this project.
-
-**Home Page**
-
-<details open>
-    <summary>Home Page - Visible to all Users</summary>  
-    <img src="documentation/final_views/home.png">  
-</details>
-
-In the Home Page 'Hero' section, when a user is not registered they will see a 'Sign Up' button under the section text, which will bring them to the Sign Up page. When logged in, they will see 'Book Today!' which will bring them to the booking page.
 
 
 **About Page**
 
 <details>
     <summary>About Page - Visible to all Users</summary>  
-    <img src="documentation/final_views/about.png">  
+    <img src="documentation/views/about_page.png">  
 </details>  
 
+**Contact Page**
 
-The 'About' section of the Home Page contains three sections of information for the user, 'About', 'Safety', 'Benefits'. These sections display paragraphs and bulleted lists of information about the park and its positive values and benefits. Within each paragraph is a colour-coded word which acts as a link to bring the user to an important section of the website.
+<details>
+    <summary>Contact Page - Visible to all Users</summary>  
+    <img src="documentation/views/contact_page.png">  
+</details>  
 
-![Paragraph link](documentation/final_views/linkarea.png)  
-*'visit' provides a link to the Visit Us page as the user reads through the park's information*
-
-<hr>
 
 **Registration/SignUp**
 
 <details open>
     <summary>Sign Up Page</summary>  
-    <img src="documentation/final_views/signup.png">  
+    <img src="documentation/views/desktop_signup.png">  
 </details>
   
 Users are required to add their Email, Username and Password twice, to ensure the correct one is saved. If any field is not filled in appropriately then a display message is used to inform the user with how to procede to complete the form. The Sign up and Sign in pages are created with default templates available with the AllAuth package. These templates are combined with the power of Bootstraps Crispy Forms pack to give extra control over the forms' appearance.
@@ -510,198 +410,98 @@ Users are required to add their Email, Username and Password twice, to ensure th
 
 <details open>
     <summary>Sign In Page</summary>  
-    <img src="documentation/final_views/login.png">  
+    <img src="documentation/views/mobile_login.png">  
 </details>
 
-On successful Sign In, the user is greeted with feedback through a message which confirms sign in. The 'open padlock' Log In icon now changes to a 'closed padlock' Log Out icon that the user can click to begin the Log Out process. A 'Forgot Password' page is also re-designed from the AllAuth templates but it's full functionality is not yet activated for this version.
-
-![incorrect username/email warning](documentation/final_views/incorrect_sign_in.png)  
-*User is given feedback if they submit incorrect details where one item is correct and the other is incorrect*  
 
 
-![fill out field warning](documentation/final_views/fill_field_warning.png)  
-*Django built in field warnings for incorrect/forgotten fields input*  
+![incorrect username/email warning](documentation/views/signin_error.png)  
+*Sign in error*  
 
 
-![Sign In message and Log In icon change](documentation/final_views/signin_message.png)  
-*Sign In message and Log In icon change*
-
-
-**Sign Out**
+**Admin Dashboard**
 
 <details open>
-    <summary>Sign Out Page</summary>  
-    <img src="documentation/final_views/logout.png">  
+    <summary>Admin dashboard Page - Admin only</summary>  
+    <img src="documentation/views/admin_dashboard.png">  
+    <img src="documentation/views/admin_dashboard_slidemenu.png">  
 </details>
   
-A user may choose to return to the Home page and stay logged in or leave the site, logged out.
-
-![sign out message](documentation/final_views/signed_out.png)  
-*User is given feedback in message format to confirm sign out, Profile icon no longer visible in navigation bar - message disappears after 3 seconds or if user clicks 'x'*  
-
-<hr>
-
-**Profile**
+**Attendee Dashboard**
 
 <details open>
-    <summary>Profile Page - Registered Users only</summary>  
-    <img src="documentation/final_views/profile.png">  
+    <summary>Attendee dashboard Page - Registered Users only</summary>  
+    <img src="documentation/views/attendee_dashboard.png">
+    <img src="documentation/views/attendee_dashboard_slidemenu.png">
 </details>
   
 The user profile is created upon registration and displays a placeholder image and 'Edit Profile' button to allow the user to personalise their view. With future releases this page will be accessible to other users and allow connection, currently it is only viewable to the user.
   
 <details>
     <summary>Profile Page - Placeholder image for Profile</summary>  
-    <img src="documentation/final_views/placeholder_profile.png">  
+    <img src="documentation/views/attendee_profile.png">  
 </details>
   
   
 **Profile Edit**
 
 <details>
-    <summary>Edit Profile Modal</summary>  
-    <img src="documentation/final_views/edit_profile.png">  
+    <summary>Edit Profile</summary>  
+    <img src="documentation/views/attendee_profile_update.png">  
 </details>
 
-Modal appears over the Profile page and allows users to edit their Profile Picture, Display Name (Display Name will be required for the future features of leaving Feedback/Reviews, Adding Friends and Direct Messaging) and Bio. Using the RichTextField input field, user's have more control of the formatting of their text if they wish.
 
-<hr>
-
-**Articles**
+**Events**
 
 <details open>
-    <summary>Articles Page - Unregistered User View (mobile/tablet), Registered User View with 'Add Article' icon (desktop)</summary>  
-    <img src="documentation/final_views/articles.png">  
+    <summary>Event Listing Page </summary>  
+    <img src="documentation/views/event_listing.png">  
 </details>
 
 <details>
-    <summary>Read Article Page - Unregistered User View</summary>  
-    <img src="documentation/final_views/art_unregview.png">  
+    <summary>Event Detailed Page</summary>  
+    <img src="documentation/views/event_detailed.png">  
 </details>  
-  
-Unregistered Users have access to all articles available on FreeFido. When registered and logged in, they may access the 'Add Article' button, 'Like/Unlike' icon and leave a comment for Admin approval. Articles created are displayed on individual 'cards' which display in rows for larger screens and columns for portrait, mobile view.
 
-![site pagination arrow for moving page every 6 articles](documentation/final_views/site_pag.png)  
-*Site pagination kicks in to display 6 articles per page. Arrows at the base of the article section allow users to move forward and back*  
+**Event Create**
 
-
-Unregistered Users are free to read the articles and comments left on FreeFido but they cannot 'Like/Comment' them until they have signed up and logged in.
-
-![like/comment count under article](documentation/final_views/like_comment.png)  
-*A Likes and Comments counter is visible under every article. Logged-In Users can interact by clicking the heart outline to like. 'Heart outline' icon is replaced by filled Heart icon*  
-
-
-![zero likes icon](documentation/final_views/zerolikes.png)  
-*Likes icon is represented by an outlined heart icon. When it receives a like from the logged-in user, it becomes a filled heart icon*  
-  
+The Admin creates events.
 
 <details open>
-    <summary>Add a Comment - Registered User View</summary>  
-    <img src="documentation/final_views/comments.png">  
-</details>
-
-A comment box is visible to logged-in users only. Their comment is submitted for review by the Admin, once approved, the comment appears on the website.
-
-![comment awaiting approval message](documentation/final_views/approval_comment.png)  
-*Comment is awaiting approval message displayed after comment submit*
+    <summary>Event Create Page - Visible only Admin</summary>  
+    <img src="documentation/views/admin_create_event.png">  
+</details> 
   
 
+  **Bookings**
+
+<details open>
+    <summary>Bookings - Event Booking Page </summary>  
+    <img src="documentation/views/event_booking.png">  
+</details>
+
+When the user clicks on Book Event, the event is book and the user is redirected to the booking-list
 <details>
-    <summary>Delete Comment - Registered User View for Comment Author only</summary>  
-    <img src="documentation/final_views/comm_del_icon.png">  
-</details>
-
-For the author of the comment, when logged in, a trash icon will appear to allow them to delete the comment if they wish. 
-
-
-**Create Article**
-
-<details open>
-    <summary>Create Article Page - Registered, Logged In User View</summary>  
-    <img src="documentation/final_views/add_article.png">  
+    <summary>Event Detailed Page</summary>  
+     <img src="documentation/views/event_booking.png">   
 </details>  
-  
-The user may create an article and include their own image or allow a placeholder image. Feedback is given to the user to guide them if they do not fill out the required sections appropriately. The Submit button saves the article for Admin approval. Once approved, the article will appear on the main page.  
-  
-
-<details>
-    <summary>Placeholder image for Articles - credit: Pattern Monster with FreeFido purple</summary>  
-    <img src="documentation/final_views/placeholder_img.png">  
-</details>
-
-
-![feedback that article is awaiting spproval by Admin](documentation/final_views/art_approve.png)  
-*Admin approval is required for articles to keep FreeFido on topic. Feedback is provided to the user by message that the article is awaiting approval*
-
-
-**Edit Article**
+ 
 
 <details open>
-    <summary>Edit Article Page - Registered, Logged In User View - Article Author View - Edit/Delete Icon</summary>  
-    <img src="documentation/final_views/art_eddel_reg.png">  
+    <summary>Cancel Booking (Update)</summary>  
+    <img src="documentation/views/cancel_booking.png">  
 </details>
 
-<details>
-    <summary>Edit Article Page - Only accessible to the Article Author</summary>  
-    <img src="documentation/final_views/edit_article.png">  
-</details>
-  
-If a user spots a typo, error or wants to add new information to their article, then they may edit the article and submit for immediate reposting. A certain amount of trust exists between Admin and the FreeFido community to hope that no inappropriate or off-topic content will be shared, which will result in an immediate deletion of the user's account by the Admin. These issues will be locked down in the future development of FreeFido to allow certain content/words to be flagged and removed by the Admin or not allow the form to be submitted in the first place. Community guidelines will also be developed.
+**Attendee Booking list**
 
 <details>
-    <summary>Edit Article Message</summary>  
-    <img src="documentation/final_views/art_updated_msg.png">  
-</details>
-
-
-**Delete Article**
-
-<details>
-    <summary>Delete Article Page - Only accessible to the Article Author </summary>  
-    <img src="documentation/final_views/delete_article.png">  
-</details>
-
-![delete article successful message](documentation/final_views/del_art_msg.png)  
-*User is informed that their article has been deleted - message disappears after 3 seconds*
-
-
-**Search Function**
-
-<details open>
-    <summary>Search Function - Visible on Article pages only</summary>  
-    <img src="documentation/final_views/search.png">  
-</details>  
-  
-A user may search for something particular using the 'Search' field, which only appears on article related pages. If the search yields no results then the user is informed and provided with a link back to the articles.
-
-<details>
-    <summary>Search Function No Articles Found - Visible on Article pages only</summary>  
-    <img src="documentation/final_views/no_articles.png">  
+    <summary>Attendee Booking list</summary>  
+    <img src="documentation/views/attendee_bookings.png">  
 </details>
 
 <hr>
-
-**Bookings**
-
-<details open>
-    <summary>Bookings Page - Registered, logged-in Users only</summary>  
-    <img src="documentation/final_views/booking.png">  
-</details>
-  
-The booking system that has been created for FreeFido is a basic booking system that 'gets the job done' for the starting business. The user may create, edit and delete their bookings, they are informed if a date/time is unavailable and they see a display message if their booking is saved. For future development, the UI of this booking system will improve to make unavailable times shaded-out/hidden and the user will receive confirmation emails for all bookings saved. Only 4 bookings may be held for each user and currently this includes past bookings, which the user must delete themselves. This is to remind the user of all bookings incase they may have forgotten and not attended their booked time slot, making it unavailable for someone else. In the future booking feature, the user will receive an email informing them that they have missed a booking, the booking will be flagged with a red text message on the dashboard and the user will be reminded that repeated no-shows for bookings will have their access to bookings revoked for a period of time.
-
-<details>
-    <summary>Bookings Page - Max Bookings Reached</summary>  
-    <img src="documentation/final_views/maxbooking.png">  
-</details>
-
-
-**Booking Create**
-
-<details open>
-    <summary>Booking Create Page - Visible only to Logged-In Users</summary>  
-    <img src="documentation/final_views/booking_c.png">  
-</details>  
+ 
+ 
   
 For creating a booking, the user is informed of the necessary fields to be filled in to secure the booking via feedback. The user may add a second dog if they wish, or leave this to another time. A dropdown selection of 'Breed Choices' is made available for quicker booking, with 'Other' included for mixed breeds. This information is important to the FreeFido staff member who maybe operating the gate for allowing entry. The dog's appearance will help them to identify and confirm the booking along with the human user information.
 Date and time is selectable via a calendar widget for date and dropdown selection menu displaying the hour slots from 8am to 8pm. FreeFido is super kind and opens every single day of the year for it's community members.
@@ -832,6 +632,14 @@ Admin can control users bookings via the Django Admin panel.
 <details>
     <summary>All bookings are made available to the Admin</summary>  
     <img src="documentation/final_views/djbooking.png">  
+</details>
+
+ **Close Account**
+
+Attendee can close an account, in that case, he is permanently deleted from the database.
+<details open>
+    <summary>Close Account (Delete) </summary>  
+    <img src="documentation/views/close_accout.png">  
 </details>
 
 
